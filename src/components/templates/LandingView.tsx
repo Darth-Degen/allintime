@@ -12,14 +12,13 @@ const LandingView: FC<Props> = (props: Props) => {
   const { showView } = useContext(ViewContext);
 
   return (
-    <div className="w-full h-full flex flex-col items-center justify-center lg:justify-end 3xl:justify-center">
+    <div className="w-full h-full flex flex-col items-center justify-center">
       <motion.div {...enterAnimation}>
         <Image
-          src="/images/logo_lg.png"
+          src="/images/landing/intro.png"
           alt="RULEBREAKERS"
-          width={1113}
-          height={721}
-          className="px-2 lg:px-20 2xl:px-0"
+          width={1494 * 0.4}
+          height={2060 * 0.4}
           onLoadingComplete={() =>
             setAssets && setAssets((prevState) => [(prevState[0] = true)])
           }
