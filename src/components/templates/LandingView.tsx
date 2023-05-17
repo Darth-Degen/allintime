@@ -1,7 +1,6 @@
 import { motion } from "framer-motion";
 import { Dispatch, SetStateAction, FC, useContext } from "react";
-import { ViewContext, slideDown } from "@constants";
-import { IconBar } from "@components";
+import { ViewContext, enterAnimation } from "@constants";
 import Image from "next/image";
 
 interface Props {
@@ -14,7 +13,7 @@ const LandingView: FC<Props> = (props: Props) => {
 
   return (
     <div className="w-full h-full flex flex-col items-center justify-center lg:justify-end 3xl:justify-center">
-      <motion.div {...slideDown(showView)}>
+      <motion.div {...enterAnimation}>
         <Image
           src="/images/logo_lg.png"
           alt="RULEBREAKERS"
@@ -26,7 +25,6 @@ const LandingView: FC<Props> = (props: Props) => {
           }
         />
       </motion.div>
-      <IconBar className="lg:hidden absolute bottom-3" />
     </div>
   );
 };

@@ -4,57 +4,46 @@ import { midClickAnimation } from "src/constants";
 import Image from "next/image";
 
 interface Props extends HTMLAttributes<HTMLDivElement> {
-  showExchange?: boolean;
+  icons: string[];
+  hrefs: string[];
+  sizes?: number[];
 }
 const IconBar: FC<Props> = (props: Props) => {
-  const { showExchange = true, className } = props;
+  const { icons, hrefs, sizes, className } = props;
   return (
-    <div className={`flex items-center justify-center gap-4 ${className}`}>
-      <motion.div className="cursor-pointer" {...midClickAnimation}>
-        <a
-          href={"https://discord.gg/4RTbsVnJ"}
-          rel="noreferrer"
-          target="_blank"
-        >
-          <Image
-            src="/images/icons/discord.png"
-            height={144 / 2.5}
-            width={144 / 2.5}
-            alt="menu"
-          />
-        </a>
-      </motion.div>
-      <motion.div className="cursor-pointer" {...midClickAnimation}>
-        <a
-          href={"https://twitter.com/rulebreakers___"}
-          rel="noreferrer"
-          target="_blank"
-        >
-          <Image
-            src="/images/icons/twitter.png"
-            height={144 / 2.5}
-            width={144 / 2.5}
-            alt="menu"
-          />
-        </a>
-      </motion.div>
-      {showExchange && (
-        <motion.div className="cursor-pointer" {...midClickAnimation}>
-          <a
-            href={"https://exchange.art/series/RULE%20BREAKERS/nfts"}
-            rel="noreferrer"
-            target="_blank"
-          >
-            <Image
-              src="/images/icons/exchange.png"
-              height={144 / 2.5}
-              width={144 / 2.5}
-              alt="menu"
-            />
-          </a>
-        </motion.div>
-      )}
+    <div
+      className={`flex items-center justify-center gap-4 3xl:scale-150 ${className}`}
+    >
+      {icons.map((icon, index) => (
+        <IconBarItem
+          key={index}
+          icon={icon}
+          href={hrefs[index]}
+          size={sizes?.[index]}
+        />
+      ))}
     </div>
+  );
+};
+
+interface IbiProps extends HTMLAttributes<HTMLDivElement> {
+  icon: string;
+  href: string;
+  size?: number;
+}
+const IconBarItem: FC<IbiProps> = (props: IbiProps) => {
+  const { icon, href, size = 35 } = props;
+  return (
+    <motion.div className="cursor-pointer" {...midClickAnimation}>
+      <a href={href} rel="noreferrer" target="_blank">
+        <Image
+          src={`/images/icons/${icon}`}
+          height={size}
+          width={size}
+          alt="menu"
+        />
+      </a>
+    </motion.div>
   );
 };
 

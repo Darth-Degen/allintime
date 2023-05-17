@@ -5,7 +5,6 @@ import {
   Footer,
   SplashScreen,
   GalleryModal,
-  CollabModal,
 } from "@components";
 import { enterAnimation, ViewContext } from "@constants";
 import { AnimatePresence, motion } from "framer-motion";
@@ -13,6 +12,7 @@ import { AnimatePresence, motion } from "framer-motion";
 interface Props {
   children: ReactNode;
   footer?: boolean;
+  header?: boolean;
   fixed?: boolean;
   headerType?: string;
   mainClass?: string;
@@ -21,7 +21,8 @@ interface Props {
 
 const PageLayout: FC<Props> = (props: Props) => {
   const {
-    footer = true,
+    footer = false,
+    header = false,
     fixed = false,
     headerType = "absolute",
     children,
@@ -31,33 +32,29 @@ const PageLayout: FC<Props> = (props: Props) => {
 
   //context for splash screen & modals
   const [showView, setShowView] = useState<boolean>(false);
-  const [galleryModalId, setGalleryModalId] = useState<number>(-1);
-  const [collabModal, setCollabModal] = useState({ id: -1, type: "" });
+  const [modalId, setModalId] = useState<number>(-1);
   const value = {
     showView,
     setShowView,
-    galleryModalId,
-    setGalleryModalId,
-    collabModal,
-    setCollabModal,
+    modalId,
+    setModalId,
   };
 
   return (
-    <div
-      className={`flex flex-col lg:min-h-screen h-full justify-between overflow-none  ${
-        fixed ? "absolute inset-0" : ""
-      }`}
-    >
-      <PageHead
-        title="BRKRS"
-        description="unconventional. unorthodox. unphased. 1/1 pfp experiment by pencilxart"
-        url="https://rulebreakers.xyz/"
-        // url="https://rulebreakers.vercel.app/"
-        twitter="rulebreakers___"
-      />
-      <ViewContext.Provider value={value}>
+    <ViewContext.Provider value={value}>
+      <div
+        className={`flex flex-col lg:min-h-screen h-full justify-between overflow-none  ${
+          fixed ? "absolute inset-0" : ""
+        }`}
+      >
+        <PageHead
+          title="Liberty Square"
+          description="Liberty Square main website git fukt m8"
+          url="https://libertysquare.io/"
+          twitter="LibertySquareHQ"
+        />
         {/* header */}
-        <Header headerType={headerType} />
+        {header && <Header headerType={headerType} />}
 
         {/* body */}
         <motion.main
@@ -75,24 +72,16 @@ const PageLayout: FC<Props> = (props: Props) => {
         {/* modals */}
         {assets && <SplashScreen assets={assets} />}
         <AnimatePresence mode="wait">
-          {galleryModalId !== -1 && (
+          {modalId !== -1 && (
             <GalleryModal
-              key="gallery-modal"
-              imageId={galleryModalId}
-              setImageId={setGalleryModalId}
-            />
-          )}
-          {collabModal.id !== -1 && (
-            <CollabModal
-              key="collab-modal"
-              id={collabModal.id}
-              type={collabModal.type}
-              setCollab={setCollabModal}
+              key="modal"
+              imageId={modalId}
+              setImageId={setModalId}
             />
           )}
         </AnimatePresence>
-      </ViewContext.Provider>
-    </div>
+      </div>
+    </ViewContext.Provider>
   );
 };
 export default PageLayout;

@@ -1,7 +1,6 @@
 import { Dispatch, FC, SetStateAction, useEffect, useRef } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import { IconBar, NavItem } from "@components";
-import Link from "next/link";
+import { NavItem } from "@components";
 import { useWindowSize } from "@hooks";
 import { fadeVariants } from "@constants";
 import { useOutsideAlerter } from "@hooks";
@@ -64,18 +63,10 @@ const Menu: FC<Props> = (props: Props) => {
             exit="closed"
           >
             <div className="absolute left-1/2 top-[45%] transform -translate-x-1/2 -translate-y-1/2  flex flex-col items-center justify-start uppercase text-4xl sm:text-6xl gap-5">
-              <NavItem href="/about">About</NavItem>
-              <NavItem href="/rulebreakers">RULEBREAKERS</NavItem>
-              <NavItem href="/assets">Assets</NavItem>
-              {/* <NavItem
-                href="https://twitter.com/rulebreakers___"
-                isExternal={true}
-              >
-                MARKETPLACE
-              </NavItem> */}
-              <NavItem href="/more">MORE</NavItem>
+              <NavItem href="/">About</NavItem>
+              <NavItem href="/">Assets</NavItem>
+              <NavItem href="/">MORE</NavItem>
             </div>
-            <IconBar className="hidden lg:flex absolute left-1/2 transform -translate-x-1/2 bottom-3" />
           </motion.div>
         </motion.aside>
       )}

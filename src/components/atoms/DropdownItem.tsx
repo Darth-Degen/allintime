@@ -1,11 +1,11 @@
 import { FC } from "react";
 import { motion, Variants } from "framer-motion";
-import { Rulebreakers } from "@types";
+import { Token } from "@types";
 import { backgroundAnimations } from "@constants";
 
 interface Props {
-  item: Rulebreakers;
-  handleClick: (item: Rulebreakers) => void;
+  item: Token;
+  handleClick: (item: Token) => void;
   variants: Variants;
 }
 
