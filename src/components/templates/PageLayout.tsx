@@ -48,10 +48,10 @@ const PageLayout: FC<Props> = (props: Props) => {
         }`}
       >
         <PageHead
-          title="Liberty Square"
-          description="Liberty Square main website git fukt m8"
-          url="https://libertysquare.io/"
-          twitter="LibertySquareHQ"
+          title="All In Time"
+          description="All In Time"
+          url=""
+          twitter=""
         />
         {/* header */}
         {header && <Header headerType={headerType} />}
