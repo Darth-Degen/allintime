@@ -8,6 +8,14 @@ const Home: NextPage = () => {
   return (
     <PageLayout footer={false} fixed={true} assets={assets}>
       <LandingView setAssets={setAssets} />
+      {/* 
+        
+        <SecondView />
+        <ThirdView />
+        
+        etc..
+
+      */}
     </PageLayout>
   );
 };
