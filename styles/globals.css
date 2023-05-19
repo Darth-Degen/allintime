@@ -1,19 +1,18 @@
-@tailwind base; 
-@tailwind components; 
+@tailwind base;
+@tailwind components;
 @tailwind utilities;
 
 @font-face {
   font-family: mk-hell;
-  src: url('../public/fonts/MK-HELL-Regular.ttf') format('truetype');
+  src: url("../public/fonts/MK-HELL-Regular.ttf") format("truetype");
 }
-
 @font-face {
   font-family: pangram-regular;
-  src: url('../public/fonts/Pangram-Regular.ttf') format('truetype');
+  src: url("../public/fonts/Pangram-Regular.ttf") format("truetype");
 }
 @font-face {
   font-family: pangram-black;
-  src: url('../public/fonts/Pangram-Black.ttf') format('truetype');
+  src: url("../public/fonts/Pangram-Black.ttf") format("truetype");
 }
 
 a {
