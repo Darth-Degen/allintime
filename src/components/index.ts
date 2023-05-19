@@ -12,6 +12,7 @@ const MenuIcon = dynamic(() => import("./@icons/MenuIcon"));
 const CloseIcon = dynamic(() => import("./@icons/CloseIcon"));
 const MenuCloseIcon = dynamic(() => import("./@icons/MenuCloseIcon"));
 const DownloadIcon = dynamic(() => import("./@icons/DownloadIcon"));
+const StarIcon = dynamic(() => import("./@icons/StarIcon"));
 //atoms
 const DropdownButton = dynamic(() => import("./atoms/DropdownButton"));
 const DropdownItem = dynamic(() => import("./atoms/DropdownItem"));
@@ -36,6 +37,7 @@ const Modal = dynamic(() => import("./molecules/Modal"));
 const Menu = dynamic(() => import("./molecules/Menu"));
 const IconBar = dynamic(() => import("./molecules/IconBar"));
 const SplashScreen = dynamic(() => import("./molecules/SplashScreen"));
+const LandingBanner = dynamic(() => import("./molecules/LandingBanner"));
 //organisms
 const Header = dynamic(() => import("./organisms/Header"));
 const Footer = dynamic(() => import("./organisms/Footer"));
@@ -48,9 +50,11 @@ export {
   PageHead,
   Logo,
   Header,
+  LandingBanner,
   Footer,
   PageLayout,
   SunIcon,
+  StarIcon,
   MoonIcon,
   ThemeChanger,
   Dropdown,
