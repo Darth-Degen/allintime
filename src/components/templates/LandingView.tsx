@@ -14,8 +14,8 @@ const LandingView: FC<Props> = (props: Props) => {
 
   return (
     <div
-      className="bg-custom-black max-w-[1600px] mx-auto w-full
-      h-full flex flex-col items-center justify-center"
+      className="bg-custom-black w-full
+      h-screen flex flex-col items-center justify-center"
     >
       <motion.div {...enterAnimation} className="w-full px-10">
         <LandingBanner />
@@ -25,7 +25,7 @@ const LandingView: FC<Props> = (props: Props) => {
             className="absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2  
             text-center opacity-80 whitespace-nowrap font-mk-hell text-custom-teal"
           >
-            <p className="text-[140px] xl:text-[180px] pt-20">all in time</p>
+            <p className="text-[140px] xl:text-[180px] pt-16">all in time</p>
             <p className="text-xl mt-20">
               a virtuous lifestyle,
               <br />

@@ -25,10 +25,13 @@ const LoadCircle = dynamic(() => import("./atoms/LoadCircle"));
 const TabBarItem = dynamic(() => import("./atoms/TabBarItem"));
 const Underline = dynamic(() => import("./atoms/Underline"));
 const ImageShimmer = dynamic(() => import("./atoms/ImageShimmer"));
+const QuoteBox = dynamic(() => import("./atoms/QuoteBox"));
+const QuoteImage = dynamic(() => import("./atoms/QuoteImage"));
 //molecules
 const PageHead = dynamic(() => import("./molecules/PageHead"));
 const Logo = dynamic(() => import("./molecules/Logo"));
 const ThemeChanger = dynamic(() => import("./molecules/ThemeChanger"));
+const QuoteWindow = dynamic(() => import("./molecules/QuoteWindow"));
 const Dropdown = dynamic(() => import("./molecules/Dropdown"));
 const NavItem = dynamic(() => import("./molecules/NavItem"));
 const TabBar = dynamic(() => import("./molecules/TabBar"));
@@ -40,16 +43,19 @@ const SplashScreen = dynamic(() => import("./molecules/SplashScreen"));
 const LandingBanner = dynamic(() => import("./molecules/LandingBanner"));
 //organisms
 const Header = dynamic(() => import("./organisms/Header"));
+const MerchQuotes = dynamic(() => import("./organisms/MerchQuotes"));
 const Footer = dynamic(() => import("./organisms/Footer"));
 const GalleryModal = dynamic(() => import("./organisms/GalleryModal"));
 //templates
 const PageLayout = dynamic(() => import("./templates/PageLayout"));
 const LandingView = dynamic(() => import("./templates/LandingView"));
+const MerchView = dynamic(() => import("./templates/MerchView"));
 
 export {
   PageHead,
   Logo,
   Header,
+  MerchQuotes,
   LandingBanner,
   Footer,
   PageLayout,
@@ -57,6 +63,7 @@ export {
   StarIcon,
   MoonIcon,
   ThemeChanger,
+  QuoteWindow,
   Dropdown,
   DropdownButton,
   ArrowIcon,
@@ -85,6 +92,9 @@ export {
   IconBar,
   SplashScreen,
   LandingView,
+  MerchView,
   ImageShimmer,
+  QuoteBox,
+  QuoteImage,
   GalleryModal,
 };
