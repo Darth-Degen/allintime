@@ -16,6 +16,7 @@ const StarIcon = dynamic(() => import("./@icons/StarIcon"));
 //atoms
 const DropdownButton = dynamic(() => import("./atoms/DropdownButton"));
 const DropdownItem = dynamic(() => import("./atoms/DropdownItem"));
+const BrandBox = dynamic(() => import("./atoms/BrandBox"));
 const NumberInput = dynamic(() => import("./atoms/NumberInput"));
 const TextInput = dynamic(() => import("./atoms/TextInput"));
 const Button = dynamic(() => import("./atoms/Button"));
@@ -49,7 +50,8 @@ const GalleryModal = dynamic(() => import("./organisms/GalleryModal"));
 //templates
 const PageLayout = dynamic(() => import("./templates/PageLayout"));
 const LandingView = dynamic(() => import("./templates/LandingView"));
-const MerchView = dynamic(() => import("./templates/MerchView"));
+const MerchView1 = dynamic(() => import("./templates/MerchView1"));
+const MerchView2 = dynamic(() => import("./templates/MerchView2"));
 
 export {
   PageHead,
@@ -71,6 +73,7 @@ export {
   NumberInput,
   TextInput,
   CheckBox,
+  BrandBox,
   Button,
   LoadAnimation,
   TwitterIcon,
@@ -92,7 +95,8 @@ export {
   IconBar,
   SplashScreen,
   LandingView,
-  MerchView,
+  MerchView1,
+  MerchView2,
   ImageShimmer,
   QuoteBox,
   QuoteImage,

@@ -18,6 +18,10 @@
   font-family: neuebit;
   src: url("../public/fonts/NeueBit-Regular.ttf") format("truetype");
 }
+@font-face {
+  font-family: neuebit-bold;
+  src: url("../public/fonts/NeueBit-Bold.ttf") format("truetype");
+}
 
 a {
   color: inherit;
