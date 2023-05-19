@@ -13,9 +13,9 @@ const MerchView: FC<Props> = (props: Props) => {
   const { showView } = useContext(ViewContext);
 
   return (
-    <>
+    <div className="w-full h-full bg-custom-teal">
       <div
-        className="bg-custom-black w-full
+        className="bg-custom-black w-[90%] mx-auto
         h-full flex flex-col items-center justify-center"
       >
         <motion.div {...enterAnimation} className="w-full">
@@ -59,7 +59,7 @@ const MerchView: FC<Props> = (props: Props) => {
           <MerchQuotes />
         </motion.div>
       </div>
-    </>
+    </div>
   );
 };
 
