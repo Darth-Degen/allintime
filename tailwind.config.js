@@ -22,6 +22,7 @@ module.exports = {
           "monospace",
         ],
         black: ["pangram-black"],
+        neuebit: ["neuebit"],
       },
       colors: {
         //custom
