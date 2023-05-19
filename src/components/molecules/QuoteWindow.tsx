@@ -14,7 +14,7 @@ const QuoteWindow: FC<Props> = ({ image, offset, quote, author, icon }) => {
     <div className="relative">
       <QuoteImage image={image} offset={offset} />
       <div
-        className={`${offset} absolute top-0 left-0 w-full h-full flex justify-center items-center`}
+        className={`${offset} absolute top-5 left-0 w-full h-full flex justify-center items-center`}
       >
         <QuoteBox quote={quote} author={author} icon={icon} />
       </div>

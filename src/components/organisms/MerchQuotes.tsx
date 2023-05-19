@@ -3,7 +3,7 @@ import { QuoteWindow } from "@components";
 const MerchQuotes = () => {
   return (
     <div
-      className="w-3/4 mx-auto bg-white rounded-[80px] font-secondary 
+      className="relative w-3/4 mx-auto bg-white rounded-[80px] font-secondary 
       flex justify-between pt-20 pb-32 px-20"
     >
       <div className="flex justify-between gap-8">
