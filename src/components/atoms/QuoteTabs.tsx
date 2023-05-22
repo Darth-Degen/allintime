@@ -22,7 +22,7 @@ const QuoteTabs: FC<QuoteTabsProps> = ({
         height="26"
         rx="13"
         stroke="#6F6F6F"
-        stroke-width="5"
+        strokeWidth="5"
       />
       <rect
         x="1294.5"
@@ -31,7 +31,7 @@ const QuoteTabs: FC<QuoteTabsProps> = ({
         height="26"
         rx="13"
         stroke="#6F6F6F"
-        stroke-width="5"
+        strokeWidth="5"
       />
     </svg>
   );
