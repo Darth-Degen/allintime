@@ -21,7 +21,7 @@ const MerchView1: FC<Props> = (props: Props) => {
         <motion.div {...enterAnimation} className="w-full">
           {/* banner */}
           <div className="mt-20 w-full bg-white h-10 flex items-center justify-center">
-            <p className="px-5 whitespace-nowrap overflow-hidden uppercase text-2xl text-center text-black font-neuebitBold tracking-[0.22em]">
+            <p className="px-5 whitespace-nowrap overflow-hidden uppercase text-base lg:text-lg 2xl:text-2xl text-center text-black font-neuebitBold tracking-[0.22em]">
               {`rob banks // use space magic // be a real life action figure
               // time travel // get drained (with style)`}
             </p>

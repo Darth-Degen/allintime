@@ -13,6 +13,9 @@ const CloseIcon = dynamic(() => import("./@icons/CloseIcon"));
 const MenuCloseIcon = dynamic(() => import("./@icons/MenuCloseIcon"));
 const DownloadIcon = dynamic(() => import("./@icons/DownloadIcon"));
 const StarIcon = dynamic(() => import("./@icons/StarIcon"));
+const VirtuousLifestyleIcon = dynamic(
+  () => import("./@icons/VirtuousLifestyleIcon")
+);
 //atoms
 const DropdownButton = dynamic(() => import("./atoms/DropdownButton"));
 const DropdownItem = dynamic(() => import("./atoms/DropdownItem"));
@@ -81,6 +84,7 @@ export {
   LoadCircle,
   ExpIcon,
   MenuIcon,
+  VirtuousLifestyleIcon,
   NavItem,
   TabBarItem,
   TabBar,

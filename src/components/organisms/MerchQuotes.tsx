@@ -1,11 +1,15 @@
-import { QuoteWindow } from "@components";
+import { QuoteWindow, VirtuousLifestyleIcon } from "@components";
 
 const MerchQuotes = () => {
   return (
     <div
-      className="relative w-3/4 mx-auto bg-white rounded-[80px] font-secondary 
-      flex justify-between pt-20 pb-32 px-20"
+      className="relative w-3/4 mx-auto bg-white rounded-[60px] font-secondary 
+      flex justify-between py-20 px-20"
     >
+      <VirtuousLifestyleIcon
+        fill="#939393"
+        className="absolute bottom-0 left-10 w-80 xl:w-96"
+      />
       <div className="flex justify-between gap-8">
         <QuoteWindow
           image="/images/merch/betty.png"
