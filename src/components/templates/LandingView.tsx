@@ -53,9 +53,6 @@ const LandingView: FC<Props> = (props: Props) => {
                 priority={true}
                 width={1494 * 0.4}
                 height={2060 * 0.4}
-                onLoadingComplete={() =>
-                  setAssets && setAssets((prevState) => [(prevState[0] = true)])
-                }
               />
             </div>
           </div>
