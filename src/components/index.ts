@@ -16,6 +16,9 @@ const StarIcon = dynamic(() => import("./@icons/StarIcon"));
 const VirtuousLifestyleIcon = dynamic(
   () => import("./@icons/VirtuousLifestyleIcon")
 );
+const GlobeIcon = dynamic(() => import("./@icons/GlobeIcon"));
+const NoteIcon1 = dynamic(() => import("./@icons/NoteIcon1"));
+const NoteIcon2 = dynamic(() => import("./@icons/NoteIcon2"));
 //atoms
 const DropdownButton = dynamic(() => import("./atoms/DropdownButton"));
 const DropdownItem = dynamic(() => import("./atoms/DropdownItem"));
@@ -31,6 +34,7 @@ const Underline = dynamic(() => import("./atoms/Underline"));
 const ImageShimmer = dynamic(() => import("./atoms/ImageShimmer"));
 const QuoteBox = dynamic(() => import("./atoms/QuoteBox"));
 const QuoteImage = dynamic(() => import("./atoms/QuoteImage"));
+const QuoteTabs = dynamic(() => import("./atoms/QuoteTabs"));
 //molecules
 const PageHead = dynamic(() => import("./molecules/PageHead"));
 const Logo = dynamic(() => import("./molecules/Logo"));
@@ -84,6 +88,9 @@ export {
   LoadCircle,
   ExpIcon,
   MenuIcon,
+  GlobeIcon,
+  NoteIcon1,
+  NoteIcon2,
   VirtuousLifestyleIcon,
   NavItem,
   TabBarItem,
@@ -104,5 +111,6 @@ export {
   ImageShimmer,
   QuoteBox,
   QuoteImage,
+  QuoteTabs,
   GalleryModal,
 };

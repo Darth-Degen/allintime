@@ -1,16 +1,32 @@
-import { QuoteWindow, VirtuousLifestyleIcon } from "@components";
+import {
+  GlobeIcon,
+  NoteIcon2,
+  QuoteTabs,
+  QuoteWindow,
+  VirtuousLifestyleIcon,
+} from "@components";
+import NoteIcon1 from "../@icons/NoteIcon1";
 
 const MerchQuotes = () => {
   return (
     <div
-      className="relative w-3/4 mx-auto bg-white rounded-[60px] font-secondary 
-      flex justify-between py-20 px-20"
+      className="relative w-[90%] 2xl:w-3/4 mx-auto bg-white rounded-[60px] font-secondary 
+      flex justify-between pt-16 pb-24 px-20"
     >
       <VirtuousLifestyleIcon
         fill="#939393"
-        className="absolute bottom-0 left-10 w-80 xl:w-96"
+        className="absolute bottom-14 left-10 w-52 2xl:w-80 h-fit"
       />
-      <div className="flex justify-between gap-8">
+      <GlobeIcon className="absolute bottom-14 right-10 w-16 2xl:w-28 h-fit" />
+      <div className="absolute top-5 right-8 h-6 2xl:h-8 w-fit">
+        <div className="flex items-center gap-5">
+          <NoteIcon1 className="h-6 2xl:h-8 w-fit" />
+          <NoteIcon2 className="h-6 2xl:h-8 w-fit" />
+        </div>
+      </div>
+      <QuoteTabs className="absolute bottom-6 left-1/2 -translate-x-1/2 h-fit w-[90%] 2xl:w-[95%]" />
+
+      <div className="flex justify-between gap-6 2xl:gap-8">
         <QuoteWindow
           image="/images/merch/betty.png"
           icon="/images/merch/betty_icon.png"
