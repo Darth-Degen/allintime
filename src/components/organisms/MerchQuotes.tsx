@@ -15,13 +15,13 @@ const MerchQuotes = () => {
     >
       <VirtuousLifestyleIcon
         fill="#939393"
-        className="absolute bottom-14 left-10 w-52 2xl:w-80 h-fit"
+        className="absolute bottom-14 left-10 2xl:left-16 w-52 2xl:w-80 3xl:w-96 h-fit"
       />
-      <GlobeIcon className="absolute bottom-14 right-10 w-16 2xl:w-28 h-fit" />
+      <GlobeIcon className="absolute bottom-14 right-10 2xl:right-16 w-16 2xl:w-28 3xl:w-36 h-fit" />
       <div className="absolute top-5 right-8 h-6 2xl:h-8 w-fit">
         <div className="flex items-center gap-5">
-          <NoteIcon1 className="h-6 2xl:h-8 w-fit" />
-          <NoteIcon2 className="h-6 2xl:h-8 w-fit" />
+          <NoteIcon1 className="h-6 2xl:h-8 3xl:h-10 w-fit" />
+          <NoteIcon2 className="h-6 2xl:h-8 3xl:h-10 w-fit" />
         </div>
       </div>
       <QuoteTabs className="absolute bottom-6 left-1/2 -translate-x-1/2 h-fit w-[90%] 2xl:w-[95%]" />
