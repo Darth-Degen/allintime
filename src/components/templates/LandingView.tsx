@@ -50,6 +50,7 @@ const LandingView: FC<Props> = (props: Props) => {
               <Image
                 src="/images/landing/intro.png"
                 alt="RULEBREAKERS"
+                priority={true}
                 width={1494 * 0.4}
                 height={2060 * 0.4}
                 onLoadingComplete={() =>

@@ -13,9 +13,16 @@ const CloseIcon = dynamic(() => import("./@icons/CloseIcon"));
 const MenuCloseIcon = dynamic(() => import("./@icons/MenuCloseIcon"));
 const DownloadIcon = dynamic(() => import("./@icons/DownloadIcon"));
 const StarIcon = dynamic(() => import("./@icons/StarIcon"));
+const VirtuousLifestyleIcon = dynamic(
+  () => import("./@icons/VirtuousLifestyleIcon")
+);
+const GlobeIcon = dynamic(() => import("./@icons/GlobeIcon"));
+const NoteIcon1 = dynamic(() => import("./@icons/NoteIcon1"));
+const NoteIcon2 = dynamic(() => import("./@icons/NoteIcon2"));
 //atoms
 const DropdownButton = dynamic(() => import("./atoms/DropdownButton"));
 const DropdownItem = dynamic(() => import("./atoms/DropdownItem"));
+const BrandBox = dynamic(() => import("./atoms/BrandBox"));
 const NumberInput = dynamic(() => import("./atoms/NumberInput"));
 const TextInput = dynamic(() => import("./atoms/TextInput"));
 const Button = dynamic(() => import("./atoms/Button"));
@@ -25,10 +32,14 @@ const LoadCircle = dynamic(() => import("./atoms/LoadCircle"));
 const TabBarItem = dynamic(() => import("./atoms/TabBarItem"));
 const Underline = dynamic(() => import("./atoms/Underline"));
 const ImageShimmer = dynamic(() => import("./atoms/ImageShimmer"));
+const QuoteBox = dynamic(() => import("./atoms/QuoteBox"));
+const QuoteImage = dynamic(() => import("./atoms/QuoteImage"));
+const QuoteTabs = dynamic(() => import("./atoms/QuoteTabs"));
 //molecules
 const PageHead = dynamic(() => import("./molecules/PageHead"));
 const Logo = dynamic(() => import("./molecules/Logo"));
 const ThemeChanger = dynamic(() => import("./molecules/ThemeChanger"));
+const QuoteWindow = dynamic(() => import("./molecules/QuoteWindow"));
 const Dropdown = dynamic(() => import("./molecules/Dropdown"));
 const NavItem = dynamic(() => import("./molecules/NavItem"));
 const TabBar = dynamic(() => import("./molecules/TabBar"));
@@ -40,16 +51,20 @@ const SplashScreen = dynamic(() => import("./molecules/SplashScreen"));
 const LandingBanner = dynamic(() => import("./molecules/LandingBanner"));
 //organisms
 const Header = dynamic(() => import("./organisms/Header"));
+const MerchQuotes = dynamic(() => import("./organisms/MerchQuotes"));
 const Footer = dynamic(() => import("./organisms/Footer"));
 const GalleryModal = dynamic(() => import("./organisms/GalleryModal"));
 //templates
 const PageLayout = dynamic(() => import("./templates/PageLayout"));
 const LandingView = dynamic(() => import("./templates/LandingView"));
+const MerchView1 = dynamic(() => import("./templates/MerchView1"));
+const MerchView2 = dynamic(() => import("./templates/MerchView2"));
 
 export {
   PageHead,
   Logo,
   Header,
+  MerchQuotes,
   LandingBanner,
   Footer,
   PageLayout,
@@ -57,6 +72,7 @@ export {
   StarIcon,
   MoonIcon,
   ThemeChanger,
+  QuoteWindow,
   Dropdown,
   DropdownButton,
   ArrowIcon,
@@ -64,6 +80,7 @@ export {
   NumberInput,
   TextInput,
   CheckBox,
+  BrandBox,
   Button,
   LoadAnimation,
   TwitterIcon,
@@ -71,6 +88,10 @@ export {
   LoadCircle,
   ExpIcon,
   MenuIcon,
+  GlobeIcon,
+  NoteIcon1,
+  NoteIcon2,
+  VirtuousLifestyleIcon,
   NavItem,
   TabBarItem,
   TabBar,
@@ -85,6 +106,11 @@ export {
   IconBar,
   SplashScreen,
   LandingView,
+  MerchView1,
+  MerchView2,
   ImageShimmer,
+  QuoteBox,
+  QuoteImage,
+  QuoteTabs,
   GalleryModal,
 };
