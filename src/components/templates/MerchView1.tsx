@@ -33,10 +33,7 @@ const MerchView1: FC<Props> = (props: Props) => {
               width={3800}
               height={3267}
               alt="merch images"
-              priority
-              onLoadingComplete={() =>
-                setAssets && setAssets((prevState) => [(prevState[0] = true)])
-              }
+              priority={true}
             />
             <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2">
               <BrandBox />
