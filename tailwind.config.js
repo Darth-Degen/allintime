@@ -9,6 +9,8 @@ module.exports = {
         "white-gradient": `linear-gradient(360.58deg, #FFFFFF 43.76%, rgba(255, 255, 255, 0) 106.82%)`,
         "merch-gradient":
           "linear-gradient(180deg, rgba(183, 119, 84, 0) 0%, rgba(255, 151, 95, 0.5) 100%)",
+        "pikachu-gradient":
+          "linear-gradient(0deg, rgba(255, 102, 212, 0) 0%, rgba(255, 151, 95, 0.5) 100%)",
       },
       dropShadow: {
         card: "30px 30px 0px rgba(0, 0, 0, 0)",

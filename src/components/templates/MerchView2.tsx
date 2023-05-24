@@ -1,16 +1,9 @@
 import { motion } from "framer-motion";
-import { Dispatch, SetStateAction, FC, useContext } from "react";
-import { ViewContext, enterAnimation } from "@constants";
+import { FC } from "react";
+import { enterAnimation } from "@constants";
 import { MerchQuotes } from "@components";
 
-interface Props {
-  setAssets?: Dispatch<SetStateAction<boolean[]>>;
-}
-
-const MerchView2: FC<Props> = (props: Props) => {
-  const { setAssets } = props;
-  const { showView } = useContext(ViewContext);
-
+const MerchView2: FC = () => {
   return (
     <div className="w-full h-full bg-merch-gradient">
       <div className="flex flex-col items-center justify-center">

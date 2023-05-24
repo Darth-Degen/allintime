@@ -1,4 +1,10 @@
-import { PageLayout, LandingView, MerchView1, MerchView2 } from "@components";
+import {
+  PageLayout,
+  LandingView,
+  MerchView1,
+  MerchView2,
+  PikaView,
+} from "@components";
 import { NextPage } from "next";
 import { useState } from "react";
 
@@ -8,8 +14,9 @@ const Home: NextPage = () => {
   return (
     <PageLayout footer={false} fixed={false} assets={assets}>
       <LandingView setAssets={setAssets} />
-      <MerchView1 setAssets={setAssets} />
-      <MerchView2 setAssets={setAssets} />
+      <MerchView1 />
+      <MerchView2 />
+      <PikaView />
     </PageLayout>
   );
 };

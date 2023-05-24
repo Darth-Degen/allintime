@@ -1,17 +1,10 @@
 import { motion } from "framer-motion";
-import { Dispatch, SetStateAction, FC, useContext } from "react";
-import { ViewContext, enterAnimation } from "@constants";
-import { BrandBox, MerchQuotes } from "@components";
+import { FC } from "react";
+import { enterAnimation } from "@constants";
+import { BrandBox } from "@components";
 import Image from "next/image";
 
-interface Props {
-  setAssets?: Dispatch<SetStateAction<boolean[]>>;
-}
-
-const MerchView1: FC<Props> = (props: Props) => {
-  const { setAssets } = props;
-  const { showView } = useContext(ViewContext);
-
+const MerchView1: FC = () => {
   return (
     <div className="w-full h-full bg-custom-teal">
       <div
