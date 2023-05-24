@@ -59,6 +59,7 @@ const PageLayout = dynamic(() => import("./templates/PageLayout"));
 const LandingView = dynamic(() => import("./templates/LandingView"));
 const MerchView1 = dynamic(() => import("./templates/MerchView1"));
 const MerchView2 = dynamic(() => import("./templates/MerchView2"));
+const PikaView = dynamic(() => import("./templates/PikaView"));
 
 export {
   PageHead,
@@ -108,6 +109,7 @@ export {
   LandingView,
   MerchView1,
   MerchView2,
+  PikaView,
   ImageShimmer,
   QuoteBox,
   QuoteImage,
