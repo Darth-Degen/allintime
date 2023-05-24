@@ -4,8 +4,10 @@ import {
   MerchView1,
   MerchView2,
   PikaView,
+  NiceFknCrew,
 } from "@components";
 import { NextPage } from "next";
+import Image from "next/image";
 import { useState } from "react";
 
 const Home: NextPage = () => {
@@ -17,6 +19,14 @@ const Home: NextPage = () => {
       <MerchView1 />
       <MerchView2 />
       <PikaView />
+      <Image
+        src="/images/pika/clouds_stock.png"
+        width={1537}
+        height={330}
+        alt="adobe stock clouds"
+        className="z-[-1] w-full -translate-y-40 2xl:-translate-y-80"
+      />
+      <NiceFknCrew />
     </PageLayout>
   );
 };

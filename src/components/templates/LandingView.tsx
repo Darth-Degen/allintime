@@ -40,7 +40,7 @@ const LandingView: FC<Props> = (props: Props) => {
             >
               <div className="w-full flex justify-center items-center">
                 <p className="font-secondary text-custom-teal mr-5">VOLUME 1</p>
-                <div className="w-full h-[1px] bg-transparent border-b border-dotted border-custom-teal" />
+                <div className="w-full h-[1px] bg-transparent border-b-4 border-dotted border-custom-teal" />
                 <p className="font-secondary text-custom-teal ml-5">
                   ESSENTIALS
                 </p>

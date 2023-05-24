@@ -33,6 +33,8 @@ module.exports = {
         "custom-black": "#020102",
         "custom-white": "#E8E8E8",
         "custom-red": "#FF0000",
+        "custom-tan": "#F6EFD3",
+        "custom-blue": "#3D7FFF",
 
         //template (replace if needed)
         "custom-white-2": "#EBE6E6",
