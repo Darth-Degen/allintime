@@ -6,7 +6,7 @@ import { Button, CrewneckFlavortext1, CrewneckFlavortext2 } from "@components";
 
 const NiceFknCrew: FC = () => {
   return (
-    <div className="w-full h-full bg-custom-tan -translate-y-40 2xl:-translate-y-80">
+    <div className="w-full h-full bg-custom-tan">
       <motion.div {...enterAnimation} className="w-[90%] 2xl:w-3/4 mx-auto">
         <div className="w-full flex justify-center items-center pt-20 pb-10">
           <p className="font-secondary mr-5 whitespace-nowrap">ALL IN TIME</p>
