@@ -6,8 +6,11 @@ import { Button, CrewneckFlavortext1, CrewneckFlavortext2 } from "@components";
 
 const NiceFknCrew: FC = () => {
   return (
-    <div className="w-full h-full bg-custom-tan -translate-y-40 2xl:-translate-y-80">
-      <motion.div {...enterAnimation} className="w-[90%] 2xl:w-3/4 mx-auto">
+    <div className="w-full h-full bg-custom-tan">
+      <motion.div
+        {...enterAnimation}
+        className="w-[90%] 2xl:w-3/4 max-w-[1785px] mx-auto"
+      >
         <div className="w-full flex justify-center items-center pt-20 pb-10">
           <p className="font-secondary mr-5 whitespace-nowrap">ALL IN TIME</p>
           <div className="w-full h-[1px] bg-transparent border-b-4 border-dotted border-black" />
@@ -27,9 +30,9 @@ const NiceFknCrew: FC = () => {
             </span> */}
           </p>
         </div>
-        <div className="flex items-center justify-between w-full pb-10 gap-10">
-          <CrewneckFlavortext1 className="h-16" />
-          <CrewneckFlavortext2 className="h-16" />
+        <div className="flex items-center justify-end w-full pb-10 gap-10">
+          <CrewneckFlavortext1 className="h-16 w-fit" />
+          <CrewneckFlavortext2 className="h-16 w-fit" />
           <div className="flex items-center gap-2">
             <svg
               width="91.4"
@@ -63,40 +66,42 @@ const NiceFknCrew: FC = () => {
             </svg>
           </div>
         </div>
-        <Image
-          src="/images/nice_crewneck/crewneck_models.png"
-          width={1785}
-          height={739}
-          alt="crewneck models"
-          className="my-4"
-        />
-        <div className="w-full">
-          <p className="font-secondary uppercase text-2xl">
-            all in time crewneck
-          </p>
-          <p className="font-secondary uppercase">100% organic knit</p>
-          <p className="font-secondary uppercase">embroidery 3 locations</p>
-          <p className="font-secondary uppercase">2 custom tags</p>
-          <div className="w-full flex items-center justify-between mb-20 -translate-y-11">
-            <p className="font-secondary uppercase whitespace-nowrap w-fit">
-              cost: 15 racks
+        <div className="w-fit mx-auto">
+          <Image
+            src="/images/nice_crewneck/crewneck_models.png"
+            width={1785}
+            height={739}
+            alt="crewneck models"
+            className="my-4 w-fit mx-auto"
+          />
+          <div className="w-full">
+            <p className="font-secondary uppercase text-2xl">
+              all in time crewneck
             </p>
-            <div className="w-full px-4">
-              <Image
-                src="/images/nice_crewneck/racks.png"
-                width={2231}
-                height={257}
-                alt="racks aka dolla dolla bill"
-                className="w-full pb-2"
-              />
+            <p className="font-secondary uppercase">100% organic knit</p>
+            <p className="font-secondary uppercase">embroidery 3 locations</p>
+            <p className="font-secondary uppercase">2 custom tags</p>
+            <div className="w-full flex items-center justify-between mb-20 -translate-y-14">
+              <p className="font-secondary uppercase whitespace-nowrap w-fit">
+                cost: 15 racks
+              </p>
+              <div className="w-full px-4">
+                <Image
+                  src="/images/nice_crewneck/racks.png"
+                  width={2231}
+                  height={257}
+                  alt="racks aka dolla dolla bill"
+                  className="w-full pb-2"
+                />
+              </div>
+              <Button
+                className="w-fit h-16 bg-white border-[2px] border-black 
+                !rounded-full text-custom-blue font-secondary text-[30px] px-20 uppercase whitespace-nowrap"
+                onClick={() => console.log("buy racks")}
+              >
+                Buy Racks
+              </Button>
             </div>
-            <Button
-              className="w-fit h-16 bg-white border-[2px] border-black 
-              !rounded-full text-custom-blue font-secondary text-[30px] px-20 uppercase whitespace-nowrap"
-              onClick={() => console.log("buy racks")}
-            >
-              Buy Racks
-            </Button>
           </div>
         </div>
       </motion.div>

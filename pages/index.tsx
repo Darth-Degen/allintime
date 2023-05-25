@@ -5,6 +5,9 @@ import {
   MerchView2,
   PikaView,
   NiceFknCrew,
+  WaitTheresMore,
+  GraphicTee,
+  ShirtHatTransition,
 } from "@components";
 import { NextPage } from "next";
 import Image from "next/image";
@@ -24,9 +27,12 @@ const Home: NextPage = () => {
         width={1537}
         height={330}
         alt="adobe stock clouds"
-        className="z-[-1] w-full -translate-y-40 2xl:-translate-y-80"
+        className="z-[-1] w-full -mt-40 2xl:-mt-80"
       />
       <NiceFknCrew />
+      <WaitTheresMore />
+      <GraphicTee />
+      <ShirtHatTransition />
     </PageLayout>
   );
 };

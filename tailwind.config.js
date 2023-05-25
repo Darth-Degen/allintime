@@ -31,10 +31,13 @@ module.exports = {
         //custom
         "custom-teal": "#9CD9CC",
         "custom-black": "#020102",
+        "custom-black2": "#030303",
         "custom-white": "#E8E8E8",
         "custom-red": "#FF0000",
         "custom-tan": "#F6EFD3",
         "custom-blue": "#3D7FFF",
+        "custom-yellow": "#E0AF00",
+        "custom-brown": "#825010",
 
         //template (replace if needed)
         "custom-white-2": "#EBE6E6",
@@ -45,7 +48,6 @@ module.exports = {
         "custom-dark-gray": "#202020",
         "custom-light-gray": "#6F7273",
         "custom-light-gray-2": "#c4c2c3",
-        "custom-yellow": "#FFBA21",
         "custom-green": "#56BC78",
         "custom-orange": "#FF5722",
         "custom-light-red": "#E77975",

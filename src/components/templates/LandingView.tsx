@@ -15,7 +15,7 @@ const LandingView: FC<Props> = (props: Props) => {
   return (
     <div className="w-full h-full bg-custom-teal">
       <div
-        className="w-[90%] mx-auto h-full bg-custom-black flex flex-col 
+        className="w-[90%] max-w-[2200px] mx-auto h-full bg-custom-black flex flex-col 
         items-center justify-center px-20"
       >
         <motion.div {...enterAnimation} className="w-full px-10">
