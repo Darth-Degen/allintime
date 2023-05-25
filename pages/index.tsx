@@ -5,6 +5,7 @@ import {
   MerchView2,
   PikaView,
   NiceFknCrew,
+  WaitTheresMore,
 } from "@components";
 import { NextPage } from "next";
 import Image from "next/image";
@@ -27,6 +28,7 @@ const Home: NextPage = () => {
         className="z-[-1] w-full -mt-40 2xl:-mt-80"
       />
       <NiceFknCrew />
+      <WaitTheresMore />
     </PageLayout>
   );
 };

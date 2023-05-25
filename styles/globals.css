@@ -46,6 +46,11 @@ html {
   scroll-behavior: smooth;
 }
 
+.more-gradient {
+  background: linear-gradient(180deg, #f6efd3 0%, rgba(246, 239, 211, 0) 99%),
+    #030303;
+}
+
 @keyframes shimmer {
   0% {
     background-position: 0% 0%;

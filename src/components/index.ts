@@ -67,6 +67,7 @@ const MerchView1 = dynamic(() => import("./templates/MerchView1"));
 const MerchView2 = dynamic(() => import("./templates/MerchView2"));
 const PikaView = dynamic(() => import("./templates/PikaView"));
 const NiceFknCrew = dynamic(() => import("./templates/NiceFknCrew"));
+const WaitTheresMore = dynamic(() => import("./templates/WaitTheresMore"));
 
 export {
   PageHead,
@@ -118,6 +119,7 @@ export {
   MerchView2,
   PikaView,
   NiceFknCrew,
+  WaitTheresMore,
   ImageShimmer,
   QuoteBox,
   QuoteImage,
