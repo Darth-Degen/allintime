@@ -69,7 +69,7 @@ const CorduroyHat: FC = () => {
               />
             </div>
             <Button
-              className="w-fit h-16 bg-custom-yellow2 px-20 uppercase text-custom-brown
+              className="w-fit h-16 bg-custom-yellow2 px-20 uppercase text-[#312A29]
               !rounded-full font-secondary text-[30px] whitespace-nowrap"
               onClick={() => console.log("buy racks")}
             >
