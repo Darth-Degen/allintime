@@ -57,6 +57,7 @@ const Menu = dynamic(() => import("./molecules/Menu"));
 const IconBar = dynamic(() => import("./molecules/IconBar"));
 const SplashScreen = dynamic(() => import("./molecules/SplashScreen"));
 const LandingBanner = dynamic(() => import("./molecules/LandingBanner"));
+const ItemInfo = dynamic(() => import("./molecules/ItemInfo"));
 //organisms
 const Header = dynamic(() => import("./organisms/Header"));
 const MerchQuotes = dynamic(() => import("./organisms/MerchQuotes"));
@@ -82,6 +83,7 @@ export {
   Header,
   MerchQuotes,
   LandingBanner,
+  ItemInfo,
   Footer,
   PageLayout,
   SunIcon,
