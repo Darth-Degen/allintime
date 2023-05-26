@@ -16,15 +16,17 @@ const ShirtHatTransition: FC = () => {
         alt="transition piece"
         className="-mt-3 w-full"
       />
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full">
-        <div className="w-full max-w-[1785px] mx-auto px-32 text-white">
-          <p className="font-secondary uppercase text-2xl">skullface tee</p>
-          <p className="font-secondary uppercase">100% organic knit</p>
-          <p className="font-secondary uppercase">front and back print</p>
-          <p className="font-secondary uppercase">2 custom tags</p>
+      <div className="absolute top-5 left-1/2 -translate-x-1/2 w-full">
+        <div className="relative w-full max-w-[1785px] mx-auto px-32 text-white">
+          <p className="font-secondary uppercase text-3xl">skullface tee</p>
+          <p className="font-secondary uppercase text-xl">100% organic knit</p>
+          <p className="font-secondary uppercase text-xl">
+            front and back print
+          </p>
+          <p className="font-secondary uppercase text-xl">2 custom tags</p>
           <div className="w-full flex items-center justify-between -translate-y-5">
-            <p className="font-secondary uppercase whitespace-nowrap w-fit">
-              cost: 5 racks
+            <p className="font-secondary uppercase whitespace-nowrap w-fit text-xl">
+              cost: <span className="font-thin">5 racks</span>
             </p>
             <div className="relative w-full px-4">
               <Image
@@ -44,11 +46,15 @@ const ShirtHatTransition: FC = () => {
             </div>
             <Button
               className="w-fit h-16 bg-custom-red font-bold
-            !rounded-full text-black font-secondary text-[30px] px-20 uppercase whitespace-nowrap"
+              !rounded-full text-black font-secondary text-[30px] px-20 uppercase whitespace-nowrap"
               onClick={() => console.log("buy racks")}
             >
               Buy Racks
             </Button>
+          </div>
+          <div className="absolute right-32 top-0 text-custom-red">
+            <p className="text-right">pieces</p>
+            <p className="text-[50px] leading-10 pt-2">01/200</p>
           </div>
         </div>
       </div>
