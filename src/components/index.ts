@@ -35,12 +35,14 @@ const ImageShimmer = dynamic(() => import("./atoms/ImageShimmer"));
 const QuoteBox = dynamic(() => import("./atoms/QuoteBox"));
 const QuoteImage = dynamic(() => import("./atoms/QuoteImage"));
 const QuoteTabs = dynamic(() => import("./atoms/QuoteTabs"));
+const HatTabs = dynamic(() => import("./atoms/HatTabs"));
 const CrewneckFlavortext1 = dynamic(
   () => import("./atoms/CrewneckFlavortext1")
 );
 const CrewneckFlavortext2 = dynamic(
   () => import("./atoms/CrewneckFlavortext2")
 );
+const RacksDottedLine = dynamic(() => import("./atoms/RacksDottedLine"));
 //molecules
 const PageHead = dynamic(() => import("./molecules/PageHead"));
 const Logo = dynamic(() => import("./molecules/Logo"));
@@ -132,7 +134,9 @@ export {
   QuoteBox,
   QuoteImage,
   QuoteTabs,
+  HatTabs,
   CrewneckFlavortext1,
   CrewneckFlavortext2,
+  RacksDottedLine,
   GalleryModal,
 };

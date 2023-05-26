@@ -37,6 +37,7 @@ module.exports = {
         "custom-tan": "#F6EFD3",
         "custom-blue": "#3D7FFF",
         "custom-yellow": "#E0AF00",
+        "custom-yellow2": "#FABC2A",
         "custom-brown": "#825010",
 
         //template (replace if needed)
