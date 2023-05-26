@@ -2,8 +2,8 @@ import { FC } from "react";
 
 const WaitTheresMore: FC = () => {
   return (
-    <div className="w-full h-screen more-gradient pt-20">
-      <div className="h-full pb-52 flex flex-col items-center justify-between">
+    <div className="w-full h-[200vh] more-gradient pt-20">
+      <div className="h-full py-40 flex flex-col items-center justify-between">
         <div>
           <p className="text-4xl text-black text-center uppercase font-neuebitBold">
             but wait

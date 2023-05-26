@@ -24,7 +24,7 @@ const LandingView: FC<Props> = (props: Props) => {
             {/* header text */}
             <div
               className="absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2  
-            text-center opacity-80 whitespace-nowrap font-mk-hell text-custom-teal"
+              text-center opacity-80 whitespace-nowrap font-mk-hell text-custom-teal"
             >
               <p className="text-[140px] xl:text-[180px] pt-20">all in time</p>
               <p className="text-xl mt-20">
