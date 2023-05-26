@@ -9,6 +9,7 @@ import {
   GraphicTee,
   ShirtHatTransition,
   CorduroyHat,
+  CulturePack,
 } from "@components";
 import { NextPage } from "next";
 import Image from "next/image";
@@ -35,6 +36,7 @@ const Home: NextPage = () => {
       <GraphicTee />
       <ShirtHatTransition />
       <CorduroyHat />
+      <CulturePack />
     </PageLayout>
   );
 };
