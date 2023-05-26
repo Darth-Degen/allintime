@@ -18,17 +18,23 @@ const NiceFknCrew: FC = () => {
             a virtuous lifestyle with very little patience
           </p>
         </div>
-        <div className="relative w-full pb-10">
-          <p className="font-secondary text-[150px] uppercase leading-[150px]">
+        <div className="relative w-full mb-10">
+          {/* <p className="font-secondary text-[150px] uppercase leading-[150px]">
             The nice f*cking crewneck
-            {/* <span className="text-xs leading-3">
-              This was the first item created. We spent many many sleepless
-              nights deciding the placement of the tags, the materials for the
-              crewneck itself. The process taught me the basis for this
-              collection. Nothing and I mean nothing is worth doing if it’s not
-              done right. All in time.
-            </span> */}
           </p>
+          <div className="absolute right-0 bottom-0 text-sm w-96 h-[150px] border border-red-500 font-secondary text-justify">
+            This was the first item created. We spent many many sleepless nights
+            deciding the placement of the tags, the materials for the crewneck
+            itself. The process taught me the basis for this collection. Nothing
+            and I mean nothing is worth doing if it’s not done right. All in
+            time.
+          </div> */}
+          <Image
+            src="/images/nice_crewneck/NFC_text.png"
+            width={4114}
+            height={913}
+            alt="header text"
+          />
         </div>
         <div className="flex items-center justify-end w-full pb-10 gap-10">
           <CrewneckFlavortext1 className="h-16 w-fit" />
@@ -81,17 +87,24 @@ const NiceFknCrew: FC = () => {
             <p className="font-secondary uppercase">100% organic knit</p>
             <p className="font-secondary uppercase">embroidery 3 locations</p>
             <p className="font-secondary uppercase">2 custom tags</p>
-            <div className="w-full flex items-center justify-between mb-20 -translate-y-14">
+            <div className="w-full flex items-center justify-between -translate-y-5">
               <p className="font-secondary uppercase whitespace-nowrap w-fit">
                 cost: 15 racks
               </p>
-              <div className="w-full px-4">
+              <div className="relative w-full px-4">
+                <Image
+                  src="/images/nice_crewneck/racks_dotted_line.svg"
+                  width={4461}
+                  height={28}
+                  alt="racks dotted line"
+                  className="w-full"
+                />
                 <Image
                   src="/images/nice_crewneck/racks.png"
-                  width={2231}
-                  height={257}
+                  width={120}
+                  height={120}
                   alt="racks aka dolla dolla bill"
-                  className="w-full pb-2"
+                  className="absolute -bottom-1/2 left-1/2 -translate-x-1/2 translate-y-1/2"
                 />
               </div>
               <Button
