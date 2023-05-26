@@ -8,7 +8,7 @@ const CulturePack: FC = () => {
   const [width] = useWindowSize();
   const mobileView = width < 1280;
   return (
-    <div className="w-full h-full mt-40">
+    <div className="w-full h-full my-40">
       <div className="w-full max-w-[1900px] mx-auto px-32">
         <div className="relative w-full z-[+1]">
           <p
@@ -63,6 +63,7 @@ const CulturePack: FC = () => {
           price={5}
           buttonBgColor="white"
           buttonTextColor="#3D7FFF"
+          buttonBorder="#312A29"
         />
       </div>
     </div>
