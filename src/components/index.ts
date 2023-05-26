@@ -72,6 +72,7 @@ const GraphicTee = dynamic(() => import("./templates/GraphicTee"));
 const ShirtHatTransition = dynamic(
   () => import("./templates/ShirtHatTransition")
 );
+const CorduroyHat = dynamic(() => import("./templates/CorduroyHat"));
 
 export {
   PageHead,
@@ -126,6 +127,7 @@ export {
   WaitTheresMore,
   GraphicTee,
   ShirtHatTransition,
+  CorduroyHat,
   ImageShimmer,
   QuoteBox,
   QuoteImage,

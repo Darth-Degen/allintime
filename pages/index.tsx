@@ -8,6 +8,7 @@ import {
   WaitTheresMore,
   GraphicTee,
   ShirtHatTransition,
+  CorduroyHat,
 } from "@components";
 import { NextPage } from "next";
 import Image from "next/image";
@@ -33,6 +34,7 @@ const Home: NextPage = () => {
       <WaitTheresMore />
       <GraphicTee />
       <ShirtHatTransition />
+      <CorduroyHat />
     </PageLayout>
   );
 };
