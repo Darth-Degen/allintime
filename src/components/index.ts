@@ -35,6 +35,12 @@ const ImageShimmer = dynamic(() => import("./atoms/ImageShimmer"));
 const QuoteBox = dynamic(() => import("./atoms/QuoteBox"));
 const QuoteImage = dynamic(() => import("./atoms/QuoteImage"));
 const QuoteTabs = dynamic(() => import("./atoms/QuoteTabs"));
+const CrewneckFlavortext1 = dynamic(
+  () => import("./atoms/CrewneckFlavortext1")
+);
+const CrewneckFlavortext2 = dynamic(
+  () => import("./atoms/CrewneckFlavortext2")
+);
 //molecules
 const PageHead = dynamic(() => import("./molecules/PageHead"));
 const Logo = dynamic(() => import("./molecules/Logo"));
@@ -60,6 +66,12 @@ const LandingView = dynamic(() => import("./templates/LandingView"));
 const MerchView1 = dynamic(() => import("./templates/MerchView1"));
 const MerchView2 = dynamic(() => import("./templates/MerchView2"));
 const PikaView = dynamic(() => import("./templates/PikaView"));
+const NiceFknCrew = dynamic(() => import("./templates/NiceFknCrew"));
+const WaitTheresMore = dynamic(() => import("./templates/WaitTheresMore"));
+const GraphicTee = dynamic(() => import("./templates/GraphicTee"));
+const ShirtHatTransition = dynamic(
+  () => import("./templates/ShirtHatTransition")
+);
 
 export {
   PageHead,
@@ -110,9 +122,15 @@ export {
   MerchView1,
   MerchView2,
   PikaView,
+  NiceFknCrew,
+  WaitTheresMore,
+  GraphicTee,
+  ShirtHatTransition,
   ImageShimmer,
   QuoteBox,
   QuoteImage,
   QuoteTabs,
+  CrewneckFlavortext1,
+  CrewneckFlavortext2,
   GalleryModal,
 };

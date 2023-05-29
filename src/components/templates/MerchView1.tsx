@@ -8,7 +8,7 @@ const MerchView1: FC = () => {
   return (
     <div className="w-full h-full bg-custom-teal">
       <div
-        className="w-[90%] mx-auto
+        className="w-[90%] max-w-[2200px] mx-auto
         h-full flex flex-col items-center justify-center"
       >
         <motion.div {...enterAnimation} className="w-full">

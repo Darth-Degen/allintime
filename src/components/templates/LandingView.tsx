@@ -15,7 +15,7 @@ const LandingView: FC<Props> = (props: Props) => {
   return (
     <div className="w-full h-full bg-custom-teal">
       <div
-        className="w-[90%] mx-auto h-full bg-custom-black flex flex-col 
+        className="w-[90%] max-w-[2200px] mx-auto h-full bg-custom-black flex flex-col 
         items-center justify-center px-20"
       >
         <motion.div {...enterAnimation} className="w-full px-10">
@@ -24,7 +24,7 @@ const LandingView: FC<Props> = (props: Props) => {
             {/* header text */}
             <div
               className="absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2  
-            text-center opacity-80 whitespace-nowrap font-mk-hell text-custom-teal"
+              text-center opacity-80 whitespace-nowrap font-mk-hell text-custom-teal"
             >
               <p className="text-[140px] xl:text-[180px] pt-20">all in time</p>
               <p className="text-xl mt-20">
@@ -40,7 +40,7 @@ const LandingView: FC<Props> = (props: Props) => {
             >
               <div className="w-full flex justify-center items-center">
                 <p className="font-secondary text-custom-teal mr-5">VOLUME 1</p>
-                <div className="w-full h-[1px] bg-transparent border-b border-dotted border-custom-teal" />
+                <div className="w-full h-[1px] bg-transparent border-b-4 border-dotted border-custom-teal" />
                 <p className="font-secondary text-custom-teal ml-5">
                   ESSENTIALS
                 </p>

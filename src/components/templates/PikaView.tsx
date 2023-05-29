@@ -41,13 +41,6 @@ const PikaView: FC = () => {
           />
         </div>
       </motion.div>
-      <Image
-        src="/images/pika/clouds_stock.png"
-        width={1537}
-        height={330}
-        alt="adobe stock clouds"
-        className="z-[-1] absolute left-0 right-0 w-full -translate-y-40 2xl:-translate-y-80"
-      />
     </div>
   );
 };
