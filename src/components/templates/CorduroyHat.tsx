@@ -8,8 +8,8 @@ const CorduroyHat: FC = () => {
   const tabletView = width < 1536 && width > 1024;
   const mobileView = width < 1024;
   return (
-    <div className="w-full h-full bg-noisy-brown pt-40 xl:pt-64 pb-32">
-      <div className="w-full max-w-[1900px] mx-auto px-32">
+    <div className="w-full h-full bg-noisy-brown py-32 xl:pt-64">
+      <div className="w-full max-w-[1900px] mx-auto px-16 xl:px-32">
         <Image
           src="/images/corduroy_hat/three_hats.png"
           width={1808}
@@ -18,12 +18,12 @@ const CorduroyHat: FC = () => {
           className="w-full mb-20"
         />
         <div className="flex items-start justify-between font-black uppercase text-custom-yellow2">
-          <p className="text-4xl text-left">
+          <p className="text-2xl lg:text-4xl text-left">
             corduroy dad hat
             <br />
             AIT // v1
           </p>
-          <p className="text-sm text-right">
+          <p className="text-[11px] lg:text-sm text-right">
             “good” brown
             <br />
             stylish brain container
@@ -33,8 +33,8 @@ const CorduroyHat: FC = () => {
             it made headlines.
           </p>
         </div>
-        <div className="w-full flex items-center justify-center py-16">
-          <p className="text-center uppercase sarcastic-hat text-custom-yellow2 text-2xl">
+        <div className="w-full flex items-center justify-center py-12 xl:py-16">
+          <p className="text-center uppercase sarcastic-hat text-custom-yellow2 text-xl xl:text-2xl">
             it goes on your head
           </p>
         </div>

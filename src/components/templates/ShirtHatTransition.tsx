@@ -1,6 +1,7 @@
 import { FC } from "react";
 import Image from "next/image";
 import { ItemInfo } from "@components";
+import { useWindowSize } from "src/hooks";
 
 const ShirtHatTransition: FC = () => {
   return (
