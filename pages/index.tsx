@@ -10,6 +10,7 @@ import {
   ShirtHatTransition,
   CorduroyHat,
   CulturePack,
+  FooterView,
 } from "@components";
 import { NextPage } from "next";
 import Image from "next/image";
@@ -37,6 +38,7 @@ const Home: NextPage = () => {
       <ShirtHatTransition />
       <CorduroyHat />
       <CulturePack />
+      <FooterView />
     </PageLayout>
   );
 };

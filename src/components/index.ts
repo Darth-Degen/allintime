@@ -78,6 +78,7 @@ const ShirtHatTransition = dynamic(
 );
 const CorduroyHat = dynamic(() => import("./templates/CorduroyHat"));
 const CulturePack = dynamic(() => import("./templates/CulturePack"));
+const FooterView = dynamic(() => import("./templates/FooterView"));
 
 export {
   PageHead,
@@ -136,6 +137,7 @@ export {
   ShirtHatTransition,
   CorduroyHat,
   CulturePack,
+  FooterView,
   ImageShimmer,
   QuoteBox,
   QuoteImage,
