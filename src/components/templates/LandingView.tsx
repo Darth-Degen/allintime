@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Dispatch, SetStateAction, FC, useContext } from "react";
-import { ViewContext, enterAnimation } from "@constants";
+import { enterAnimation } from "@constants";
 import { LandingBanner } from "@components";
 import Image from "next/image";
 
@@ -10,13 +10,12 @@ interface Props {
 
 const LandingView: FC<Props> = (props: Props) => {
   const { setAssets } = props;
-  const { showView } = useContext(ViewContext);
 
   return (
     <div className="w-full h-full bg-custom-teal">
       <div
         className="w-[90%] max-w-[2200px] mx-auto h-full bg-custom-black flex flex-col 
-        items-center justify-center px-20"
+        items-center justify-center px-8 xl:px-20"
       >
         <motion.div {...enterAnimation} className="w-full px-10">
           <LandingBanner />
@@ -27,7 +26,7 @@ const LandingView: FC<Props> = (props: Props) => {
               text-center opacity-80 whitespace-nowrap font-mk-hell text-custom-teal"
             >
               <p className="text-[140px] xl:text-[180px] pt-20">all in time</p>
-              <p className="text-xl mt-20">
+              <p className="text-lg xl:text-xl mt-20">
                 a virtuous lifestyle,
                 <br />
                 with very little patience
@@ -36,11 +35,11 @@ const LandingView: FC<Props> = (props: Props) => {
             {/* footer text */}
             <div
               className="absolute left-1/2 -translate-x-1/2 bottom-14 w-full  
-            text-center opacity-80 whitespace-nowrap px-8"
+              text-center opacity-80 whitespace-nowrap px-8"
             >
-              <div className="w-full flex justify-center items-center">
+              <div className="w-full flex justify-center items-center text-sm xl:text-base">
                 <p className="font-secondary text-custom-teal mr-5">VOLUME 1</p>
-                <div className="w-full h-[1px] bg-transparent border-b-4 border-dotted border-custom-teal" />
+                <div className="w-full h-[1px] bg-transparent border-b-2 xl:border-b-4 border-dotted border-custom-teal" />
                 <p className="font-secondary text-custom-teal ml-5">
                   ESSENTIALS
                 </p>

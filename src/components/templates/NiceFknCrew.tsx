@@ -3,42 +3,28 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { enterAnimation } from "@constants";
 import {
-  Button,
   CrewneckFlavortext1,
   CrewneckFlavortext2,
   ItemInfo,
-  RacksDottedLine,
 } from "@components";
-import { useWindowSize } from "src/hooks";
 
 const NiceFknCrew: FC = () => {
-  const [width] = useWindowSize();
-  const tabletView = width < 1536 && width > 1024;
-  const mobileView = width < 1024;
   return (
     <div className="w-full h-full bg-custom-tan">
       <motion.div
         {...enterAnimation}
         className="w-[90%] 2xl:w-3/4 max-w-[1900px] mx-auto"
       >
-        <div className="w-full flex justify-center items-center pt-20 pb-10">
-          <p className="font-secondary mr-5 whitespace-nowrap">ALL IN TIME</p>
-          <div className="w-full h-[1px] bg-transparent border-b-4 border-dotted border-black" />
-          <p className="font-secondary ml-5 whitespace-nowrap uppercase">
+        <div className="w-full flex justify-center items-center xl:pt-20 py-10 text-xs xl:text-base">
+          <p className="font-secondary mr-3 xl:mr-5 whitespace-nowrap">
+            ALL IN TIME
+          </p>
+          <div className="w-full h-[1px] bg-transparent border-b-2 xl:border-b-4 border-dotted border-black" />
+          <p className="font-secondary ml-3 xl:ml-5 whitespace-nowrap uppercase">
             a virtuous lifestyle with very little patience
           </p>
         </div>
         <div className="relative w-full mb-10">
-          {/* <p className="font-secondary text-[150px] uppercase leading-[150px]">
-            The nice f*cking crewneck
-          </p>
-          <div className="absolute right-0 bottom-0 text-sm w-96 h-[150px] border border-red-500 font-secondary text-justify">
-            This was the first item created. We spent many many sleepless nights
-            deciding the placement of the tags, the materials for the crewneck
-            itself. The process taught me the basis for this collection. Nothing
-            and I mean nothing is worth doing if it’s not done right. All in
-            time.
-          </div> */}
           <Image
             src="/images/nice_crewneck/NFC_text.png"
             width={4114}
@@ -46,7 +32,7 @@ const NiceFknCrew: FC = () => {
             alt="header text"
           />
         </div>
-        <div className="flex items-center justify-end w-full pb-10 gap-10">
+        <div className="flex items-center justify-end w-full pb-10 gap-4 xl:gap-10">
           <CrewneckFlavortext1 className="h-16 w-fit" />
           <CrewneckFlavortext2 className="h-16 w-fit" />
           <div className="flex items-center gap-2">
@@ -62,9 +48,9 @@ const NiceFknCrew: FC = () => {
                 fill="#312A29"
               />
             </svg>
-            <p className="relative font-secondary whitespace-nowrap text-center text-4xl leading-5">
+            <p className="relative font-secondary whitespace-nowrap text-center text-xl xl:text-4xl leading-5">
               01/200
-              <span className="absolute -bottom-7 left-1/2 -translate-x-1/2 text-base">
+              <span className="absolute -bottom-4 xl:-bottom-7 left-1/2 -translate-x-1/2 text-[10px] xl:text-base">
                 pieces
               </span>
             </p>

@@ -33,20 +33,22 @@ const CorduroyHat: FC = () => {
             it made headlines.
           </p>
         </div>
-        <div className="w-full flex items-center justify-center py-12 xl:py-16">
+        <div className="w-full flex items-center justify-center py-10 xl:py-16">
           <p className="text-center uppercase sarcastic-hat text-custom-yellow2 text-xl xl:text-2xl">
             it goes on your head
           </p>
         </div>
         <div className="flex items-end justify-between uppercase text-custom-yellow2 pb-16">
-          <p className="text-2xl text-left font-secondary whitespace-nowrap">
+          <p className="text-base xl:text-2xl text-left font-secondary whitespace-nowrap">
             0.11kg (probably)
           </p>
-          <HatTabs className="h-4" />
-          <p className="font-secondary text-sm text-right leading-7">
+          <HatTabs className="h-4 px-8 mb-1" />
+          <p className="font-secondary text-sm text-right leading-4 xl:leading-7">
             pieces
             <br />
-            <span className="text-[50px] font-secondary">01/200</span>
+            <span className="text-3xl xl:text-[50px] font-secondary">
+              01/200
+            </span>
           </p>
         </div>
         <ItemInfo

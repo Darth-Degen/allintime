@@ -8,14 +8,14 @@ const PikaView: FC = () => {
     <div className="w-full h-full bg-pikachu-gradient">
       <motion.div
         {...enterAnimation}
-        className="relative flex flex-col items-center justify-center pt-8 w-fit max-w-[70%] mx-auto h-full"
+        className="relative flex flex-col items-center justify-center xl:pt-8 w-fit max-w-[70%] mx-auto h-full"
       >
         <Image
           src="/images/pika/available_packages_bubbles.png"
           width={7203}
           height={2189}
           alt="available packages"
-          className="w-[80%]"
+          className="w-[80%] pb-10"
         />
         <div className="flex items-center justify-between w-full px-20 -translate-y-20">
           <Image

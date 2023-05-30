@@ -9,10 +9,10 @@ const CulturePack: FC = () => {
   const mobileView = width < 1280;
   return (
     <div className="w-full h-full my-40">
-      <div className="w-full max-w-[1900px] mx-auto px-32">
-        <div className="relative w-full z-[+1]">
+      <div className="w-full max-w-[1900px] mx-auto px-12 xl:px-32">
+        <div className="relative w-full z-[+1] pb-16 xl:pb-0">
           <p
-            className="text-[120px] leading-[110px] xl:text-[190px] xl:leading-[170px]
+            className="text-[100px] leading-[90px] xl:text-[190px] xl:leading-[170px]
             2xl:text-[250px] 2xl:leading-[200px] font-black text-custom-white2 uppercase"
           >
             culture
@@ -20,11 +20,11 @@ const CulturePack: FC = () => {
             builder
             <br />
             pack
-            <span className="font-secondary text-[20px] 2xl:text-[40px] pl-3">
+            <span className="font-secondary text-lg 2xl:text-[40px] pl-3">
               01/200
             </span>
           </p>
-          <p className="absolute bottom-10 right-0 w-40 font-secondary text-custom-white2 uppercase">
+          <p className="absolute bottom-10 right-0 w-32 xl:w-40 text-xs xl:text-base font-secondary text-custom-white2 uppercase">
             * some assembly required
           </p>
           <Image
@@ -32,7 +32,7 @@ const CulturePack: FC = () => {
             width={mobileView ? 288 : 575.5}
             height={mobileView ? 327.5 : 655}
             alt="culture pack"
-            className="absolute top-0 right-10 z-[-1]"
+            className="absolute top-0 right-20 xl:right-10 z-[-1]"
           />
         </div>
         <div className="grid grid-cols-2 xl:grid-cols-4 gap-5 z-[-1]">

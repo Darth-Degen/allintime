@@ -11,7 +11,7 @@ const MerchQuotes = () => {
   return (
     <div
       className="relative w-[90%] max-w-[1600px] mx-auto bg-white rounded-[60px] font-secondary 
-      flex justify-between pt-16 pb-24 px-20"
+      flex justify-between pt-16 pb-24 px-10 xl:px-20"
     >
       <VirtuousLifestyleIcon
         fill="#939393"

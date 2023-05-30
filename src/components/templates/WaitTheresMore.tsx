@@ -5,7 +5,7 @@ const WaitTheresMore: FC = () => {
     <div className="w-full h-[200vh] more-gradient pt-20">
       <div className="h-full py-40 flex flex-col items-center justify-between">
         <div>
-          <p className="text-4xl text-black text-center uppercase font-neuebitBold">
+          <p className="text-lg xl:text-4xl text-black text-center uppercase font-neuebitBold">
             but wait
             <br />
             there&apos;s more
@@ -24,7 +24,9 @@ const WaitTheresMore: FC = () => {
             />
           </svg>
         </div>
-        <p className="text-white text-[60px] text-center">that&apos;s right</p>
+        <p className="text-white text-xl xl:text-[60px] text-center">
+          that&apos;s right
+        </p>
       </div>
     </div>
   );
