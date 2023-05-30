@@ -5,15 +5,15 @@ import ExpIcon from "../@icons/ExpIcon";
 
 const FooterView: FC = () => {
   return (
-    <div className="w-full h-full mt-40">
-      <div className="w-full max-w-[1900px] mx-auto px-12 xl:px-32">
+    <div className="w-full h-full xl:mt-40">
+      <div className="w-full max-w-[1900px] mx-auto px-12 xl:px-32 font-secondary text-center">
         BUY RACKS MODULE HERE
         <Image
           src="/images/footer/design_trends.png"
           width={3288}
           height={1233}
           alt="design trends"
-          className="px-32"
+          className="xl:px-32"
         />
         <p
           className="mt-5 text-center text-xl lowercase text-white"
@@ -21,17 +21,17 @@ const FooterView: FC = () => {
         >
           *JK i worked really hard on this &lt;3 scum
         </p>
-        <div className="flex items-center justify-between py-16">
+        <div className="flex items-center justify-between pt-40 pb-8 xl:pb-16">
           <Image
             src="/images/footer/all_in_time_bubbles.png"
             width={2146}
             height={427}
             alt="all in time bubbles"
-            className="h-20 w-fit"
+            className="h-10 xl:h-20 w-fit"
           />
           <div className="flex flex-col items-center">
-            <div className="bg-white rounded-2xl h-20 w-36 flex items-center justify-center">
-              <ExpIcon color={"#9CD9CC"} />
+            <div className="bg-white rounded-xl xl:rounded-2xl h-12 xl:h-20 w-20 xl:w-36 flex items-center justify-center">
+              <ExpIcon className="h-10 xl:h-20" fill="#9CD9CC" />
             </div>
             <p className="mt-1 text-lg text-white font-secondary">
               powered by EXP
