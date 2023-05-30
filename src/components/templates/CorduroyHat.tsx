@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { FC } from "react";
-import { Button, HatTabs, RacksDottedLine } from "@components";
+import { Button, HatTabs, ItemInfo, RacksDottedLine } from "@components";
 import { useWindowSize } from "src/hooks";
 
 const CorduroyHat: FC = () => {
@@ -39,46 +39,26 @@ const CorduroyHat: FC = () => {
           </p>
         </div>
         <div className="flex items-end justify-between uppercase text-custom-yellow2 pb-16">
-          <p className="text-lg xl:text-2xl text-left font-secondary whitespace-nowrap">
+          <p className="text-2xl text-left font-secondary whitespace-nowrap">
             0.11kg (probably)
           </p>
-          <HatTabs className="h-2 xl:h-4 mb-2 xl:mb-1 px-8" />
-          <p className="font-secondary text-xs xl:text-sm text-right leading-5 xl:leading-7">
+          <HatTabs className="h-4" />
+          <p className="font-secondary text-sm text-right leading-7">
             pieces
             <br />
-            <span className="text-[32px] xl:text-[50px] font-secondary">
-              01/200
-            </span>
+            <span className="text-[50px] font-secondary">01/200</span>
           </p>
         </div>
-        <div className="w-full max-w-[1900px] mx-auto text-custom-yellow2">
-          <p className="font-black uppercase text-3xl">corduroy dad hat</p>
-          <p className="font-secondary uppercase">a really nice brown</p>
-          <p className="font-secondary uppercase">custom embroidery & tags</p>
-          <p className="font-secondary uppercase">stickers</p>
-          <div className="w-full flex items-center justify-between -translate-y-5">
-            <p className="font-secondary uppercase whitespace-nowrap w-fit">
-              cost: 5 racks
-            </p>
-            <div className="relative w-full px-4">
-              <RacksDottedLine className="w-full fill-custom-yellow2" />
-              <Image
-                src="/images/nice_crewneck/racks.png"
-                width={tabletView ? 80 : mobileView ? 50 : 120}
-                height={tabletView ? 80 : mobileView ? 50 : 120}
-                alt="racks aka dolla dolla bill"
-                className="absolute bottom-1/2 left-1/2 -translate-x-1/2 translate-y-1/2"
-              />
-            </div>
-            <Button
-              className="w-fit h-16 bg-custom-yellow2 px-20 uppercase text-[#312A29]
-              !rounded-full font-secondary text-[30px] whitespace-nowrap"
-              onClick={() => console.log("buy racks")}
-            >
-              Buy Racks
-            </Button>
-          </div>
-        </div>
+        <ItemInfo
+          title="corduroy dad hat"
+          description1="a really nice brown"
+          description2="custom embroidery & tags"
+          description3="stickers"
+          textColor="#FABC2A"
+          price={5}
+          buttonBgColor="#FABC2A"
+          buttonTextColor="#312A29"
+        />
       </div>
     </div>
   );

@@ -57,6 +57,8 @@ const Menu = dynamic(() => import("./molecules/Menu"));
 const IconBar = dynamic(() => import("./molecules/IconBar"));
 const SplashScreen = dynamic(() => import("./molecules/SplashScreen"));
 const LandingBanner = dynamic(() => import("./molecules/LandingBanner"));
+const CulturePackImage = dynamic(() => import("./molecules/CulturePackImage"));
+const ItemInfo = dynamic(() => import("./molecules/ItemInfo"));
 //organisms
 const Header = dynamic(() => import("./organisms/Header"));
 const MerchQuotes = dynamic(() => import("./organisms/MerchQuotes"));
@@ -75,6 +77,7 @@ const ShirtHatTransition = dynamic(
   () => import("./templates/ShirtHatTransition")
 );
 const CorduroyHat = dynamic(() => import("./templates/CorduroyHat"));
+const CulturePack = dynamic(() => import("./templates/CulturePack"));
 
 export {
   PageHead,
@@ -82,6 +85,8 @@ export {
   Header,
   MerchQuotes,
   LandingBanner,
+  CulturePackImage,
+  ItemInfo,
   Footer,
   PageLayout,
   SunIcon,
@@ -130,6 +135,7 @@ export {
   GraphicTee,
   ShirtHatTransition,
   CorduroyHat,
+  CulturePack,
   ImageShimmer,
   QuoteBox,
   QuoteImage,

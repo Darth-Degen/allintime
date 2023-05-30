@@ -6,6 +6,7 @@ import {
   Button,
   CrewneckFlavortext1,
   CrewneckFlavortext2,
+  ItemInfo,
   RacksDottedLine,
 } from "@components";
 import { useWindowSize } from "src/hooks";
@@ -89,36 +90,17 @@ const NiceFknCrew: FC = () => {
             alt="crewneck models"
             className="my-4 w-fit mx-auto"
           />
-          <div className="w-full">
-            <p className="font-black uppercase text-3xl">
-              all in time crewneck
-            </p>
-            <p className="font-secondary uppercase">100% organic knit</p>
-            <p className="font-secondary uppercase">embroidery 3 locations</p>
-            <p className="font-secondary uppercase">2 custom tags</p>
-            <div className="w-full flex items-center justify-between -translate-y-5">
-              <p className="font-secondary uppercase whitespace-nowrap w-fit">
-                cost: 15 racks
-              </p>
-              <div className="relative w-full px-4">
-                <RacksDottedLine className="w-full fill-black" />
-                <Image
-                  src="/images/nice_crewneck/racks.png"
-                  width={tabletView ? 80 : mobileView ? 50 : 120}
-                  height={tabletView ? 80 : mobileView ? 50 : 120}
-                  alt="racks aka dolla dolla bill"
-                  className="absolute bottom-1/2 left-1/2 -translate-x-1/2 translate-y-1/2"
-                />
-              </div>
-              <Button
-                className="w-fit h-16 bg-white border-[2px] border-black 
-                !rounded-full text-custom-blue font-secondary text-[30px] px-20 uppercase whitespace-nowrap"
-                onClick={() => console.log("buy racks")}
-              >
-                Buy Racks
-              </Button>
-            </div>
-          </div>
+          <ItemInfo
+            title="all in time crewneck"
+            description1="100% organic knit"
+            description2="embroidery 3 locations"
+            description3="2 custom tags"
+            textColor="#312A29"
+            price={15}
+            buttonBgColor="white"
+            buttonTextColor="#3D7FFF"
+            buttonBorder="#312A29"
+          />
         </div>
       </motion.div>
     </div>
