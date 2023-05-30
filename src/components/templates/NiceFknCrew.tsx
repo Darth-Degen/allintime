@@ -2,14 +2,23 @@ import { FC } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { enterAnimation } from "@constants";
-import { Button, CrewneckFlavortext1, CrewneckFlavortext2 } from "@components";
+import {
+  Button,
+  CrewneckFlavortext1,
+  CrewneckFlavortext2,
+  RacksDottedLine,
+} from "@components";
+import { useWindowSize } from "src/hooks";
 
 const NiceFknCrew: FC = () => {
+  const [width] = useWindowSize();
+  const tabletView = width < 1536 && width > 1024;
+  const mobileView = width < 1024;
   return (
     <div className="w-full h-full bg-custom-tan">
       <motion.div
         {...enterAnimation}
-        className="w-[90%] 2xl:w-3/4 max-w-[1785px] mx-auto"
+        className="w-[90%] 2xl:w-3/4 max-w-[1900px] mx-auto"
       >
         <div className="w-full flex justify-center items-center pt-20 pb-10">
           <p className="font-secondary mr-5 whitespace-nowrap">ALL IN TIME</p>
@@ -75,13 +84,13 @@ const NiceFknCrew: FC = () => {
         <div className="w-fit mx-auto">
           <Image
             src="/images/nice_crewneck/crewneck_models.png"
-            width={1785}
+            width={1900}
             height={739}
             alt="crewneck models"
             className="my-4 w-fit mx-auto"
           />
           <div className="w-full">
-            <p className="font-secondary uppercase text-2xl">
+            <p className="font-black uppercase text-3xl">
               all in time crewneck
             </p>
             <p className="font-secondary uppercase">100% organic knit</p>
@@ -92,19 +101,13 @@ const NiceFknCrew: FC = () => {
                 cost: 15 racks
               </p>
               <div className="relative w-full px-4">
-                <Image
-                  src="/images/nice_crewneck/racks_dotted_line.svg"
-                  width={4461}
-                  height={28}
-                  alt="racks dotted line"
-                  className="w-full"
-                />
+                <RacksDottedLine className="w-full fill-black" />
                 <Image
                   src="/images/nice_crewneck/racks.png"
-                  width={120}
-                  height={120}
+                  width={tabletView ? 80 : mobileView ? 50 : 120}
+                  height={tabletView ? 80 : mobileView ? 50 : 120}
                   alt="racks aka dolla dolla bill"
-                  className="absolute -bottom-1/2 left-1/2 -translate-x-1/2 translate-y-1/2"
+                  className="absolute bottom-1/2 left-1/2 -translate-x-1/2 translate-y-1/2"
                 />
               </div>
               <Button
