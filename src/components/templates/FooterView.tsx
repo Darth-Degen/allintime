@@ -21,7 +21,7 @@ const FooterView: FC = () => {
         >
           *JK i worked really hard on this &lt;3 scum
         </p>
-        <div className="flex items-center justify-between pt-40 pb-8 xl:pb-16">
+        <div className="flex items-center justify-between pt-40 pb-8">
           <Image
             src="/images/footer/all_in_time_bubbles.png"
             width={2146}
@@ -30,12 +30,10 @@ const FooterView: FC = () => {
             className="h-10 xl:h-20 w-fit"
           />
           <div className="flex flex-col items-center">
-            <div className="bg-white rounded-xl xl:rounded-2xl h-12 xl:h-20 w-20 xl:w-36 flex items-center justify-center">
-              <ExpIcon className="h-10 xl:h-20" fill="#9CD9CC" />
+            <div className="bg-white rounded-xl h-12 w-20 flex items-center justify-center">
+              <ExpIcon className="h-10" fill="#9CD9CC" />
             </div>
-            <p className="mt-1 text-lg text-white font-secondary">
-              powered by EXP
-            </p>
+            <p className="mt-1 text-white font-secondary">powered by EXP</p>
           </div>
         </div>
       </div>
