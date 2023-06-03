@@ -5,9 +5,13 @@ const GraphicTee: FC = () => {
   return (
     <div className="w-full h-full bg-custom-black2 pt-20">
       <div className="w-full h-full flex flex-col items-center max-w-[1900px] mx-auto mt-[500px] px-32">
-        <p className="w-full text-center text-custom-yellow text-[70px] leading-[80px] xl:text-[200px] xl:leading-[190px]">
-          it&apos;s a graphic tee
-        </p>
+        <Image
+          src="/images/graphic_tee/header_text.png"
+          width={3566}
+          height={375}
+          alt="it's a graphic tee!"
+          className="mb-6"
+        />
         <Image
           src="/images/graphic_tee/graphic_tee.png"
           width={1808}
