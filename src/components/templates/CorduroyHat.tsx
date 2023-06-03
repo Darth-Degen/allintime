@@ -1,12 +1,8 @@
 import Image from "next/image";
 import { FC } from "react";
-import { Button, HatTabs, ItemInfo, RacksDottedLine } from "@components";
-import { useWindowSize } from "src/hooks";
+import { HatTabs, ItemInfo } from "@components";
 
 const CorduroyHat: FC = () => {
-  const [width] = useWindowSize();
-  const tabletView = width < 1536 && width > 1024;
-  const mobileView = width < 1024;
   return (
     <div className="w-full h-full bg-noisy-brown py-32 xl:pt-64">
       <div className="w-full max-w-[1900px] mx-auto px-16 xl:px-32">
@@ -46,7 +42,7 @@ const CorduroyHat: FC = () => {
           <p className="font-secondary text-sm text-right leading-4 xl:leading-7">
             pieces
             <br />
-            <span className="text-3xl xl:text-[50px] font-secondary">
+            <span className="text-3xl xl:text-[50px] font-pangramLight">
               01/200
             </span>
           </p>

@@ -20,11 +20,11 @@ const CulturePack: FC = () => {
             builder
             <br />
             pack
-            <span className="font-secondary text-lg 2xl:text-[40px] pl-3">
+            <span className="font-pangramLight text-lg 2xl:text-[40px] pl-3">
               01/200
             </span>
           </p>
-          <p className="absolute bottom-10 right-0 w-32 xl:w-40 text-xs xl:text-base font-secondary text-custom-white2 uppercase">
+          <p className="absolute bottom-10 right-0 w-32 xl:w-40 text-xs xl:text-base font-pangramLight text-custom-white2 uppercase">
             * some assembly required
           </p>
           <Image

@@ -13,7 +13,7 @@ const NiceFknCrew: FC = () => {
     <div className="w-full h-full bg-custom-tan">
       <motion.div
         {...enterAnimation}
-        className="w-[90%] 2xl:w-3/4 max-w-[1900px] mx-auto"
+        className="w-full max-w-[1900px] mx-auto px-16 xl:px-32"
       >
         <div className="w-full flex justify-center items-center xl:pt-20 py-10 text-xs xl:text-base">
           <p className="font-secondary mr-3 xl:mr-5 whitespace-nowrap">
@@ -48,9 +48,9 @@ const NiceFknCrew: FC = () => {
                 fill="#312A29"
               />
             </svg>
-            <p className="relative font-secondary whitespace-nowrap text-center text-xl xl:text-4xl leading-5">
+            <p className="relative font-pangramLight whitespace-nowrap text-center text-xl xl:text-4xl leading-5">
               01/200
-              <span className="absolute -bottom-4 xl:-bottom-7 left-1/2 -translate-x-1/2 text-[10px] xl:text-base">
+              <span className="uppercase absolute -bottom-4 xl:-bottom-5 left-1/2 -translate-x-1/2 text-[10px] xl:text-base">
                 pieces
               </span>
             </p>
