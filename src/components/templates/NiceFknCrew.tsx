@@ -71,8 +71,8 @@ const NiceFknCrew: FC = () => {
         <div className="w-fit mx-auto">
           <Image
             src="/images/nice_crewneck/crewneck_models.png"
-            width={1900}
-            height={739}
+            width={3570}
+            height={1478}
             alt="crewneck models"
             className="my-4 w-fit mx-auto"
           />
