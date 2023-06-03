@@ -17,7 +17,7 @@ const CorduroyHat: FC = () => {
           alt="corduroy hats"
           className="w-full mb-20"
         />
-        <div className="flex items-start justify-between font-black uppercase text-custom-yellow2">
+        <div className="flex items-start justify-between font-pangramBlack uppercase text-custom-yellow2">
           <p className="text-2xl lg:text-4xl text-left">
             corduroy dad hat
             <br />

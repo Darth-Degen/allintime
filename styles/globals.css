@@ -7,6 +7,14 @@
   src: url("../public/fonts/MK-HELL-Regular.ttf") format("truetype");
 }
 @font-face {
+  font-family: pangram-light;
+  src: url("../public/fonts/Pangram-ExtraLight.ttf") format("truetype");
+}
+@font-face {
+  font-family: pangram-bold;
+  src: url("../public/fonts/Pangram-Bold.ttf") format("truetype");
+}
+@font-face {
   font-family: pangram-regular;
   src: url("../public/fonts/Pangram-Regular.ttf") format("truetype");
 }

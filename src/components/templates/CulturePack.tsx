@@ -13,7 +13,7 @@ const CulturePack: FC = () => {
         <div className="relative w-full z-[+1] pb-16 xl:pb-0">
           <p
             className="text-[100px] leading-[90px] xl:text-[190px] xl:leading-[170px]
-            2xl:text-[250px] 2xl:leading-[200px] font-black text-custom-white2 uppercase"
+            2xl:text-[250px] 2xl:leading-[200px] font-pangramBlack text-custom-white2 uppercase"
           >
             culture
             <br />

@@ -38,7 +38,7 @@ const ItemInfo: FC<Props> = ({
       }`}
       style={{ color: textColor }}
     >
-      <p className="font-black uppercase text-xl xl:text-3xl">{title}</p>
+      <p className="font-pangramBlack uppercase text-xl xl:text-3xl">{title}</p>
       <p className="font-secondary uppercase text-xs xl:text-base">
         {description1}
       </p>
