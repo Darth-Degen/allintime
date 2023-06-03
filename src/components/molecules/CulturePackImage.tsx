@@ -16,7 +16,7 @@ const CulturePackImage: FC<Props> = ({ image, description }) => {
         alt={description}
         className="rounded-xl overflow-hidden"
       />
-      <p className="text-xs xl:text-base text-black xl:px-4 uppercase font-secondary">
+      <p className="text-xs xl:text-lg text-black xl:px-6 uppercase font-neuebitBold">
         {description}
       </p>
     </div>

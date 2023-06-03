@@ -6,13 +6,14 @@ import ItemInfo from "../molecules/ItemInfo";
 
 const CulturePack: FC = () => {
   const [width] = useWindowSize();
-  const mobileView = width < 1280;
+  const mobileView = width < 1024;
+  const mediumView = width < 1536 && width >= 1024;
   return (
     <div className="w-full h-full my-40">
       <div className="w-full max-w-[1900px] mx-auto px-12 xl:px-32">
-        <div className="relative w-full z-[+1] pb-16 xl:pb-0">
+        <div className="relative w-full pb-16 xl:pb-10 2xl:pb-0">
           <p
-            className="text-[100px] leading-[90px] xl:text-[190px] xl:leading-[170px]
+            className="text-[100px] leading-[90px] lg:text-[150px] lg:leading-[120px] xl:text-[200px] xl:leading-[160px]
             2xl:text-[250px] 2xl:leading-[200px] font-pangramBlack text-custom-white2 uppercase"
           >
             culture
@@ -24,29 +25,32 @@ const CulturePack: FC = () => {
               01/200
             </span>
           </p>
-          <p className="absolute bottom-10 right-0 w-32 xl:w-40 text-xs xl:text-base font-pangramLight text-custom-white2 uppercase">
+          <p
+            className="absolute bottom-10 right-[2%] w-32 2xl:w-40 
+            text-xs xl:text-base font-neuebit text-custom-white2 uppercase"
+          >
             * some assembly required
           </p>
           <Image
             src="/images/culture_pack/green_item.png"
-            width={mobileView ? 288 : 575.5}
-            height={mobileView ? 327.5 : 655}
+            width={mobileView ? 288 : mediumView ? 489.6 : 575.5}
+            height={mobileView ? 327.5 : mediumView ? 556.75 : 655}
             alt="culture pack"
-            className="absolute top-0 right-20 xl:right-10 z-[-1]"
+            className="absolute -top-6 right-[8%] z-[-1]"
           />
         </div>
-        <div className="grid grid-cols-2 xl:grid-cols-4 gap-5 z-[-1]">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-5">
           {/* four images with descriptions */}
           <CulturePackImage
             image="/images/culture_pack/pen.png"
             description="an extremely powerful pen (smoke not included)"
           />
           <CulturePackImage
-            image="/images/culture_pack/stickers.png"
+            image="/images/culture_pack/book.png"
             description="a sketchbook with the power to create entire worlds"
           />
           <CulturePackImage
-            image="/images/culture_pack/pen.png"
+            image="/images/culture_pack/pin.png"
             description="a hard enamel pin to add some ice to your backpack"
           />
           <CulturePackImage
