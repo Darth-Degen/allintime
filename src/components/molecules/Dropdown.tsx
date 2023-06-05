@@ -55,7 +55,7 @@ const Dropdown: FC<Props> = (props: Props) => {
             initial="hidden"
             animate="show"
           >
-            <motion.ul className="rounded-sm shadow max-h-[250px] w-screen md:w-96 overflow-y-auto z-10 font-secondary bg-mid-gray left-1/2 transform -translate-x-1/2">
+            <motion.ul className="rounded-sm shadow max-h-[250px] w-screen md:w-96 overflow-y-auto z-10 font-pangram bg-mid-gray left-1/2 transform -translate-x-1/2">
               {collections &&
                 collections.map((item: Token) => (
                   <DropdownItem

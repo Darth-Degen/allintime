@@ -25,8 +25,10 @@ const LandingView: FC<Props> = (props: Props) => {
               className="absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2  
               text-center opacity-80 whitespace-nowrap font-mk-hell text-custom-teal"
             >
-              <p className="text-[140px] xl:text-[180px] pt-20">all in time</p>
-              <p className="text-lg xl:text-xl mt-20">
+              <p className="text-[140px] xl:text-[180px] pt-20 font-mkHell">
+                all in time
+              </p>
+              <p className="text-lg xl:text-xl mt-20 font-mkHell">
                 a virtuous lifestyle,
                 <br />
                 with very little patience
@@ -38,9 +40,11 @@ const LandingView: FC<Props> = (props: Props) => {
               text-center opacity-80 whitespace-nowrap px-8"
             >
               <div className="w-full flex justify-center items-center text-sm xl:text-base">
-                <p className="font-secondary text-custom-teal mr-5">VOLUME 1</p>
+                <p className="font-pangram text-custom-teal mr-5 pb-2">
+                  VOLUME 1
+                </p>
                 <div className="w-full h-[1px] bg-transparent border-b-2 xl:border-b-4 border-dotted border-custom-teal" />
-                <p className="font-secondary text-custom-teal ml-5">
+                <p className="font-pangram text-custom-teal ml-5 pb-2">
                   ESSENTIALS
                 </p>
               </div>

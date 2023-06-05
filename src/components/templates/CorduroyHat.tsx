@@ -35,11 +35,11 @@ const CorduroyHat: FC = () => {
           </p>
         </div>
         <div className="flex items-end justify-between uppercase text-custom-yellow2 pb-16">
-          <p className="text-base xl:text-2xl text-left font-secondary whitespace-nowrap">
+          <p className="text-base xl:text-2xl text-left font-pangram whitespace-nowrap">
             0.11kg (probably)
           </p>
           <HatTabs className="h-4 px-8 mb-1" />
-          <p className="font-secondary text-sm text-right leading-4 xl:leading-7">
+          <p className="font-pangram text-sm text-right leading-4 xl:leading-7">
             pieces
             <br />
             <span className="text-3xl xl:text-[50px] font-pangramLight">

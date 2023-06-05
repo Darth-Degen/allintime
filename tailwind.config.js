@@ -16,13 +16,8 @@ module.exports = {
         card: "30px 30px 0px rgba(0, 0, 0, 0)",
       },
       fontFamily: {
-        primary: ["mk-hell", "-apple-system", "system-ui", "monospace"],
-        secondary: [
-          "pangram-regular",
-          "-apple-system",
-          "system-ui",
-          "monospace",
-        ],
+        mkHell: ["mk-hell"],
+        pangram: ["pangram-regular"],
         pangramLight: ["pangram-light"],
         pangramBlack: ["pangram-black"],
         pangramBold: ["pangram-bold"],

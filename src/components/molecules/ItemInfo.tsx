@@ -39,17 +39,17 @@ const ItemInfo: FC<Props> = ({
       style={{ color: textColor }}
     >
       <p className="font-pangramBlack uppercase text-xl xl:text-3xl">{title}</p>
-      <p className="font-secondary uppercase text-xs xl:text-base">
+      <p className="font-pangram uppercase text-xs xl:text-base">
         {description1}
       </p>
-      <p className="font-secondary uppercase text-xs xl:text-base">
+      <p className="font-pangram uppercase text-xs xl:text-base">
         {description2}
       </p>
-      <p className="font-secondary uppercase text-xs xl:text-base">
+      <p className="font-pangram uppercase text-xs xl:text-base">
         {description3}
       </p>
       <div className="w-full flex items-center justify-between -translate-y-4 xl:-translate-y-3">
-        <p className="font-secondary uppercase text-xs xl:text-base whitespace-nowrap w-fit">
+        <p className="font-pangram uppercase text-xs xl:text-base whitespace-nowrap w-fit">
           {`cost: ${price.toLocaleString()} racks`}
         </p>
         <div className="relative w-full px-4">
@@ -66,7 +66,7 @@ const ItemInfo: FC<Props> = ({
           className={`w-fit h-10 xl:h-12 font-bold !rounded-full text-black ${
             buttonBorder && "border"
           }
-          font-secondary text-xl xl:text-3xl px-8 xl:px-16 uppercase whitespace-nowrap`}
+          font-pangram text-xl xl:text-3xl px-8 xl:px-16 uppercase whitespace-nowrap`}
           style={{
             backgroundColor: buttonBgColor,
             color: buttonTextColor,

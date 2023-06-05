@@ -40,18 +40,21 @@ a {
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+  font-family: "forma-djr-display", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
 .quote {
   box-shadow: 10px 10px 0px #373737;
 }
 
 @layer base {
   html {
-    @apply scroll-smooth bg-custom-teal text-custom-black font-primary;
+    @apply scroll-smooth bg-custom-teal text-custom-black;
   }
-}
-
-html {
-  scroll-behavior: smooth;
 }
 
 .more-gradient {
@@ -66,6 +69,18 @@ html {
 .sarcastic-hat {
   font-family: "Times New Roman";
   font-style: italic;
+}
+
+.forma-med {
+  font-family: "forma-djr-display", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+}
+
+.forma-bold {
+  font-family: "forma-djr-display", sans-serif;
+  font-weight: 700;
+  font-style: normal;
 }
 
 @keyframes shimmer {
