@@ -56,6 +56,10 @@ html {
   font-style: normal;
 }
 
+body {
+  overscroll-behavior: none;
+}
+
 .quote {
   box-shadow: 10px 10px 0px #373737;
 }
