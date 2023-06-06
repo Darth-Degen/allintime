@@ -16,11 +16,9 @@ const NiceFknCrew: FC = () => {
         className="w-full max-w-[1900px] mx-auto px-16 xl:px-32"
       >
         <div className="w-full flex justify-center items-center xl:pt-20 py-10 text-xs xl:text-base">
-          <p className="font-pangram mr-3 xl:mr-5 whitespace-nowrap">
-            ALL IN TIME
-          </p>
-          <div className="w-full h-[1px] bg-transparent border-b-2 xl:border-b-4 border-dotted border-black" />
-          <p className="font-pangram ml-3 xl:ml-5 whitespace-nowrap uppercase">
+          <p className="mr-3 xl:mr-5 whitespace-nowrap">ALL IN TIME</p>
+          <div className="w-full h-[1px] bg-transparent border-b-2 border-dotted border-black" />
+          <p className="font-pangramLight ml-3 xl:ml-5 whitespace-nowrap uppercase">
             a virtuous lifestyle with very little patience
           </p>
         </div>

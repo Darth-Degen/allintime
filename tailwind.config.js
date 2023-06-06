@@ -23,6 +23,8 @@ module.exports = {
         pangramBold: ["pangram-bold"],
         neuebit: ["neuebit"],
         neuebitBold: ["neuebit-bold"],
+        thabit: ["thabit"],
+        migra: ["migra"],
       },
       colors: {
         //custom

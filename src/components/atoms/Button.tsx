@@ -15,9 +15,7 @@ const Button: FC<Props> = (props: Props) => {
     <motion.div
       whileTap={{ scale: componentProps.disabled ? 1 : 0.97 }}
       className={`transition-colors duration-200 p-0.5 rounded ${
-        componentProps.disabled
-          ? "cursor-not-allowed bg-custom-dark-gray border-custom-dark-gray"
-          : ""
+        componentProps.disabled ? "cursor-not-allowed opacity-40" : ""
       }`}
     >
       <button

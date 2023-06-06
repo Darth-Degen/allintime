@@ -7,7 +7,6 @@ const FooterView: FC = () => {
   return (
     <div className="w-full h-full xl:mt-40">
       <div className="w-full max-w-[1900px] mx-auto px-12 xl:px-32 font-pangram text-center">
-        BUY RACKS MODULE HERE
         <Image
           src="/images/footer/design_trends.png"
           width={3288}

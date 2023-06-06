@@ -3,8 +3,8 @@ import Image from "next/image";
 
 const GraphicTee: FC = () => {
   return (
-    <div className="w-full h-full bg-custom-black2 pt-20">
-      <div className="w-full h-full flex flex-col items-center max-w-[1900px] mx-auto mt-[500px] px-32">
+    <div className="w-full h-full bg-custom-black2">
+      <div className="w-full h-full flex flex-col items-center max-w-[1900px] mx-auto mt-[300px] px-32">
         <Image
           src="/images/graphic_tee/header_text.png"
           width={3566}

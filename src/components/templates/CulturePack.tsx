@@ -33,8 +33,8 @@ const CulturePack: FC = () => {
           </p>
           <Image
             src="/images/culture_pack/green_item.png"
-            width={mobileView ? 288 : mediumView ? 489.6 : 575.5}
-            height={mobileView ? 327.5 : mediumView ? 556.75 : 655}
+            width={mobileView ? 288 : mediumView ? 489.6 * 0.95 : 575.5}
+            height={mobileView ? 327.5 : mediumView ? 556.75 * 0.95 : 655}
             alt="culture pack"
             className="absolute -top-6 right-[8%] z-[-1]"
           />

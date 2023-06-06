@@ -73,6 +73,7 @@ const ItemInfo: FC<Props> = ({
             borderColor: buttonBorder,
           }}
           onClick={() => console.log("buy racks")}
+          disabled={true}
         >
           Buy Racks
         </Button>

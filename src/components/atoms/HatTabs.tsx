@@ -20,7 +20,7 @@ const HatTabs: FC<HatTabsProps> = ({ ...componentProps }: HatTabsProps) => {
         height="44"
         rx="22"
         stroke="#FABC2A"
-        stroke-width="5"
+        strokeWidth="5"
       />
       <rect
         x="1708.5"
@@ -29,7 +29,7 @@ const HatTabs: FC<HatTabsProps> = ({ ...componentProps }: HatTabsProps) => {
         height="44"
         rx="22"
         stroke="#FABC2A"
-        stroke-width="5"
+        strokeWidth="5"
       />
     </svg>
   );
