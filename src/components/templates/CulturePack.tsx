@@ -1,16 +1,26 @@
 import Image from "next/image";
-import { FC } from "react";
+import { FC, useRef } from "react";
 import { useWindowSize } from "src/hooks";
 import CulturePackImage from "../molecules/CulturePackImage";
 import ItemInfo from "../molecules/ItemInfo";
+import { useInView, motion } from "framer-motion";
+import { slideUp } from "src/constants";
 
 const CulturePack: FC = () => {
   const [width] = useWindowSize();
   const mobileView = width < 1024;
   const mediumView = width < 1536 && width >= 1024;
+
+  const ref = useRef(null);
+  const isInView = useInView(ref);
+  const slideUpAnimation = slideUp(isInView, true);
   return (
     <div className="w-full h-full my-40">
-      <div className="w-full max-w-[1900px] mx-auto px-12 xl:px-32">
+      <motion.div
+        className="w-full max-w-[1900px] mx-auto px-12 xl:px-32"
+        {...slideUpAnimation}
+        ref={ref}
+      >
         <div className="relative w-full pb-16 xl:pb-10 2xl:pb-0">
           <p
             className="text-[100px] leading-[90px] lg:text-[150px] lg:leading-[120px] xl:text-[200px] xl:leading-[160px]
@@ -69,7 +79,7 @@ const CulturePack: FC = () => {
           buttonTextColor="#3D7FFF"
           buttonBorder="#312A29"
         />
-      </div>
+      </motion.div>
     </div>
   );
 };

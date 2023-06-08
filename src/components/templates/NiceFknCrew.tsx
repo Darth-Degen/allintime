@@ -1,7 +1,7 @@
-import { FC } from "react";
+import { FC, useRef } from "react";
 import Image from "next/image";
-import { motion } from "framer-motion";
-import { enterAnimation } from "@constants";
+import { motion, useInView } from "framer-motion";
+import { slideUp } from "@constants";
 import {
   CrewneckFlavortext1,
   CrewneckFlavortext2,
@@ -9,11 +9,15 @@ import {
 } from "@components";
 
 const NiceFknCrew: FC = () => {
+  const ref = useRef(null);
+  const isInView = useInView(ref);
+  const slideUpAnimation = slideUp(isInView, true);
+
   return (
-    <div className="w-full h-full bg-custom-tan">
+    <div className="w-full h-full bg-custom-tan" ref={ref}>
       <motion.div
-        {...enterAnimation}
         className="w-full max-w-[1900px] mx-auto px-16 xl:px-32"
+        {...slideUpAnimation}
       >
         <div className="w-full flex justify-center items-center xl:pt-20 py-10 text-xs xl:text-base">
           <p className="mr-3 xl:mr-5 whitespace-nowrap">ALL IN TIME</p>

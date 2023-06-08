@@ -1,11 +1,20 @@
 import Image from "next/image";
-import { FC } from "react";
+import { FC, useRef } from "react";
 import { HatTabs, ItemInfo } from "@components";
+import { motion, useInView } from "framer-motion";
+import { slideUp } from "src/constants";
 
 const CorduroyHat: FC = () => {
+  const ref = useRef(null);
+  const isInView = useInView(ref);
+  const slideUpAnimation = slideUp(isInView, true);
   return (
     <div className="w-full h-full bg-noisy-brown py-32 xl:pt-64">
-      <div className="w-full max-w-[1900px] mx-auto px-16 xl:px-32">
+      <motion.div
+        className="w-full max-w-[1900px] mx-auto px-16 xl:px-32"
+        {...slideUpAnimation}
+        ref={ref}
+      >
         <Image
           src="/images/corduroy_hat/three_hats.png"
           width={1808}
@@ -57,7 +66,7 @@ const CorduroyHat: FC = () => {
           buttonBgColor="#FABC2A"
           buttonTextColor="#312A29"
         />
-      </div>
+      </motion.div>
     </div>
   );
 };

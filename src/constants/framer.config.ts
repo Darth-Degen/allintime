@@ -146,10 +146,10 @@ export const slideDown = (animate: boolean) => ({
   transition: { duration: 1.5, ease: "easeInOut" },
 });
 
-export const slideUp = (animate: boolean) => ({
+export const slideUp = (animate: boolean, delay: boolean) => ({
   initial: { y: 300, opacity: 0 },
   animate: { y: animate ? 0 : 300, opacity: animate ? 1 : 0 },
-  transition: { duration: 1.5, ease: "easeInOut" },
+  transition: { duration: 0.8, ease: "easeInOut", delay: delay ? 0.5 : 0 },
 });
 export const slideLeft = (animate: boolean) => ({
   initial: { x: 300, opacity: 0 },
@@ -167,7 +167,7 @@ export const imageLoadAnimation = (animate: boolean) => ({
   animate: { opacity: animate ? 1 : 0 },
   exit: { opacity: 0 },
   transition: { duration: 0.25, ease: "easeInOut" },
-})
+});
 
 export const imageSlideAnimation = (
   animate: boolean,
@@ -180,10 +180,7 @@ export const imageSlideAnimation = (
   transition: { duration: 0.15, ease: "easeInOut", delay: delay ?? 0 },
 });
 
-export const imageDropAnimation = (
-  animate: boolean,
-  delay?: number,
-) => ({
+export const imageDropAnimation = (animate: boolean, delay?: number) => ({
   initial: { y: -40, opacity: 0.25 },
   animate: { y: animate ? -20 : 0, opacity: 1 },
   eyit: { x: -40 },
