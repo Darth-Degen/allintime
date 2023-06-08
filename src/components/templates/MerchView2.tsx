@@ -1,20 +1,25 @@
 import { motion } from "framer-motion";
 import { FC } from "react";
-import { enterAnimation } from "@constants";
 import { MerchQuotes } from "@components";
 
 const MerchView2: FC = () => {
   return (
     <div className="w-full h-full bg-merch-gradient">
-      <div className="flex flex-col items-center justify-center max-w-[2200px] mx-auto">
-        <motion.div {...enterAnimation} className="w-fit mx-auto py-32">
-          <MerchQuotes />
-        </motion.div>
+      <div className="flex flex-col items-center justify-center max-w-[2200px] mx-auto py-32">
+        <MerchQuotes />
       </div>
-      <div className="xl:mt-10 mb-10 xl:mb-20 w-full bg-white h-10 flex items-center justify-center">
-        <p className="pl-5 whitespace-nowrap overflow-hidden uppercase xl:text-2xl text-left text-black font-neuebitBold tracking-[0.5em]">
-          {`be a real life pfp • be a real life pfp • be a real life pfp • be a real life pfp • be a real life pfp • be a real life pfp • be a real life pfp `}
-        </p>
+      <div className="marquee-w">
+        <div className="marquee">
+          <span className="uppercase xl:text-2xl text-black font-neuebitBold tracking-[0.4em]">
+            {`be a real life pfp • be a real life pfp • be a real life pfp • be a real life pfp • be a real life pfp • `}
+          </span>
+        </div>
+        <div className="marquee marquee2 uppercase xl:text-2xl text-black font-neuebitBold tracking-[0.5em]">
+          <span>
+            {`be a real life pfp • be a real life pfp • be a real life pfp • be a real life pfp • be a real life pfp • `}
+            &nbsp;
+          </span>
+        </div>
       </div>
     </div>
   );
