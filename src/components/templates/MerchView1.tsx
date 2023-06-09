@@ -8,16 +8,16 @@ const MerchView1: FC = () => {
   return (
     <div className="w-full h-full bg-custom-teal">
       <div
-        className="w-[90%] max-w-[2200px] mx-auto
+        className="w-[85%] max-w-[2200px] mx-auto
         h-full flex flex-col items-center justify-center"
       >
         <motion.div {...enterAnimation} className="w-full">
-          <div className="w-full bg-custom-black h-20 flex items-center justify-center" />
+          <div className="w-full bg-custom-black h-32 flex items-center justify-center" />
           {/* banner */}
           <div className="w-full bg-white h-6 xl:h-10 flex items-center justify-center">
             <p
               className="px-5 whitespace-nowrap overflow-hidden uppercase text-[11px] 
-              2xl:text-2xl text-center text-black font-neuebitBold tracking-[0.22em]"
+              xl:text-xl 2xl:text-2xl text-center text-black font-neuebitBold tracking-[0.22em]"
             >
               {`rob banks // use space magic // be a real life action figure
               // time travel // get drained (with style)`}
@@ -31,7 +31,7 @@ const MerchView1: FC = () => {
               alt="merch images"
               priority={true}
             />
-            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2">
+            <div className="absolute top-[60%] left-1/2 transform -translate-x-1/2">
               <BrandBox />
             </div>
           </div>

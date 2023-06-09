@@ -1,7 +1,7 @@
-import { FC } from "react";
+import { FC, useRef } from "react";
 import Image from "next/image";
-import { motion } from "framer-motion";
-import { enterAnimation } from "@constants";
+import { motion, useInView } from "framer-motion";
+import { slideUp } from "@constants";
 import {
   CrewneckFlavortext1,
   CrewneckFlavortext2,
@@ -9,18 +9,20 @@ import {
 } from "@components";
 
 const NiceFknCrew: FC = () => {
+  const ref = useRef(null);
+  const isInView = useInView(ref);
+  const slideUpAnimation = slideUp(isInView, true);
+
   return (
-    <div className="w-full h-full bg-custom-tan">
+    <div className="w-full h-full bg-custom-tan" ref={ref}>
       <motion.div
-        {...enterAnimation}
-        className="w-[90%] 2xl:w-3/4 max-w-[1900px] mx-auto"
+        className="w-full max-w-[1900px] mx-auto px-16 xl:px-32"
+        {...slideUpAnimation}
       >
         <div className="w-full flex justify-center items-center xl:pt-20 py-10 text-xs xl:text-base">
-          <p className="font-secondary mr-3 xl:mr-5 whitespace-nowrap">
-            ALL IN TIME
-          </p>
-          <div className="w-full h-[1px] bg-transparent border-b-2 xl:border-b-4 border-dotted border-black" />
-          <p className="font-secondary ml-3 xl:ml-5 whitespace-nowrap uppercase">
+          <p className="mr-3 xl:mr-5 whitespace-nowrap">ALL IN TIME</p>
+          <div className="w-full h-[1px] bg-transparent border-b-2 border-dotted border-black" />
+          <p className="font-pangramLight ml-3 xl:ml-5 whitespace-nowrap uppercase">
             a virtuous lifestyle with very little patience
           </p>
         </div>
@@ -48,9 +50,9 @@ const NiceFknCrew: FC = () => {
                 fill="#312A29"
               />
             </svg>
-            <p className="relative font-secondary whitespace-nowrap text-center text-xl xl:text-4xl leading-5">
+            <p className="relative font-pangramLight whitespace-nowrap text-center text-xl xl:text-4xl leading-5">
               01/200
-              <span className="absolute -bottom-4 xl:-bottom-7 left-1/2 -translate-x-1/2 text-[10px] xl:text-base">
+              <span className="uppercase absolute -bottom-4 xl:-bottom-5 left-1/2 -translate-x-1/2 text-[10px] xl:text-base">
                 pieces
               </span>
             </p>
@@ -71,8 +73,8 @@ const NiceFknCrew: FC = () => {
         <div className="w-fit mx-auto">
           <Image
             src="/images/nice_crewneck/crewneck_models.png"
-            width={1900}
-            height={739}
+            width={3570}
+            height={1478}
             alt="crewneck models"
             className="my-4 w-fit mx-auto"
           />

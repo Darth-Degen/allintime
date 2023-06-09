@@ -14,7 +14,7 @@ const LandingView: FC<Props> = (props: Props) => {
   return (
     <div className="w-full h-full bg-custom-teal">
       <div
-        className="w-[90%] max-w-[2200px] mx-auto h-full bg-custom-black flex flex-col 
+        className="w-[85%] max-w-[2200px] mx-auto h-full bg-custom-black flex flex-col 
         items-center justify-center px-8 xl:px-20"
       >
         <motion.div {...enterAnimation} className="w-full px-10">
@@ -22,11 +22,13 @@ const LandingView: FC<Props> = (props: Props) => {
           <div className="relative w-full">
             {/* header text */}
             <div
-              className="absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2  
+              className="absolute left-1/2 -translate-x-1/2 top-[50%] -translate-y-1/2  
               text-center opacity-80 whitespace-nowrap font-mk-hell text-custom-teal"
             >
-              <p className="text-[140px] xl:text-[180px] pt-20">all in time</p>
-              <p className="text-lg xl:text-xl mt-20">
+              <p className="text-[140px] xl:text-[180px] pt-20 font-mkHell">
+                all in time
+              </p>
+              <p className="text-lg xl:text-xl font-mkHell">
                 a virtuous lifestyle,
                 <br />
                 with very little patience
@@ -34,13 +36,15 @@ const LandingView: FC<Props> = (props: Props) => {
             </div>
             {/* footer text */}
             <div
-              className="absolute left-1/2 -translate-x-1/2 bottom-14 w-full  
+              className="absolute left-1/2 -translate-x-1/2 bottom-0 w-full  
               text-center opacity-80 whitespace-nowrap px-8"
             >
               <div className="w-full flex justify-center items-center text-sm xl:text-base">
-                <p className="font-secondary text-custom-teal mr-5">VOLUME 1</p>
+                <p className="font-pangram text-custom-teal mr-5 pb-2">
+                  VOLUME 1
+                </p>
                 <div className="w-full h-[1px] bg-transparent border-b-2 xl:border-b-4 border-dotted border-custom-teal" />
-                <p className="font-secondary text-custom-teal ml-5">
+                <p className="font-pangram text-custom-teal ml-5 pb-2">
                   ESSENTIALS
                 </p>
               </div>
@@ -50,8 +54,8 @@ const LandingView: FC<Props> = (props: Props) => {
                 src="/images/landing/intro.png"
                 alt="RULEBREAKERS"
                 priority={true}
-                width={1494 * 0.4}
-                height={2060 * 0.4}
+                width={1494 * 0.3}
+                height={2060 * 0.3}
                 onLoadingComplete={() =>
                   setAssets && setAssets((prevState) => [(prevState[0] = true)])
                 }

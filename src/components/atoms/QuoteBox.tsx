@@ -34,10 +34,10 @@ const QuoteBox: FC<Props> = ({ quote, author, icon }) => {
           className="w-full xl:w-2/3 h-full flex flex-col items-start justify-evenly
           py-2 xl:py-6 px-3 xl:px-1"
         >
-          <p className="text-[9px] xl:text-sm 4xl:text-base font-mk-hell">
+          <p className="text-[9px] xl:text-[13px] 4xl:text-base forma-bold">
             {author}
           </p>
-          <p className="font-mk-hell text-[10px] xl:text-sm 2xl:text-base 4xl:text-lg">
+          <p className="text-[10px] xl:text-sm 2xl:text-base 4xl:text-lg">
             {quote}
           </p>
         </div>

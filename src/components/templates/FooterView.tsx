@@ -6,8 +6,7 @@ import ExpIcon from "../@icons/ExpIcon";
 const FooterView: FC = () => {
   return (
     <div className="w-full h-full xl:mt-40">
-      <div className="w-full max-w-[1900px] mx-auto px-12 xl:px-32 font-secondary text-center">
-        BUY RACKS MODULE HERE
+      <div className="w-full max-w-[1900px] mx-auto px-12 xl:px-32 font-pangram text-center">
         <Image
           src="/images/footer/design_trends.png"
           width={3288}
@@ -33,7 +32,7 @@ const FooterView: FC = () => {
             <div className="bg-white rounded-xl h-12 w-20 flex items-center justify-center">
               <ExpIcon className="h-10" fill="#9CD9CC" />
             </div>
-            <p className="mt-1 text-white font-secondary">powered by EXP</p>
+            <p className="mt-1 text-white font-pangram">powered by EXP</p>
           </div>
         </div>
       </div>

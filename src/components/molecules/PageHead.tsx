@@ -16,6 +16,7 @@ const PageHead: FC<Props> = (props: Props) => {
       <title>{title}</title>
       <meta name="description" content={description} />
       <link rel="icon" href="/favicon.ico" />
+      <link rel="stylesheet" href="https://use.typekit.net/fja7raq.css" />
       {/* twitter */}
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:site" content={`@${twitter}`} />

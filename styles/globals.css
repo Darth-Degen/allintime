@@ -7,6 +7,14 @@
   src: url("../public/fonts/MK-HELL-Regular.ttf") format("truetype");
 }
 @font-face {
+  font-family: pangram-light;
+  src: url("../public/fonts/Pangram-ExtraLight.ttf") format("truetype");
+}
+@font-face {
+  font-family: pangram-bold;
+  src: url("../public/fonts/Pangram-Bold.ttf") format("truetype");
+}
+@font-face {
   font-family: pangram-regular;
   src: url("../public/fonts/Pangram-Regular.ttf") format("truetype");
 }
@@ -22,6 +30,15 @@
   font-family: neuebit-bold;
   src: url("../public/fonts/NeueBit-Bold.ttf") format("truetype");
 }
+@font-face {
+  font-family: thabit;
+  src: url("../public/fonts/Thabit.ttf") format("truetype");
+  font-weight: 500;
+}
+@font-face {
+  font-family: migra;
+  src: url("../public/fonts/Migra-Regular.otf") format("opentype");
+}
 
 a {
   color: inherit;
@@ -32,18 +49,25 @@ a {
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+  font-family: "forma-djr-display", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
+body {
+  overscroll-behavior: none;
+}
+
 .quote {
   box-shadow: 10px 10px 0px #373737;
 }
 
 @layer base {
   html {
-    @apply scroll-smooth bg-custom-teal text-custom-black font-primary;
+    @apply scroll-smooth bg-custom-teal text-custom-black;
   }
-}
-
-html {
-  scroll-behavior: smooth;
 }
 
 .more-gradient {
@@ -53,11 +77,30 @@ html {
 
 .bg-noisy-brown {
   background-image: url("/images/corduroy_hat/noisy_brown.svg");
+  background-size: cover;
 }
 
 .sarcastic-hat {
   font-family: "Times New Roman";
   font-style: italic;
+}
+
+.forma-light {
+  font-family: "forma-djr-display", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.forma-med {
+  font-family: "forma-djr-display", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+}
+
+.forma-bold {
+  font-family: "forma-djr-display", sans-serif;
+  font-weight: 700;
+  font-style: normal;
 }
 
 @keyframes shimmer {
