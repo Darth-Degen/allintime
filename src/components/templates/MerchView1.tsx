@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { FC } from "react";
 import { enterAnimation } from "@constants";
-import { BrandBox } from "@components";
+import { BrandBox, MovingText } from "@components";
 import Image from "next/image";
 
 const MerchView1: FC = () => {
@@ -14,21 +14,10 @@ const MerchView1: FC = () => {
         <motion.div {...enterAnimation} className="w-full">
           <div className="w-full bg-custom-black h-32 flex items-center justify-center" />
           {/* banner */}
-          <div className="marquee-w">
-            <div className="marquee">
-              <span className="uppercase xl:text-2xl text-black font-neuebitBold tracking-[0.5em]">
-                {`rob banks // use space magic // be a real life action figure
-              // time travel // get drained (with style) //`}
-              </span>
-            </div>
-            <div className="marquee marquee2 uppercase xl:text-2xl text-black font-neuebitBold tracking-[0.5em]">
-              <span>
-                {` rob banks // use space magic // be a real life action figure
-              // time travel // get drained (with style) //`}
-                &nbsp;
-              </span>
-            </div>
-          </div>
+          <MovingText
+            text={`rob banks // use space magic // be a real life action figure // time
+            travel // get drained (with style)`}
+          />
           <div className="relative w-full pb-10">
             <Image
               src="/images/merch/merch_images.png"

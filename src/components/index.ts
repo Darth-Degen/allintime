@@ -43,6 +43,7 @@ const CrewneckFlavortext2 = dynamic(
   () => import("./atoms/CrewneckFlavortext2")
 );
 const RacksDottedLine = dynamic(() => import("./atoms/RacksDottedLine"));
+const MovingText = dynamic(() => import("./atoms/MovingText"));
 //molecules
 const PageHead = dynamic(() => import("./molecules/PageHead"));
 const Logo = dynamic(() => import("./molecules/Logo"));
@@ -146,5 +147,6 @@ export {
   CrewneckFlavortext1,
   CrewneckFlavortext2,
   RacksDottedLine,
+  MovingText,
   GalleryModal,
 };
