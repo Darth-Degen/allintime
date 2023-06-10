@@ -43,7 +43,7 @@ const PageLayout: FC<Props> = (props: Props) => {
   return (
     <ViewContext.Provider value={value}>
       <div
-        className={`flex flex-col lg:min-h-screen h-full justify-between overflow-none ${
+        className={`hidden md:flex flex-col lg:min-h-screen h-full justify-between overflow-none ${
           fixed ? "absolute inset-0" : ""
         }`}
       >
@@ -80,6 +80,14 @@ const PageLayout: FC<Props> = (props: Props) => {
             />
           )}
         </AnimatePresence>
+      </div>
+      <div className="md:hidden bg-custom-black w-full h-screen">
+        <div className="flex items-center justify-center h-full">
+          <p className="text-white text-center text-2xl px-10 font-mkHell">
+            This site is not optimized for mobile. Please view on a desktop
+            browser.
+          </p>
+        </div>
       </div>
     </ViewContext.Provider>
   );
