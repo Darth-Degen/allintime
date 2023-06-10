@@ -8,9 +8,7 @@ const MerchView2: FC = () => {
       <div className="flex flex-col items-center justify-center max-w-[2200px] mx-auto py-32">
         <MerchQuotes />
       </div>
-      <MovingText
-        text={`be a real life pfp • be a real life pfp • be a real life pfp • be a real life pfp • be a real life pfp`}
-      />
+      <MovingText text="be a real life pfp • be a real life pfp • be a real life pfp • be a real life pfp • be a real life pfp •&nbsp;" />
     </div>
   );
 };

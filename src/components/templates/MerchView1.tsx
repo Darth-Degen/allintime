@@ -15,8 +15,8 @@ const MerchView1: FC = () => {
           <div className="w-full bg-custom-black h-32 flex items-center justify-center" />
           {/* banner */}
           <MovingText
-            text={`rob banks // use space magic // be a real life action figure // time
-            travel // get drained (with style)`}
+            text="rob banks // use space magic // be a real life action figure // time
+            travel // get drained (with style) //&nbsp;"
           />
           <div className="relative w-full pb-10">
             <Image
