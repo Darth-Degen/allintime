@@ -51,7 +51,7 @@ const LandingView: FC<Props> = (props: Props) => {
             </div>
             <div className="w-fit mx-auto pl-14">
               <Image
-                src="/images/landing/intro.png"
+                src="/images/landing/intro.jpg"
                 alt="RULEBREAKERS"
                 priority={true}
                 width={1494 * 0.3}
