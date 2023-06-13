@@ -26,7 +26,7 @@ const FooterView: FC = () => {
             width={2146}
             height={427}
             alt="all in time bubbles"
-            className="h-10 xl:h-32 w-fit"
+            className="h-20 xl:h-32 w-fit"
           />
           <div className="flex flex-col items-center">
             <ExpIcon className="h-20" fill="white" />
