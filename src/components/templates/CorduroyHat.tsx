@@ -12,7 +12,7 @@ const CorduroyHat: FC = () => {
     <div className="w-full h-full bg-noisy-brown py-32 xl:pt-64">
       <motion.div
         className="w-full max-w-[1900px] mx-auto px-16 xl:px-32"
-        {...slideUpAnimation}
+        // {...slideUpAnimation}
         ref={ref}
       >
         <Image
@@ -39,7 +39,7 @@ const CorduroyHat: FC = () => {
           </p>
         </div>
         <div className="w-full flex items-center justify-center py-10 xl:py-16">
-          <p className="text-center uppercase sarcastic-hat text-custom-yellow2 text-xl xl:text-2xl">
+          <p className="text-center uppercase sarcastic-hat text-custom-yellow2 text-lg">
             it goes on your head
           </p>
         </div>

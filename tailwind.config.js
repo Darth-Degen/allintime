@@ -24,6 +24,7 @@ module.exports = {
         neuebit: ["neuebit"],
         neuebitBold: ["neuebit-bold"],
         thabit: ["thabit"],
+        thabitBold: ["thabit-bold"],
         migra: ["migra"],
       },
       colors: {

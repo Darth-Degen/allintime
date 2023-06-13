@@ -18,12 +18,12 @@ const CulturePack: FC = () => {
     <div className="w-full h-full my-40">
       <motion.div
         className="w-full max-w-[1900px] mx-auto px-12 xl:px-32"
-        {...slideUpAnimation}
+        // {...slideUpAnimation}
         ref={ref}
       >
-        <div className="relative w-full pb-16 xl:pb-10 2xl:pb-0">
+        <div className="relative w-full pb-16 xl:pb-10">
           <p
-            className="text-[100px] leading-[90px] lg:text-[150px] lg:leading-[120px] xl:text-[200px] xl:leading-[160px]
+            className="text-[100px] leading-[90px] lg:text-[150px] lg:leading-[120px] xl:text-[180px] xl:leading-[150px]
             2xl:text-[250px] 2xl:leading-[200px] font-pangramBlack text-custom-white2 uppercase"
           >
             culture
