@@ -32,6 +32,7 @@ module.exports = {
         "custom-teal": "#9CD9CC",
         "custom-black": "#020102",
         "custom-black2": "#030303",
+        "custom-black3": "#322B2B",
         "custom-white": "#E8E8E8",
         "custom-white2": "#F6F3F3",
         "custom-red": "#FF0000",
@@ -40,6 +41,7 @@ module.exports = {
         "custom-yellow": "#E0AF00",
         "custom-yellow2": "#FABC2A",
         "custom-brown": "#825010",
+        "custom-green2": "#00EC18",
 
         //template (replace if needed)
         "custom-white-2": "#EBE6E6",

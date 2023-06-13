@@ -5,6 +5,7 @@ import {
   Footer,
   SplashScreen,
   GalleryModal,
+  MobileView,
 } from "@components";
 import { enterAnimation, ViewContext } from "@constants";
 import { AnimatePresence, motion } from "framer-motion";
@@ -81,14 +82,7 @@ const PageLayout: FC<Props> = (props: Props) => {
           )}
         </AnimatePresence>
       </div>
-      <div className="lg:hidden bg-black w-full h-screen">
-        <div className="flex items-center justify-center h-full">
-          <p className="text-white text-center text-2xl px-10 font-mkHell">
-            This site is not optimized for mobile. Please view on a desktop
-            browser.
-          </p>
-        </div>
-      </div>
+      <MobileView />
     </ViewContext.Provider>
   );
 };
