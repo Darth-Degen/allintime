@@ -36,7 +36,7 @@ const NiceFknCrew: FC = () => {
             alt="header text"
           />
         </div>
-        <div className="flex items-center justify-end w-full pb-10 gap-4 xl:gap-10">
+        <div className="flex items-center justify-between w-full pb-10 gap-4 xl:gap-10">
           <CrewneckFlavortext1 className="h-16 w-fit" />
           <CrewneckFlavortext2 className="h-16 w-fit" />
           <div className="flex items-center gap-2">

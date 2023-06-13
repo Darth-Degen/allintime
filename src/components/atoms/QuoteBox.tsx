@@ -16,7 +16,7 @@ const QuoteBox: FC<Props> = ({ quote, author, icon }) => {
 
   return (
     <div
-      className="3xl:mt-20 quote w-[150%] min-h-[85px] 2xl:min-h-[115px] bg-white 
+      className="3xl:mt-20 quote w-[150%] min-h-[85px] xl:min-h-[115px] bg-white 
       flex justify-center items-center border-2 border-black rounded-lg drop-shadow-card"
     >
       <div className="w-full flex items-center justify-evenly py-0.5 3xl:py-4">

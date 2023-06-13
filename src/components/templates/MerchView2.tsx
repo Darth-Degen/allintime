@@ -13,11 +13,11 @@ const MerchView2: FC = () => {
       </div>
       <div className="w-full flex flex-col gap-0.5">
         <MovingText
-          text={`be a real life pfp • be a real life pfp • be a real life pfp • be a real life pfp • `}
+          text="be a real life pfp • be a real life pfp • be a real life pfp • be a real life pfp •&nbsp;"
           direction="reverse"
         />
         <MovingText
-          text={`be a real life pfp • be a real life pfp • be a real life pfp • be a real life pfp • `}
+          text="be a real life pfp • be a real life pfp • be a real life pfp • be a real life pfp •&nbsp;"
           direction="forward"
         />
       </div>

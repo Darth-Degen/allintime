@@ -26,13 +26,11 @@ const FooterView: FC = () => {
             width={2146}
             height={427}
             alt="all in time bubbles"
-            className="h-10 xl:h-20 w-fit"
+            className="h-10 xl:h-32 w-fit"
           />
           <div className="flex flex-col items-center">
-            <div className="bg-white rounded-xl h-12 w-20 flex items-center justify-center">
-              <ExpIcon className="h-10" fill="#9CD9CC" />
-            </div>
-            <p className="mt-1 text-white font-pangram">powered by EXP</p>
+            <ExpIcon className="h-20" fill="white" />
+            <p className="-mt-2 text-white font-pangram">powered by EXP</p>
           </div>
         </div>
       </div>

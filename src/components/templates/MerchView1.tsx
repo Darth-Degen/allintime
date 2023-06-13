@@ -16,8 +16,8 @@ const MerchView1: FC = () => {
           {/* banner */}
           <div className="w-full bg-[#EBEBEB] h-6 xl:h-8 flex items-center justify-center">
             <p
-              className="px-5 whitespace-nowrap overflow-hidden uppercase text-[11px] 
-              xl:text-xl text-center text-black font-neuebitBold tracking-[0.24em]"
+              className="px-5 whitespace-nowrap overflow-hidden uppercase xl:text-xl text-center 
+              text-black font-neuebitBold tracking-[0.15em] xl:tracking-[0.24em] 3xl:tracking-[0.5em]"
             >
               {`rob banks // use space magic // be a real life action figure
               // time travel // get drained (with style)`}

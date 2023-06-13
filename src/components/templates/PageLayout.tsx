@@ -58,7 +58,7 @@ const PageLayout: FC<Props> = (props: Props) => {
 
         {/* body */}
         <motion.main
-          className={`flex flex-col h-full w-full ${mainClass} overflow-x-clip ${
+          className={`hidden lg:flex flex-col h-full w-full ${mainClass} overflow-x-clip ${
             footer ? "mb-8 md:mb-auto mt-4 md:mt-0" : ""
           }`}
           {...enterAnimation}
@@ -81,7 +81,7 @@ const PageLayout: FC<Props> = (props: Props) => {
           )}
         </AnimatePresence>
       </div>
-      <div className="md:hidden bg-custom-black w-full h-screen">
+      <div className="lg:hidden bg-black w-full h-screen">
         <div className="flex items-center justify-center h-full">
           <p className="text-white text-center text-2xl px-10 font-mkHell">
             This site is not optimized for mobile. Please view on a desktop
