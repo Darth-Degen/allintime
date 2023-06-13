@@ -23,7 +23,7 @@ const LandingView: FC<Props> = (props: Props) => {
             {/* header text */}
             <div
               className="absolute left-1/2 -translate-x-1/2 top-[50%] -translate-y-1/2  
-              text-center opacity-80 mix-blend-hard-light whitespace-nowrap font-mk-hell text-custom-teal"
+              text-center opacity-80 whitespace-nowrap font-mk-hell text-[#3BB39A]"
             >
               <p className="text-[140px] xl:text-[170px] pt-20 font-mkHell">
                 all in time
