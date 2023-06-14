@@ -93,7 +93,7 @@ const NiceFknCrew: FC = () => {
           />
           <ItemInfo
             title="all in time crewneck"
-            description1="100% organic knit"
+            description1="100% softer than your baby blanket"
             description2="embroidery 3 locations"
             description3="2 custom tags"
             textColor="#312A29"

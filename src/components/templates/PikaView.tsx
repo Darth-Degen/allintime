@@ -17,27 +17,27 @@ const PikaView: FC = () => {
           alt="available packages"
           className="w-full pb-10 2xl:py-10 translate-y-10 xl:translate-y-20 2xl:translate-y-12"
         />
-        <div className="flex items-center justify-center w-full px-20 -translate-y-[72px] 2xl:-translate-y-36">
+        <div className="flex items-center justify-center w-full -translate-y-[72px] 2xl:-translate-y-36 translate-x-5">
           <Image
             src="/images/pika/characters.png"
             width={351.2}
             height={250.8}
             alt="japanese characters"
-            className="w-[29%] pb-10 -mr-20 m"
+            className="w-[25%] pb-10"
           />
           <Image
             src="/images/pika/pika.png"
             width={2710}
             height={4064}
             alt="familiar sweatshirt model"
-            className="w-[45%] -translate-y-12 2xl:-translate-y-10 z-50 "
+            className="w-[42%] -translate-y-12 2xl:-translate-y-10 z-50 -translate-x-5"
           />
           <Image
             src="/images/pika/characters.png"
             width={351.2}
             height={250.8}
             alt="japanese characters"
-            className="w-[29%] pb-10 mr-6"
+            className="w-[25%] pb-10 mr-6"
           />
         </div>
       </motion.div>

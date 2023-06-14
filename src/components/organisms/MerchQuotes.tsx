@@ -51,14 +51,14 @@ const MerchQuotes = () => {
             image="/images/merch/betty.png"
             icon="/images/merch/betty_icon.png"
             offset="mb-10"
-            quote={`“ever since i bought my All In Time drip, i’ve been hitting licks with zero shit from the pigs.”`}
+            quote={`“Ever since I bought my All In Time drip, I’ve been hitting licks with zero shit from the pigs.”`}
             author="Mrs. White"
           />
           <QuoteWindow
             image="/images/merch/usain.png"
             icon="/images/merch/usain_icon.png"
             offset="mt-20"
-            quote={`“I used a photo of a zombie frat boy as my PFP, but since getting some All in TIme, I use me.”`}
+            quote={`“I used a photo of a zombie frat boy as my PFP, but since getting some All In Time, I use me.”`}
             author="Fast Runner"
           />
           <QuoteWindow

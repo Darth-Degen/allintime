@@ -73,6 +73,7 @@ const CulturePack: FC = () => {
           description1="custom lamy pen"
           description2="custom sketchbook"
           description3="hard enamel pin"
+          description4="stickers (5)"
           textColor="white"
           // price={5}
           price="&#9726; &#x25FE;"
