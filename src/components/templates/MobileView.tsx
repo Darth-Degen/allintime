@@ -13,13 +13,13 @@ const MobileView: FC = () => {
       <div className="w-full">
         <div className="relative">
           {/* {miniHeight || tabletWidth ? ( */}
-          <Image
+          {/* <Image
             src="/images/mobile/warning2.png"
             width={12920}
             height={963}
             alt="warning"
             className="py-2 pr-1 mx-auto"
-          />
+          /> */}
           {/* ) : ( */}
           <Image
             src="/images/mobile/warning.png"
