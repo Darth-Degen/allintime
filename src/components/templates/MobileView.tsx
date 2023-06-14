@@ -63,8 +63,8 @@ const MobileView: FC = () => {
               all in time
             </p>
           </div>
-          <div className="w-1/2 px-2 pt-2">
-            <p className="pl-3 text-custom-green2 text-left leading-4 text-xl sm:text-4xl font-neuebitBold">
+          <div className="w-1/2 px-1 pt-2">
+            <p className="pl-3 text-custom-green2 text-left leading-4 text-xl sm:text-4xl font-neuebitBold tracking-wide">
               store opens june thirtieth twenty twenty three &lt;3
             </p>
           </div>
