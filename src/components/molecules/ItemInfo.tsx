@@ -41,15 +41,17 @@ const ItemInfo: FC<Props> = ({
       style={{ color: textColor }}
     >
       <p className="forma-bold uppercase text-xl xl:text-2xl">{title}</p>
-      <p className="forma uppercase text-xs xl:text-base">{description1}</p>
-      <p className="forma uppercase text-xs xl:text-base">{description2}</p>
-      <p className="forma uppercase text-xs xl:text-base">{description3}</p>
+      <p className="forma-med uppercase text-xs xl:text-base">{description1}</p>
+      <p className="forma-med uppercase text-xs xl:text-base">{description2}</p>
+      <p className="forma-med uppercase text-xs xl:text-base">{description3}</p>
       {description4 && (
-        <p className="forma uppercase text-xs xl:text-base">{description4}</p>
+        <p className="forma-med uppercase text-xs xl:text-base">
+          {description4}
+        </p>
       )}
       <div className="w-full flex items-center justify-between -translate-y-4 xl:-translate-y-[13px]">
-        <p className="forma uppercase text-xs xl:text-base whitespace-nowrap w-fit">
-          {`cost: ${price} racks`}
+        <p className="forma-med uppercase text-xs xl:text-base whitespace-nowrap w-fit">
+          cost: {price} <span className="forma-light">racks</span>
         </p>
         <div className="relative w-full px-4">
           <RacksDottedLine className="w-full" style={{ fill: textColor }} />
