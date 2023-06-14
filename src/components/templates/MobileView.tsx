@@ -57,14 +57,14 @@ const MobileView: FC = () => {
             </p>
           </div>
         </div>
-        <div className="w-full flex items-center justify-evenly px-2 pt-0">
-          <div className="w-1/2 px-2">
+        <div className="w-full flex items-center justify-evenly px-2 pt-0 gap-2">
+          <div className="w-1/2 ">
             <p className="text-custom-green2 text-center font-mkHell text-4xl sm:text-[50px]">
               all in time
             </p>
           </div>
-          <div className="w-1/2 px-1 pt-2">
-            <p className="pl-3 text-custom-green2 text-left leading-4 text-xl sm:text-4xl font-neuebitBold tracking-wide">
+          <div className="w-1/2  pt-2">
+            <p className=" text-custom-green2 text-left leading-4 text-xl sm:text-4xl font-neuebitBold tracking-wide">
               store opens june thirtieth twenty twenty three &lt;3
             </p>
           </div>
@@ -73,8 +73,8 @@ const MobileView: FC = () => {
       {/* large chinese characters */}
       <Image
         src="/images/mobile/characters1.png"
-        width={536 * 0.5}
-        height={275 * 0.5}
+        width={536 * 0.6}
+        height={275 * 0.6}
         alt="green characters"
         className="py-8"
       />

@@ -1,4 +1,4 @@
-import { FC, ReactNode, useState } from "react";
+import { FC, ReactNode, useEffect, useState } from "react";
 import {
   PageHead,
   Header,
@@ -9,6 +9,7 @@ import {
 } from "@components";
 import { enterAnimation, ViewContext } from "@constants";
 import { AnimatePresence, motion } from "framer-motion";
+import { useWindowSize } from "src/hooks";
 
 interface Props {
   children: ReactNode;
@@ -40,6 +41,16 @@ const PageLayout: FC<Props> = (props: Props) => {
     modalId,
     setModalId,
   };
+
+  const [winWidth, winHeight] = useWindowSize();
+
+  useEffect(() => {
+    if (winWidth < 1024) {
+      document.body.style.backgroundColor = "#00EC18";
+    } else {
+      document.body.style.backgroundColor = "#9CD9CC";
+    }
+  }, [winWidth]);
 
   return (
     <ViewContext.Provider value={value}>
