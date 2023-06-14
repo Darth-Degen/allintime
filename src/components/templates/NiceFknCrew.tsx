@@ -33,7 +33,11 @@ const NiceFknCrew: FC = () => {
           <p className="forma-bold mr-3 xl:mr-5 whitespace-nowrap">
             ALL IN TIME
           </p>
-          <div className="w-full h-[1px] bg-transparent border-b-2 border-dotted border-black" />
+          <div className="w-full flex items-center gap-1">
+            <p className="pt-0.5">&#x2022;</p>
+            <div className="w-full h-[1px] bg-transparent border-b border-dashed border-black" />
+            <p className="pt-0.5">&#x2022;</p>
+          </div>
           <p className="font-pangramLight ml-3 xl:ml-5 whitespace-nowrap uppercase">
             a virtuous lifestyle with very little patience
           </p>
@@ -93,11 +97,12 @@ const NiceFknCrew: FC = () => {
           />
           <ItemInfo
             title="all in time crewneck"
-            description1="100% organic knit"
+            description1="100% softer than your baby blanket"
             description2="embroidery 3 locations"
             description3="2 custom tags"
             textColor="#312A29"
-            price={15}
+            // price={15}
+            price=""
             buttonBgColor="white"
             buttonTextColor="#3D7FFF"
             buttonBorder="#312A29"

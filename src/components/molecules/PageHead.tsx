@@ -22,10 +22,10 @@ const PageHead: FC<Props> = (props: Props) => {
       <meta name="twitter:title" content={title} />
       <meta name="twitter:description" content={description} />
       <meta name="twitter:image" content="https://allintime.xyz/meta.png" />
-      <meta property="twitter:url" content={`https://www.allintime.xyz/`} />
+      <meta property="twitter:url" content={`https://allintime.xyz/`} />
       {/* <!-- Open Graph / Facebook --> */}
       <meta property="og:type" content="website" />
-      <meta property="og:url" content="https://www.allintime.xyz/" />
+      <meta property="og:url" content="https://allintime.xyz/" />
       <meta property="og:title" content="All in Time" />
       <meta
         property="og:description"

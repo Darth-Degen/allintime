@@ -8,8 +8,9 @@ interface Props {
   description1: string;
   description2: string;
   description3: string;
+  description4?: string;
   textColor: string;
-  price: number;
+  price: number | string;
   buttonBgColor: string;
   buttonTextColor: string;
   buttonBorder?: string;
@@ -21,6 +22,7 @@ const ItemInfo: FC<Props> = ({
   description1,
   description2,
   description3,
+  description4,
   textColor,
   price,
   buttonBgColor,
@@ -38,19 +40,19 @@ const ItemInfo: FC<Props> = ({
       }`}
       style={{ color: textColor }}
     >
-      <p className="font-pangramBlack uppercase text-xl xl:text-3xl">{title}</p>
-      <p className="font-pangram uppercase text-xs xl:text-base">
-        {description1}
-      </p>
-      <p className="font-pangram uppercase text-xs xl:text-base">
-        {description2}
-      </p>
-      <p className="font-pangram uppercase text-xs xl:text-base">
-        {description3}
-      </p>
-      <div className="w-full flex items-center justify-between -translate-y-4 xl:-translate-y-[14px]">
-        <p className="font-pangram uppercase text-xs xl:text-base whitespace-nowrap w-fit">
-          {`cost: ${price.toLocaleString()} racks`}
+      <p className="forma-bold uppercase text-xl xl:text-2xl">{title}</p>
+      <p className="forma-med uppercase text-xs xl:text-base">{description1}</p>
+      <p className="forma-med uppercase text-xs xl:text-base">{description2}</p>
+      <p className="forma-med uppercase text-xs xl:text-base">{description3}</p>
+      {description4 && (
+        <p className="forma-med uppercase text-xs xl:text-base">
+          {description4}
+        </p>
+      )}
+      <div className="w-full flex items-center justify-between -translate-y-4 xl:-translate-y-[13px]">
+        <p className="forma-med uppercase text-xs xl:text-base whitespace-nowrap w-fit">
+          {/* cost: {price} <span className="forma-light">racks</span> */}
+          cost: {price} $X.XX racks
         </p>
         <div className="relative w-full px-4">
           <RacksDottedLine className="w-full" style={{ fill: textColor }} />
