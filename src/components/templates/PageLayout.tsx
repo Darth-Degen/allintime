@@ -50,9 +50,9 @@ const PageLayout: FC<Props> = (props: Props) => {
       >
         <PageHead
           title="All In Time"
-          description="All In Time"
-          url=""
-          twitter=""
+          description="clothing | collectibles | curio | Est. 2023"
+          url="https://allintime_.xyz"
+          twitter="@allintime_"
         />
         {/* header */}
         {header && <Header headerType={headerType} />}
