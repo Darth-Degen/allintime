@@ -12,23 +12,23 @@ const MobileView: FC = () => {
       {/* warning section */}
       <div className="w-full">
         <div className="relative">
-          {miniHeight || tabletWidth ? (
-            <Image
-              src="/images/mobile/warning2.png"
-              width={12920}
-              height={963}
-              alt="warning"
-              className="py-2 pr-1 mx-auto"
-            />
-          ) : (
-            <Image
-              src="/images/mobile/warning.png"
-              width={1720}
-              height={1284}
-              alt="warning2"
-              className="py-2 pr-1 mx-auto"
-            />
-          )}
+          {/* {miniHeight || tabletWidth ? ( */}
+          <Image
+            src="/images/mobile/warning2.png"
+            width={12920}
+            height={963}
+            alt="warning"
+            className="py-2 pr-1 mx-auto"
+          />
+          {/* ) : ( */}
+          <Image
+            src="/images/mobile/warning.png"
+            width={1720}
+            height={1284}
+            alt="warning2"
+            className="py-2 pr-1 mx-auto"
+          />
+          {/* )} */}
           {/* familiar cartoon character */}
           <div className={`absolute -bottom-6 left-1/2 -translate-x-1/2`}>
             <Image
