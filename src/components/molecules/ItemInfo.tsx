@@ -51,7 +51,8 @@ const ItemInfo: FC<Props> = ({
       )}
       <div className="w-full flex items-center justify-between -translate-y-4 xl:-translate-y-[13px]">
         <p className="forma-med uppercase text-xs xl:text-base whitespace-nowrap w-fit">
-          cost: {price} <span className="forma-light">racks</span>
+          {/* cost: {price} <span className="forma-light">racks</span> */}
+          cost: {price} $X.XX racks
         </p>
         <div className="relative w-full px-4">
           <RacksDottedLine className="w-full" style={{ fill: textColor }} />

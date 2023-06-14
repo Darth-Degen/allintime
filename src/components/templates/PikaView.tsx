@@ -15,7 +15,7 @@ const PikaView: FC = () => {
           width={7203}
           height={2189}
           alt="available packages"
-          className="w-full pb-10 2xl:py-10 translate-y-10 xl:translate-y-20 2xl:translate-y-12 mr-10"
+          className="w-full scale-[1.15] pb-10 2xl:py-10 translate-y-10 xl:translate-y-20 2xl:translate-y-12 mr-0"
         />
         <div className="flex items-center justify-center w-full -translate-y-[72px] 2xl:-translate-y-36 translate-x-5">
           <Image

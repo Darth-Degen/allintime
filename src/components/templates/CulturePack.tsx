@@ -76,7 +76,7 @@ const CulturePack: FC = () => {
           description4="stickers (5)"
           textColor="white"
           // price={5}
-          price="&#9726; &#x25FE;"
+          price=""
           buttonBgColor="white"
           buttonTextColor="#3D7FFF"
           buttonBorder="#312A29"

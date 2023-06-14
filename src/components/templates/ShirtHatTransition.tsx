@@ -21,7 +21,7 @@ const ShirtHatTransition: FC = () => {
           description3="2 color ways"
           textColor="white"
           // price={5}
-          price="&#9726; &#x25FE;"
+          price=""
           buttonBgColor="#FF0000"
           buttonTextColor="#312A29"
           padding
