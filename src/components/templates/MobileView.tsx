@@ -39,13 +39,29 @@ const MobileView: FC = () => {
             />
           </div>
         </div>
-        <Image
+        <div className="border-4 border-custom-green2 flex gap-4 px-4 py-2.5 -z-10 mx-2 my-1">
+          <Image
+            src="/images/mobile/gear.png"
+            width={60}
+            height={60}
+            alt="gear"
+            className="w-[60px] h-[60px]"
+          />
+          <div className="flex flex-col justify-start text-custom-green2">
+            <p className="text-2xl tracking-wide">website is desktop only</p>
+            <p className="text-xs sm:text-sm md:text-base font-normal tracking-wide">
+              ticket sales and store will be available on mobile, but until
+              then, go check out the website on desktop.
+            </p>
+          </div>
+        </div>
+        {/* <Image
           src="/images/mobile/desktop_only.png"
           width={824}
           height={192}
           alt="desktop only warning"
           className="px-2 mx-auto"
-        />
+        /> */}
         <div className="w-full flex items-center justify-evenly px-2 pt-2">
           <div className="w-1/2 px-2">
             <p className="text-custom-green2 text-center font-mkHell text-4xl sm:text-[50px]">

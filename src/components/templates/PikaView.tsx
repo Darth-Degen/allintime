@@ -17,13 +17,13 @@ const PikaView: FC = () => {
           alt="available packages"
           className="w-full pb-10 2xl:py-10 translate-y-10 xl:translate-y-20 2xl:translate-y-12"
         />
-        <div className="flex items-center justify-between w-full px-16 -translate-y-24 2xl:-translate-y-36">
+        <div className="flex items-center justify-center w-full px-20 -translate-y-[72px] 2xl:-translate-y-36">
           <Image
             src="/images/pika/characters.png"
             width={351.2}
             height={250.8}
             alt="japanese characters"
-            className="w-[30%] pb-10 -mr-20 ml-20"
+            className="w-[29%] pb-10 -mr-20 m"
           />
           <Image
             src="/images/pika/pika.png"
@@ -37,7 +37,7 @@ const PikaView: FC = () => {
             width={351.2}
             height={250.8}
             alt="japanese characters"
-            className="w-[30%] pb-10 "
+            className="w-[29%] pb-10 mr-6"
           />
         </div>
       </motion.div>
@@ -46,7 +46,7 @@ const PikaView: FC = () => {
         width={1537}
         height={330}
         alt="adobe stock clouds"
-        className="w-full opacity-80 absolute bottom-0"
+        className="w-full opacity-80 absolute bottom-0 -z-10"
       />
     </div>
   );

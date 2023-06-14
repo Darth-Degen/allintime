@@ -23,7 +23,7 @@ const MerchView1: FC = () => {
               // time travel // get drained (with style)`}
             </p>
           </div>
-          <div className="relative w-full pb-10">
+          <div className="relative w-full -mt-20 -z-10">
             <Image
               src="/images/merch/merch_images.png"
               width={3800}
@@ -31,7 +31,7 @@ const MerchView1: FC = () => {
               alt="merch images"
               priority={true}
             />
-            <div className="absolute top-[60%] left-1/2 transform -translate-x-1/2">
+            <div className="absolute top-[63%] left-1/2 transform -translate-x-1/2">
               <BrandBox />
             </div>
           </div>

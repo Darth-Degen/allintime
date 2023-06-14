@@ -3,7 +3,7 @@ import { FC } from "react";
 
 interface Props {
   image: string;
-  description: string;
+  description?: string;
 }
 
 const CulturePackImage: FC<Props> = ({ image, description }) => {
@@ -13,7 +13,7 @@ const CulturePackImage: FC<Props> = ({ image, description }) => {
         width={400}
         height={400}
         src={image}
-        alt={description}
+        alt={"Culture Pack"}
         className="rounded-xl overflow-hidden"
       />
       <p className="text-xs xl:text-lg text-black xl:px-6 uppercase font-neuebitBold">

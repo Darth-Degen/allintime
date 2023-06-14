@@ -35,37 +35,37 @@ const CulturePack: FC = () => {
               01/200
             </span>
           </p>
-          <p
-            className="absolute bottom-10 right-[2%] w-32 2xl:w-40 
+          <div
+            className="absolute bottom-10 right-[5.5%]
             text-xs xl:text-base font-neuebit text-custom-white2 uppercase"
           >
-            * some assembly required
-          </p>
+            <p>* some assembly</p> <p className="-mt-2.5">required</p>
+          </div>
           <Image
             src="/images/culture_pack/green_item.png"
             width={mobileView ? 288 : mediumView ? 489.6 * 0.95 : 575.5}
             height={mobileView ? 327.5 : mediumView ? 556.75 * 0.95 : 655}
             alt="culture pack"
-            className="absolute -top-6 right-[8%] z-[-1]"
+            className="absolute -top-6 right-[4%] z-[-1]"
           />
         </div>
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-5 z-[-2]">
           {/* four images with descriptions */}
           <CulturePackImage
             image="/images/culture_pack/pen.png"
-            description="an extremely powerful pen (smoke not included)"
+            // description="an extremely powerful pen (smoke not included)"
           />
           <CulturePackImage
             image="/images/culture_pack/book.png"
-            description="a sketchbook with the power to create entire worlds"
+            // description="a sketchbook with the power to create entire worlds"
           />
           <CulturePackImage
             image="/images/culture_pack/pin.png"
-            description="a hard enamel pin to add some ice to your backpack"
+            // description="a hard enamel pin to add some ice to your backpack"
           />
           <CulturePackImage
             image="/images/culture_pack/stickers.png"
-            description="stickers - go and spread the word. "
+            // description="stickers - go and spread the word. "
           />
         </div>
         <ItemInfo
