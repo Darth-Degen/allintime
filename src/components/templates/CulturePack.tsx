@@ -23,7 +23,7 @@ const CulturePack: FC = () => {
       >
         <div className="relative w-full pb-16 xl:pb-10 z-[+1]">
           <p
-            className="text-[100px] leading-[90px] lg:text-[150px] lg:leading-[120px] xl:text-[180px] xl:leading-[150px]
+            className="text-[100px] leading-[90px] lg:text-[150px] lg:leading-[120px] xl:text-[200px] xl:leading-[150px]
             2xl:text-[250px] 2xl:leading-[200px] font-pangramBlack text-custom-white2 uppercase z-30"
           >
             culture
@@ -46,7 +46,7 @@ const CulturePack: FC = () => {
             width={mobileView ? 288 : mediumView ? 489.6 * 0.95 : 575.5}
             height={mobileView ? 327.5 : mediumView ? 556.75 * 0.95 : 655}
             alt="culture pack"
-            className="absolute -top-6 right-[4%] z-[-1]"
+            className="absolute -top-6 right-[8%] z-[-1]"
           />
         </div>
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-5 z-[-2]">
