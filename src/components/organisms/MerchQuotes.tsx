@@ -8,13 +8,23 @@ import {
 import NoteIcon1 from "../@icons/NoteIcon1";
 import { AnimatePresence, motion, useInView } from "framer-motion";
 import { slideUp } from "src/constants";
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 
 const MerchQuotes = () => {
   const ref = useRef(null);
   const isInView = useInView(ref);
+  const didAnimateRef = useRef<boolean>();
 
-  const slideUpAnimation = slideUp(isInView, false);
+  const slideUpAnimation = slideUp(
+    isInView, //animate
+    didAnimateRef.current === true ? 0 : 300, //distance
+    didAnimateRef.current === true ? 1 : 0 //startOpacity
+  );
+
+  useEffect(() => {
+    if (isInView) didAnimateRef.current = true;
+  }, [isInView]);
+
   return (
     <AnimatePresence>
       <motion.div

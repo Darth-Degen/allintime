@@ -22,7 +22,7 @@ const LandingView: FC<Props> = (props: Props) => {
           <div className="relative w-full">
             {/* header text */}
             <div className="absolute left-1/2 -translate-x-1/2 top-[50%] -translate-y-1/2">
-              <p className="text-[140px] xl:text-[170px] pt-20 font-mkHell text-center opacity-[.75] saturate-125 whitespace-nowrap font-mk-hell text-[#3BB39A]">
+              <p className="text-[140px] xl:text-[170px] pt-20 font-mkHell text-center opacity-[.85] saturate-125 whitespace-nowrap font-mk-hell text-[#3BB39A]">
                 all in time
               </p>
               <p className="text-lg xl:text-xl font-mkHell text-center whitespace-nowrap font-mk-hell text-custom-teal">
@@ -49,13 +49,14 @@ const LandingView: FC<Props> = (props: Props) => {
             <div className="w-fit mx-auto pl-14">
               <Image
                 src="/images/landing/intro.jpg"
-                alt="RULEBREAKERS"
+                alt="AIT"
                 priority={true}
                 width={1494 * 0.3}
                 height={2060 * 0.3}
                 onLoadingComplete={() =>
                   setAssets && setAssets((prevState) => [(prevState[0] = true)])
                 }
+                className="rounded-[100px]"
               />
             </div>
           </div>

@@ -7,7 +7,7 @@ import { slideUp } from "src/constants";
 const CorduroyHat: FC = () => {
   const ref = useRef(null);
   const isInView = useInView(ref);
-  const slideUpAnimation = slideUp(isInView, true);
+  // const slideUpAnimation = slideUp(isInView, true);
   return (
     <div className="w-full h-full bg-noisy-brown py-32 xl:pt-64">
       <motion.div

@@ -13,7 +13,7 @@ const CulturePack: FC = () => {
 
   const ref = useRef(null);
   const isInView = useInView(ref);
-  const slideUpAnimation = slideUp(isInView, true);
+  // const slideUpAnimation = slideUp(isInView, true);
   return (
     <div className="w-full h-full my-40">
       <motion.div

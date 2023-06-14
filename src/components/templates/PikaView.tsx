@@ -15,9 +15,9 @@ const PikaView: FC = () => {
           width={7203}
           height={2189}
           alt="available packages"
-          className="w-full pb-10 2xl:py-10 translate-y-10 xl:translate-y-20 2xl:translate-y-5"
+          className="w-full pb-10 2xl:py-10 translate-y-10 xl:translate-y-20 2xl:translate-y-12"
         />
-        <div className="flex items-center justify-between w-full px-16 -translate-y-24 2xl:-translate-y-32">
+        <div className="flex items-center justify-between w-full px-16 -translate-y-24 2xl:-translate-y-36">
           <Image
             src="/images/pika/characters.png"
             width={351.2}
@@ -30,7 +30,7 @@ const PikaView: FC = () => {
             width={2710}
             height={4064}
             alt="familiar sweatshirt model"
-            className="w-[45%] -translate-y-4 2xl:-translate-y-24 z-50 "
+            className="w-[45%] -translate-y-12 2xl:-translate-y-10 z-50 "
           />
           <Image
             src="/images/pika/characters.png"

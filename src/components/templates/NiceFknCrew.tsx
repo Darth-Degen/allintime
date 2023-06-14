@@ -1,4 +1,4 @@
-import { FC, useRef } from "react";
+import { FC, useEffect, useRef } from "react";
 import Image from "next/image";
 import { motion, useInView } from "framer-motion";
 import { slideUp } from "@constants";
@@ -11,7 +11,17 @@ import {
 const NiceFknCrew: FC = () => {
   const ref = useRef(null);
   const isInView = useInView(ref);
-  const slideUpAnimation = slideUp(isInView, true);
+  const didAnimateRef = useRef<boolean>();
+
+  const slideUpAnimation = slideUp(
+    isInView, //animate
+    didAnimateRef.current === true ? 0 : 300, //distance
+    didAnimateRef.current === true ? 1 : 0 //startOpacity
+  );
+
+  useEffect(() => {
+    if (isInView) didAnimateRef.current = true;
+  }, [isInView]);
 
   return (
     <div className="w-full h-full bg-custom-tan" ref={ref}>
@@ -34,6 +44,7 @@ const NiceFknCrew: FC = () => {
             width={4114}
             height={913}
             alt="header text"
+            className="rounded-3xl"
           />
         </div>
         <div className="flex items-center justify-between w-full pb-10 gap-4 xl:gap-10">

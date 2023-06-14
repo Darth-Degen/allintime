@@ -6,7 +6,7 @@ import { slideUp } from "src/constants";
 const GraphicTee: FC = () => {
   const ref = useRef(null);
   const isInView = useInView(ref);
-  const slideUpAnimation = slideUp(isInView, false);
+  // const slideUpAnimation = slideUp(isInView, false);
 
   return (
     <div className="w-full h-full bg-custom-black2">
