@@ -39,7 +39,7 @@ const MobileView: FC = () => {
             />
           </div>
         </div>
-        <div className="border-4 border-custom-green2 flex gap-4 px-4 py-2.5 -z-10 mx-2 my-1">
+        <div className="border-4 border-custom-green2 flex items-center gap-4 px-4 py-2.5 -z-10 mx-2 my-1">
           <Image
             src="/images/mobile/gear.png"
             width={60}
@@ -51,7 +51,7 @@ const MobileView: FC = () => {
             <p className="text-3xl tracking-wide font-neuebitBold md:text-4xl">
               website is desktop only
             </p>
-            <p className="text-xs sm:text-sm md:text-xl font-neuebit tracking-wide">
+            <p className="text-sm md:text-xl font-neuebit tracking-wide leading-0">
               ticket sales and store will be available on mobile, but until
               then, go check out the website on desktop.
             </p>
@@ -63,8 +63,8 @@ const MobileView: FC = () => {
               all in time
             </p>
           </div>
-          <div className="w-1/2 px-2 pt-2">
-            <p className="pl-3 text-custom-green2 text-left leading-4 text-xl sm:text-4xl font-neuebit">
+          <div className="w-1/2 px-1 pt-2">
+            <p className="pl-3 text-custom-green2 text-left leading-4 text-xl sm:text-4xl font-neuebitBold tracking-wide">
               store opens june thirtieth twenty twenty three &lt;3
             </p>
           </div>
