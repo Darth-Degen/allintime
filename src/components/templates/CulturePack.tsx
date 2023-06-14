@@ -74,7 +74,8 @@ const CulturePack: FC = () => {
           description2="custom sketchbook"
           description3="hard enamel pin"
           textColor="white"
-          price={5}
+          // price={5}
+          price="&#9726; &#x25FE;"
           buttonBgColor="white"
           buttonTextColor="#3D7FFF"
           buttonBorder="#312A29"

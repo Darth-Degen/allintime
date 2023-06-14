@@ -9,7 +9,7 @@ interface Props {
   description2: string;
   description3: string;
   textColor: string;
-  price: number;
+  price: number | string;
   buttonBgColor: string;
   buttonTextColor: string;
   buttonBorder?: string;
@@ -50,7 +50,7 @@ const ItemInfo: FC<Props> = ({
       </p>
       <div className="w-full flex items-center justify-between -translate-y-4 xl:-translate-y-[14px]">
         <p className="font-pangram uppercase text-xs xl:text-base whitespace-nowrap w-fit">
-          {`cost: ${price.toLocaleString()} racks`}
+          {`cost: ${price} racks`}
         </p>
         <div className="relative w-full px-4">
           <RacksDottedLine className="w-full" style={{ fill: textColor }} />
