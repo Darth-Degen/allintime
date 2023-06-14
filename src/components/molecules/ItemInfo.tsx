@@ -63,7 +63,7 @@ const ItemInfo: FC<Props> = ({
           />
         </div>
         <Button
-          className={`w-fit h-10 xl:h-12 font-bold !rounded-full text-black ${
+          className={`w-fit h-10 xl:h-12 font-bold -mt-1 !rounded-full text-black ${
             buttonBorder && "border"
           }
           font-pangram text-xl xl:text-3xl px-8 xl:px-16 uppercase whitespace-nowrap`}

@@ -16,15 +16,15 @@ const QuoteBox: FC<Props> = ({ quote, author, icon }) => {
 
   return (
     <div
-      className="3xl:mt-20 quote w-[150%] min-h-[85px] xl:min-h-[115px] bg-white 
+      className="3xl:mt-20 quote bg-white w-[390px] h-[110px]  2xl:w-[420px] 2xl:h-[150px]
       flex justify-center items-center border-2 border-black rounded-lg drop-shadow-card"
     >
       <div className="w-full flex items-center justify-evenly py-0.5 3xl:py-4">
         {!mobileView && (
           <Image
             src={icon}
-            width={ultraWideView ? 150 : tabletView ? 70 : 100}
-            height={ultraWideView ? 150 : tabletView ? 70 : 100}
+            width={ultraWideView ? 120 : tabletView ? 80 : 100}
+            height={ultraWideView ? 120 : tabletView ? 80 : 100}
             alt="reviewer icon"
             className="px-2"
           />

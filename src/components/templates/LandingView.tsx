@@ -22,10 +22,10 @@ const LandingView: FC<Props> = (props: Props) => {
           <div className="relative w-full">
             {/* header text */}
             <div className="absolute left-1/2 -translate-x-1/2 top-[50%] -translate-y-1/2">
-              <p className="text-[140px] xl:text-[170px] pt-20 font-mkHell text-center opacity-70 saturate-125 whitespace-nowrap font-mk-hell text-[#3BB39A]">
+              <p className="text-[140px] xl:text-[170px] pt-20 font-mkHell text-center opacity-[.75] saturate-125 whitespace-nowrap font-mk-hell text-[#3BB39A]">
                 all in time
               </p>
-              <p className="text-lg xl:text-xl font-mkHell text-center whitespace-nowrap font-mk-hell text-[#3BB39A]">
+              <p className="text-lg xl:text-xl font-mkHell text-center whitespace-nowrap font-mk-hell text-custom-teal">
                 a virtuous lifestyle,
                 <br />
                 with very little patience
@@ -36,12 +36,12 @@ const LandingView: FC<Props> = (props: Props) => {
               className="absolute left-1/2 -translate-x-1/2 bottom-0 w-full  
               text-center opacity-80 whitespace-nowrap px-8"
             >
-              <div className="w-full flex justify-center items-center text-sm xl:text-base">
-                <p className="font-pangram text-custom-teal mr-5 pb-2">
+              <div className="w-full flex justify-center items-center text-sm xl:text-base ">
+                <p className="font-pangram text-custom-teal mr-1 pb-2 tracking-widest">
                   VOLUME 1
                 </p>
-                <div className="w-full h-[1px] bg-transparent border-b-2 xl:border-b-4 border-dotted border-custom-teal" />
-                <p className="font-pangram text-custom-teal ml-5 pb-2">
+                <div className="w-full h-[1px] bg-transparent border-b-2 xl:border-b-[3px] 2xl:border-b-4 border-dotted border-custom-teal" />
+                <p className="font-pangram text-custom-teal ml-1 pb-2 tracking-widest">
                   ESSENTIALS
                 </p>
               </div>

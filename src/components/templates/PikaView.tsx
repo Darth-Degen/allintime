@@ -5,7 +5,7 @@ import { enterAnimation } from "@constants";
 
 const PikaView: FC = () => {
   return (
-    <div className="w-full h-full bg-pikachu-gradient">
+    <div className="relative w-full min-h-screen bg-pikachu-gradient flex flex-col justify-between">
       <motion.div
         {...enterAnimation}
         className="relative flex flex-col items-center justify-center w-fit max-w-[70%] mx-auto h-full"
@@ -15,7 +15,7 @@ const PikaView: FC = () => {
           width={7203}
           height={2189}
           alt="available packages"
-          className="w-full py-10 translate-y-10 xl:translate-y-20 2xl:translate-y-5"
+          className="w-full pb-10 2xl:py-10 translate-y-10 xl:translate-y-20 2xl:translate-y-5"
         />
         <div className="flex items-center justify-between w-full px-16 -translate-y-24 2xl:-translate-y-32">
           <Image
@@ -23,21 +23,21 @@ const PikaView: FC = () => {
             width={351.2}
             height={250.8}
             alt="japanese characters"
-            className="w-[30%] pb-10 2xl:pb-32"
+            className="w-[30%] pb-10 -mr-20 ml-20"
           />
           <Image
             src="/images/pika/pika.png"
             width={2710}
             height={4064}
             alt="familiar sweatshirt model"
-            className="w-[40%] 2xl:-translate-y-20 z-50"
+            className="w-[45%] -translate-y-4 2xl:-translate-y-24 z-50 "
           />
           <Image
             src="/images/pika/characters.png"
             width={351.2}
             height={250.8}
             alt="japanese characters"
-            className="w-[30%] pb-10 2xl:pb-32"
+            className="w-[30%] pb-10 "
           />
         </div>
       </motion.div>
@@ -46,7 +46,7 @@ const PikaView: FC = () => {
         width={1537}
         height={330}
         alt="adobe stock clouds"
-        className="w-full -mt-56 xl:-mt-60 2xl:-mt-96 opacity-80 z[+1]"
+        className="w-full opacity-80 absolute bottom-0"
       />
     </div>
   );

@@ -25,7 +25,7 @@ const MovingText: FC<Props> = ({ text, direction = "forward" }) => {
           <motion.div
             initial={{ x: "100%" }}
             animate={{ x: "-100%" }}
-            transition={{ duration: 16, repeat: Infinity, ease: "linear" }}
+            transition={{ duration: 26, repeat: Infinity, ease: "linear" }}
             className="absolute text-3xl uppercase text-center font-neuebitBold text-black tracking-[0.3em] whitespace-nowrap"
           >
             {text}
@@ -34,10 +34,10 @@ const MovingText: FC<Props> = ({ text, direction = "forward" }) => {
             initial={{ x: "100%" }}
             animate={{ x: "-100%" }}
             transition={{
-              duration: 16,
+              duration: 26,
               repeat: Infinity,
               ease: "linear",
-              delay: 8,
+              delay: 13,
             }}
             className="absolute text-3xl uppercase text-center font-neuebitBold text-black tracking-[0.3em] whitespace-nowrap"
           >
@@ -49,7 +49,7 @@ const MovingText: FC<Props> = ({ text, direction = "forward" }) => {
           <motion.div
             initial={{ x: "-100%" }}
             animate={{ x: "100%" }}
-            transition={{ duration: 16, repeat: Infinity, ease: "linear" }}
+            transition={{ duration: 26, repeat: Infinity, ease: "linear" }}
             className="absolute text-3xl uppercase text-center font-neuebitBold text-black tracking-[0.3em] whitespace-nowrap"
           >
             {text}
@@ -58,10 +58,10 @@ const MovingText: FC<Props> = ({ text, direction = "forward" }) => {
             initial={{ x: "-100%" }}
             animate={{ x: "100%" }}
             transition={{
-              duration: 16,
+              duration: 26,
               repeat: Infinity,
               ease: "linear",
-              delay: 8,
+              delay: 13,
             }}
             className="absolute text-3xl uppercase text-center font-neuebitBold text-black tracking-[0.3em] whitespace-nowrap"
           >

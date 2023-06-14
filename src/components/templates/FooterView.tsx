@@ -28,10 +28,17 @@ const FooterView: FC = () => {
             alt="all in time bubbles"
             className="h-20 xl:h-32 w-fit"
           />
-          <div className="flex flex-col items-center">
-            <ExpIcon className="h-20" fill="white" />
-            <p className="-mt-2 text-white font-pangram">powered by EXP</p>
-          </div>
+          <a
+            className="relative cursor-pointer whitespace-nowrap"
+            href="https://twitter.com/sol_exp"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <div className="flex flex-col items-center">
+              <ExpIcon className="h-20" fill="white" />
+              <p className="-mt-2 text-white font-pangram">powered by EXP</p>
+            </div>
+          </a>
         </div>
       </div>
     </div>
