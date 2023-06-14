@@ -102,7 +102,7 @@ const NiceFknCrew: FC = () => {
             description3="2 custom tags"
             textColor="#312A29"
             // price={15}
-            price="&#9726; &#x25FE;"
+            price="&#9726;&#x25FE;"
             buttonBgColor="white"
             buttonTextColor="#3D7FFF"
             buttonBorder="#312A29"
