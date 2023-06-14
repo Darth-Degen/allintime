@@ -47,11 +47,11 @@ const MobileView: FC = () => {
             alt="gear"
             className="w-[60px] h-[60px]"
           />
-          <div className="pl-3 flex flex-col justify-start text-custom-green2">
+          <div className="pl-0 flex flex-col justify-start text-custom-green2">
             <p className="text-3xl tracking-wide font-neuebitBold md:text-4xl">
               website is desktop only
             </p>
-            <p className="text-sm md:text-xl font-neuebit tracking-wide leading-0">
+            <p className="text-base md:text-xl font-neuebit tracking-wide leading-0">
               ticket sales and store will be available on mobile, but until
               then, go check out the website on desktop.
             </p>
