@@ -33,7 +33,10 @@
 @font-face {
   font-family: thabit;
   src: url("../public/fonts/Thabit.ttf") format("truetype");
-  font-weight: 500;
+}
+@font-face {
+  font-family: thabit-bold;
+  src: url("../public/fonts/ThabitBold.ttf") format("truetype");
 }
 @font-face {
   font-family: migra;

@@ -16,10 +16,10 @@ const QuoteBox: FC<Props> = ({ quote, author, icon }) => {
 
   return (
     <div
-      className="3xl:mt-20 quote w-[150%] min-h-[85px] 2xl:min-h-[115px] bg-white 
+      className="3xl:mt-20 quote w-[150%] min-h-[85px] xl:min-h-[115px] bg-white 
       flex justify-center items-center border-2 border-black rounded-lg drop-shadow-card"
     >
-      <div className="w-full flex items-center justify-evenly py-1 3xl:py-4">
+      <div className="w-full flex items-center justify-evenly py-0.5 3xl:py-4">
         {!mobileView && (
           <Image
             src={icon}
@@ -32,14 +32,12 @@ const QuoteBox: FC<Props> = ({ quote, author, icon }) => {
 
         <div
           className="w-full xl:w-2/3 h-full flex flex-col items-start justify-evenly
-          py-2 xl:py-6 px-3 xl:px-1"
+          py-2 xl:py-6 px-3 xl:px-0"
         >
-          <p className="text-[9px] xl:text-[13px] 4xl:text-base forma-bold">
+          <p className="text-[11px] 2xl:text-[13px] 4xl:text-base forma-bold">
             {author}
           </p>
-          <p className="text-[10px] xl:text-sm 2xl:text-base 4xl:text-lg">
-            {quote}
-          </p>
+          <p className="text-xs 2xl:text-sm 4xl:text-lg">{quote}</p>
         </div>
       </div>
     </div>

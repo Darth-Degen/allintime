@@ -12,7 +12,7 @@ const GraphicTee: FC = () => {
     <div className="w-full h-full bg-custom-black2">
       <motion.div
         className="w-full h-full flex flex-col items-center max-w-[1900px] mx-auto mt-[300px] px-32"
-        {...slideUpAnimation}
+        // {...slideUpAnimation}
         ref={ref}
       >
         <Image

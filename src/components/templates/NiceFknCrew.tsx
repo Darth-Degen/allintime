@@ -19,8 +19,10 @@ const NiceFknCrew: FC = () => {
         className="w-full max-w-[1900px] mx-auto px-16 xl:px-32"
         {...slideUpAnimation}
       >
-        <div className="w-full flex justify-center items-center xl:pt-20 py-10 text-xs xl:text-base">
-          <p className="mr-3 xl:mr-5 whitespace-nowrap">ALL IN TIME</p>
+        <div className="w-full flex justify-center items-center xl:pt-20 py-10 text-xs xl:text-base text-[#312A29]">
+          <p className="forma-bold mr-3 xl:mr-5 whitespace-nowrap">
+            ALL IN TIME
+          </p>
           <div className="w-full h-[1px] bg-transparent border-b-2 border-dotted border-black" />
           <p className="font-pangramLight ml-3 xl:ml-5 whitespace-nowrap uppercase">
             a virtuous lifestyle with very little patience
@@ -34,7 +36,7 @@ const NiceFknCrew: FC = () => {
             alt="header text"
           />
         </div>
-        <div className="flex items-center justify-end w-full pb-10 gap-4 xl:gap-10">
+        <div className="flex items-center justify-between w-full pb-10 gap-4 xl:gap-10">
           <CrewneckFlavortext1 className="h-16 w-fit" />
           <CrewneckFlavortext2 className="h-16 w-fit" />
           <div className="flex items-center gap-2">

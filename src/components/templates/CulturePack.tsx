@@ -18,13 +18,13 @@ const CulturePack: FC = () => {
     <div className="w-full h-full my-40">
       <motion.div
         className="w-full max-w-[1900px] mx-auto px-12 xl:px-32"
-        {...slideUpAnimation}
+        // {...slideUpAnimation}
         ref={ref}
       >
-        <div className="relative w-full pb-16 xl:pb-10 2xl:pb-0">
+        <div className="relative w-full pb-16 xl:pb-10 z-[+1]">
           <p
-            className="text-[100px] leading-[90px] lg:text-[150px] lg:leading-[120px] xl:text-[200px] xl:leading-[160px]
-            2xl:text-[250px] 2xl:leading-[200px] font-pangramBlack text-custom-white2 uppercase"
+            className="text-[100px] leading-[90px] lg:text-[150px] lg:leading-[120px] xl:text-[180px] xl:leading-[150px]
+            2xl:text-[250px] 2xl:leading-[200px] font-pangramBlack text-custom-white2 uppercase z-30"
           >
             culture
             <br />
@@ -49,7 +49,7 @@ const CulturePack: FC = () => {
             className="absolute -top-6 right-[8%] z-[-1]"
           />
         </div>
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-5">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-5 z-[-2]">
           {/* four images with descriptions */}
           <CulturePackImage
             image="/images/culture_pack/pen.png"

@@ -5,14 +5,14 @@ const WaitTheresMore: FC = () => {
     <div className="w-full h-[200vh] more-gradient pt-20">
       <div className="h-full pt-32 pb-56 flex flex-col items-center justify-between">
         <div>
-          <p className="text-lg text-black text-center uppercase font-thabit">
+          <p className="text-lg text-black text-center uppercase font-thabitBold">
             but wait
             <br />
             there&apos;s more
           </p>
           <svg
-            width="8"
-            height="47.4"
+            width="12"
+            height="71.1"
             viewBox="0 0 38 236"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"

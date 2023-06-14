@@ -148,8 +148,9 @@ export const slideDown = (animate: boolean) => ({
 
 export const slideUp = (animate: boolean, delay: boolean) => ({
   initial: { y: 300, opacity: 0 },
-  animate: { y: animate ? 0 : 300, opacity: animate ? 1 : 0 },
-  transition: { duration: 0.8, ease: "easeInOut", delay: delay ? 0.5 : 0 },
+  whileInView: { y: animate ? 0 : 300, opacity: animate ? 1 : 0 },
+  viewport: { once: true },
+  transition: { duration: 1, ease: "easeInOut", delay: delay ? 0.5 : 0 },
 });
 export const slideLeft = (animate: boolean) => ({
   initial: { x: 300, opacity: 0 },

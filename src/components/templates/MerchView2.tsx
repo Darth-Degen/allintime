@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { FC } from "react";
 import { enterAnimation } from "@constants";
-import { MerchQuotes } from "@components";
+import { MerchQuotes, MovingText } from "@components";
 
 const MerchView2: FC = () => {
   return (
@@ -11,10 +11,15 @@ const MerchView2: FC = () => {
           <MerchQuotes />
         </motion.div>
       </div>
-      <div className="xl:mt-10 mb-10 xl:mb-20 w-full bg-white h-10 flex items-center justify-center">
-        <p className="pl-5 whitespace-nowrap overflow-hidden uppercase xl:text-2xl text-left text-black font-neuebitBold tracking-[0.5em]">
-          {`be a real life pfp • be a real life pfp • be a real life pfp • be a real life pfp • be a real life pfp • be a real life pfp • be a real life pfp `}
-        </p>
+      <div className="w-full flex flex-col gap-0.5">
+        <MovingText
+          text="be a real life pfp • be a real life pfp • be a real life pfp • be a real life pfp •&nbsp;"
+          direction="reverse"
+        />
+        <MovingText
+          text="be a real life pfp • be a real life pfp • be a real life pfp • be a real life pfp •&nbsp;"
+          direction="forward"
+        />
       </div>
     </div>
   );

@@ -48,7 +48,7 @@ const ItemInfo: FC<Props> = ({
       <p className="font-pangram uppercase text-xs xl:text-base">
         {description3}
       </p>
-      <div className="w-full flex items-center justify-between -translate-y-4 xl:-translate-y-3">
+      <div className="w-full flex items-center justify-between -translate-y-4 xl:-translate-y-[14px]">
         <p className="font-pangram uppercase text-xs xl:text-base whitespace-nowrap w-fit">
           {`cost: ${price.toLocaleString()} racks`}
         </p>

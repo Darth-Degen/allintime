@@ -43,6 +43,7 @@ const CrewneckFlavortext2 = dynamic(
   () => import("./atoms/CrewneckFlavortext2")
 );
 const RacksDottedLine = dynamic(() => import("./atoms/RacksDottedLine"));
+const MovingText = dynamic(() => import("./atoms/MovingText"));
 //molecules
 const PageHead = dynamic(() => import("./molecules/PageHead"));
 const Logo = dynamic(() => import("./molecules/Logo"));
@@ -79,6 +80,7 @@ const ShirtHatTransition = dynamic(
 const CorduroyHat = dynamic(() => import("./templates/CorduroyHat"));
 const CulturePack = dynamic(() => import("./templates/CulturePack"));
 const FooterView = dynamic(() => import("./templates/FooterView"));
+const MobileView = dynamic(() => import("./templates/MobileView"));
 
 export {
   PageHead,
@@ -138,6 +140,7 @@ export {
   CorduroyHat,
   CulturePack,
   FooterView,
+  MobileView,
   ImageShimmer,
   QuoteBox,
   QuoteImage,
@@ -146,5 +149,6 @@ export {
   CrewneckFlavortext1,
   CrewneckFlavortext2,
   RacksDottedLine,
+  MovingText,
   GalleryModal,
 };
