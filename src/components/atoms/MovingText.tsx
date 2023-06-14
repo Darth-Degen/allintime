@@ -25,19 +25,19 @@ const MovingText: FC<Props> = ({ text, direction = "forward" }) => {
           <motion.div
             initial={{ x: "100%" }}
             animate={{ x: "-100%" }}
-            transition={{ duration: 26, repeat: Infinity, ease: "linear" }}
+            transition={{ duration: 24, repeat: Infinity, ease: "linear" }}
             className="absolute text-3xl uppercase text-center font-neuebitBold text-black tracking-[0.3em] whitespace-nowrap"
           >
             {text}
           </motion.div>
           <motion.div
-            initial={{ x: "100%" }}
-            animate={{ x: "-100%" }}
+            initial={{ x: "100%", opacity: 0 }}
+            animate={{ x: "-100%", opacity: 1 }}
             transition={{
-              duration: 26,
+              duration: 24,
               repeat: Infinity,
               ease: "linear",
-              delay: 13,
+              delay: 12,
             }}
             className="absolute text-3xl uppercase text-center font-neuebitBold text-black tracking-[0.3em] whitespace-nowrap"
           >
@@ -49,21 +49,21 @@ const MovingText: FC<Props> = ({ text, direction = "forward" }) => {
           <motion.div
             initial={{ x: "-100%" }}
             animate={{ x: "100%" }}
-            transition={{ duration: 26, repeat: Infinity, ease: "linear" }}
+            transition={{ duration: 24, repeat: Infinity, ease: "linear" }}
             className="absolute text-3xl uppercase text-center font-neuebitBold text-black tracking-[0.3em] whitespace-nowrap"
           >
             {text}
           </motion.div>
           <motion.div
-            initial={{ x: "-100%" }}
-            animate={{ x: "100%" }}
+            initial={{ x: "-100%", opacity: 0 }}
+            animate={{ x: "100%", opacity: 1 }}
             transition={{
-              duration: 26,
+              duration: 24,
               repeat: Infinity,
               ease: "linear",
-              delay: 13,
+              delay: 12,
             }}
-            className="absolute text-3xl uppercase text-center font-neuebitBold text-black tracking-[0.3em] whitespace-nowrap"
+            className="absolute text-3xl uppercase text-center font-neuebitBold text-black tracking-[0.3em] whitespace-nowrap 2xl:"
           >
             {text}
           </motion.div>
