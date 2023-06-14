@@ -52,7 +52,7 @@ const PageLayout: FC<Props> = (props: Props) => {
           title="All In Time"
           description="clothing | collectibles | curio | Est. 2023"
           url="https://allintime.xyz/"
-          twitter="@allintime_"
+          twitter="allintime_"
         />
         {/* header */}
         {header && <Header headerType={headerType} />}
