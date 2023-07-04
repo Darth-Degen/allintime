@@ -45,6 +45,9 @@ const CrewneckFlavortext2 = dynamic(
 const RacksDottedLine = dynamic(() => import("./atoms/RacksDottedLine"));
 const MovingText = dynamic(() => import("./atoms/MovingText"));
 //molecules
+const ImageBox = dynamic(() => import("./molecules/ImageBox"))
+const TextBox = dynamic(() => import("./molecules/TextBox"))
+const CountdownItem = dynamic(() => import("./molecules/CountdownItem"))
 const PageHead = dynamic(() => import("./molecules/PageHead"));
 const Logo = dynamic(() => import("./molecules/Logo"));
 const ThemeChanger = dynamic(() => import("./molecules/ThemeChanger"));
@@ -60,11 +63,14 @@ const SplashScreen = dynamic(() => import("./molecules/SplashScreen"));
 const LandingBanner = dynamic(() => import("./molecules/LandingBanner"));
 const CulturePackImage = dynamic(() => import("./molecules/CulturePackImage"));
 const ItemInfo = dynamic(() => import("./molecules/ItemInfo"));
+const BuyRacksForm = dynamic(() => import("./molecules/BuyRacksForm"))
 //organisms
 const Header = dynamic(() => import("./organisms/Header"));
 const MerchQuotes = dynamic(() => import("./organisms/MerchQuotes"));
 const Footer = dynamic(() => import("./organisms/Footer"));
 const GalleryModal = dynamic(() => import("./organisms/GalleryModal"));
+const BuyRacksContent = dynamic(() => import("./organisms/BuyRacksContent"))
+const Countdown = dynamic(() => import("./organisms/Countdown"))
 //templates
 const PageLayout = dynamic(() => import("./templates/PageLayout"));
 const LandingView = dynamic(() => import("./templates/LandingView"));
@@ -151,4 +157,10 @@ export {
   RacksDottedLine,
   MovingText,
   GalleryModal,
+  BuyRacksContent,
+  ImageBox,
+  TextBox,
+  CountdownItem,
+  Countdown,
+  BuyRacksForm,
 };

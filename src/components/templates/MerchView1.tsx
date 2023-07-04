@@ -20,7 +20,7 @@ const MerchView1: FC = () => {
               text-black font-neuebitBold tracking-[0.2em] xl:tracking-[0.32em] 2xl:tracking-[0.41em] 3xl:tracking-[0.7em]"
             >
               {`rob banks // use space magic // be a real life action figure
-              // time travel // get drained (with style)`}
+              // time travel // get drained (with style)`}
             </p>
           </div>
           <div className="relative w-full -mt-20 -z-10">
