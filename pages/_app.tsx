@@ -30,10 +30,9 @@ const App = ({ Component, pageProps }: AppProps) => {
   // You can also provide a custom RPC endpoint.
   // const endpoint = useMemo(() => clusterApiUrl(network), [network]);
 
-  // const endpoint =
-  //   "https://bold-cosmological-daylight.solana-mainnet.discover.quiknode.pro/d6b580eb3a983f95fece05b014d36fe7708d9dea/";
+  const endpoint = "https://mainnet.helius-rpc.com/?api-key=fd98bcfd-5344-4cc0-8ac1-db7ba9603613";
 
-  const endpoint = "https://api.devnet.solana.com";
+  // const endpoint = "https://api.devnet.solana.com";
 
   const wallets = useMemo(
     () => [
