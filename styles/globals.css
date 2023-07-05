@@ -71,6 +71,9 @@ body {
   html {
     @apply scroll-smooth bg-custom-teal text-custom-black;
   }
+  .link {
+    @apply text-blue-600 underline cursor-pointer;
+  }
 }
 
 .more-gradient {

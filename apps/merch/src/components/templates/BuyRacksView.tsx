@@ -14,20 +14,16 @@ import { BuyRacksContent, MerchModule } from "apps/merch/src/components";
  */
 
 interface Props {
-  id: string;
-  setIsInView: Dispatch<SetStateAction<boolean>>;
-  setCurrentPage: Dispatch<SetStateAction<string>>;
+  // id: string;
+  // setIsInView: Dispatch<SetStateAction<boolean>>;
+  // setCurrentPage: Dispatch<SetStateAction<string>>;
 }
 const BuyRacksView: FC<Props> = (props: Props) => {
-  const { id, setIsInView, setCurrentPage } = props;
+  // const { id, setIsInView, setCurrentPage } = props;
 
   return (
     <MerchModule>
-      <BuyRacksContent
-        id={id}
-        setIsInView={setIsInView}
-        setCurrentPage={setCurrentPage}
-      />
+      <BuyRacksContent />
     </MerchModule>
   );
 };

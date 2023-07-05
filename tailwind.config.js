@@ -16,6 +16,8 @@ module.exports = {
           "linear-gradient(180deg, rgba(183, 119, 84, 0) 0%, rgba(255, 151, 95, 0.5) 100%)",
         "pikachu-gradient":
           "linear-gradient(0deg, rgba(255, 102, 212, 0) 0%, rgba(255, 151, 95, 0.5) 100%)",
+        "ait-gradient":
+          "linear-gradient(0deg, rgba(156,217,204,1) 37%, rgba(2,1,2,1) 37%)",
       },
       dropShadow: {
         card: "30px 30px 0px rgba(0, 0, 0, 0)",

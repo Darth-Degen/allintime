@@ -41,13 +41,8 @@ import toast from "react-hot-toast";
  * 3. end
  */
 
-interface Props {
-  // id: string;
-  // setIsInView: Dispatch<SetStateAction<boolean>>;
-  // setCurrentPage: Dispatch<SetStateAction<string>>;
-}
+interface Props {}
 const BuyRacksContent: FC<Props> = (props: Props) => {
-  // const { setIsInView, id, setCurrentPage } = props;
   const [activeStatus, setActiveStatus] = useState<RackStatus>(rackStatus[0]);
   const [editionSaleData, setEditionSaleData] = useState<EditionSaleContract>();
 
@@ -102,16 +97,6 @@ const BuyRacksContent: FC<Props> = (props: Props) => {
     })();
   }, []);
 
-  // //auto scroll
-  // const isInView = useInView(innerRef);
-  // useEffect(() => {
-  //   if (isInView) setCurrentPage(id);
-  // }, [id, isInView, setCurrentPage]);
-  // useEffect(() => {
-  //   // console.log("isInView ", isInView);
-  //   setIsInView(isInView);
-  // }, [isInView, setIsInView]);
-
   const handleDateEnd = () => {
     if (activeStatus.name === RackStatusName.Buy) {
       setActiveStatus(rackStatus[1]);
@@ -133,11 +118,10 @@ const BuyRacksContent: FC<Props> = (props: Props) => {
     }
     editionContract.buyMultipleEditions(editionSaleData, amountToMint);
   };
-  // console.log("id ", id);
   return (
     <div
       className={`w-full min-h-screen flex flex-col items-center justify-center bg-ait-teal`}
-      id={"buyracks"}
+      id="buyracks"
       ref={ref}
     >
       <div className="py-20" />
@@ -160,7 +144,7 @@ const BuyRacksContent: FC<Props> = (props: Props) => {
           </div>
           {/* header */}
           <h2
-            className="z-10 text-ait-teal text-center pt-20 lg:pt-0 lg:text-transparent lg:bg-clip-text lg:bg-ait-gradient font-primary leading-none
+            className="z-10 text-ait-teal text-center pt-20 lg:pt-0 lg:text-transparent lg:bg-clip-text lg:bg-ait-gradient font-mkHell leading-none
     text-[70px] sm:text-[80px] lg:text-[100px] xl:text-[150px] lg:absolute lg:-top-[63px] xl:-top-[95px] "
           >
             all in time

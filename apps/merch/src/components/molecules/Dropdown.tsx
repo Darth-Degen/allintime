@@ -4,7 +4,6 @@ import {
   fastExitAnimation,
 } from "@constants";
 import { DropdownButton, DropdownItem } from "@merch-components";
-import { Collection, Asset } from "@types";
 import { Dispatch, FC, HTMLAttributes, SetStateAction } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Merch } from "@merch-types";
