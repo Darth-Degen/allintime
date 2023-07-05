@@ -62,8 +62,7 @@ const CorduroyHat: FC = () => {
           description2="custom embroidery & tags"
           description3="stickers"
           textColor="#FABC2A"
-          // price={5}
-          price=""
+          price={4}
           buttonBgColor="#FABC2A"
           buttonTextColor="#312A29"
         />
