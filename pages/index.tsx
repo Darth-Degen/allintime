@@ -22,18 +22,23 @@ const Home: NextPage = () => {
 
   return (
     <PageLayout footer={false} fixed={false} assets={assets}>
-      <LandingView setAssets={setAssets} />
-      <MerchView1 />
-      <MerchView2 />
-      <PikaView />
-      <NiceFknCrew />
-      <WaitTheresMore />
-      <GraphicTee />
-      <ShirtHatTransition />
-      <CorduroyHat />
-      <CulturePack />
-      <BuyRacksView />
-      <FooterView />
+      <div className="hidden lg:flex flex-col h-full w-full">
+        <LandingView setAssets={setAssets} />
+        <MerchView1 />
+        <MerchView2 />
+        <PikaView />
+        <NiceFknCrew />
+        <WaitTheresMore />
+        <GraphicTee />
+        <ShirtHatTransition />
+        <CorduroyHat />
+        <CulturePack />
+        <BuyRacksView />
+        <FooterView />
+      </div>
+      <div className="lg:hidden flex-col h-full w-full">
+        <BuyRacksView />
+      </div>
     </PageLayout>
   );
 };
