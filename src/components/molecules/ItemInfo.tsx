@@ -2,6 +2,7 @@ import { FC } from "react";
 import Image from "next/image";
 import { RacksDottedLine, Button } from "@components";
 import { useWindowSize } from "src/hooks";
+import { scrollToSection } from "src/helpers";
 
 interface Props {
   title: string;
@@ -52,7 +53,7 @@ const ItemInfo: FC<Props> = ({
       <div className="w-full flex items-center justify-between -translate-y-4 xl:-translate-y-[13px]">
         <p className="forma-med uppercase text-xs xl:text-base whitespace-nowrap w-fit">
           {/* cost: {price} <span className="forma-light">racks</span> */}
-          cost: {price} <span className="forma-light">(X) racks</span>
+          cost: {price} <span className="forma-light">racks</span>
         </p>
         <div className="relative w-full px-4">
           <RacksDottedLine className="w-full" style={{ fill: textColor }} />
@@ -74,8 +75,8 @@ const ItemInfo: FC<Props> = ({
             color: buttonTextColor,
             borderColor: buttonBorder,
           }}
-          onClick={() => console.log("buy racks")}
-          disabled={true}
+          onClick={() => scrollToSection("buyracks")}
+          disabled={false}
         >
           Buy Racks
         </Button>

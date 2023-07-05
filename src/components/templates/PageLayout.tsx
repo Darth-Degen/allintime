@@ -70,7 +70,7 @@ const PageLayout: FC<Props> = (props: Props) => {
 
         {/* body */}
         <motion.main
-          className={`hidden lg:flex flex-col h-full w-full ${mainClass} overflow-x-clip ${
+          className={`flex flex-col h-full w-full ${mainClass} overflow-x-clip ${
             footer ? "mb-8 md:mb-auto mt-4 md:mt-0" : ""
           }`}
           {...enterAnimation}
@@ -93,7 +93,7 @@ const PageLayout: FC<Props> = (props: Props) => {
           )}
         </AnimatePresence>
       </div>
-      <MobileView />
+      {/* <MobileView /> */}
     </ViewContext.Provider>
   );
 };

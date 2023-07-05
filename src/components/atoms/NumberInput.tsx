@@ -8,7 +8,7 @@ interface Props extends InputHTMLAttributes<HTMLInputElement> {
 
 const NumberInput: FC<Props> = (props: Props) => {
   const { supply, handleInput, className, ...componentProps } = props;
-  const debouncer = debounce((value) => handleInput(value), 1000);
+  const debouncer = debounce((value) => handleInput(value), 0);
 
   const styles: string = "w-56 h-10 bg-dark text-xs";
 
