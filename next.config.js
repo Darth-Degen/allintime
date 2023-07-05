@@ -4,6 +4,26 @@ const nextConfig = {
   swcMinify: true,
   images: {
     domains: ["www.arweave.net", "arweave.net", "shdw-drive.genesysgo.net"],
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "arweave.net",
+        pathname: "/**",
+      },
+      {
+        protocol: "https",
+        hostname: "storage.googleapis.com",
+        pathname: "/**",
+      },
+    ],
+  },
+  env: {
+    apiKey: "SHMxG54Cyd@hU",
+    apiUrl: "https://slimes.expapi.link",
+    //TODO: needed for merch
+    editionUpdateAuthority: "3wP5sQ8E5vkGaWU3FLFX9fXibDjTt56BUGAMP8pe33FX",
+    editionName: "exp edition",
+    NEXT_PUBLIC_CDN_URL: "https://storage.googleapis.com/slimes-assets",
   },
 };
 

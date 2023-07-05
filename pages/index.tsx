@@ -15,7 +15,7 @@ import {
 import { NextPage } from "next";
 import Image from "next/image";
 import { useState } from "react";
-import BuyRacksView from "src/components/templates/BuyRacksView";
+import { BuyRacksView } from "@merch-components";
 
 const Home: NextPage = () => {
   const [assets, setAssets] = useState<boolean[]>([false]);

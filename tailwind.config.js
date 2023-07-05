@@ -1,7 +1,12 @@
 /** @type {import('tailwindcss').Config} */
 
 module.exports = {
-  content: ["./pages/**/*.{js,ts,jsx,tsx}", "./src/**/*.{js,ts,jsx,tsx}"],
+  content: [
+    "./pages/**/*.{js,ts,jsx,tsx}",
+    "./src/**/*.{js,ts,jsx,tsx}",
+    //merch TODO: needed for merch module reuse
+    "./apps/**/*.{js,ts,jsx,tsx}",
+  ],
   darkMode: "class",
   theme: {
     extend: {
@@ -23,6 +28,7 @@ module.exports = {
         pangramBold: ["pangram-bold"],
         neuebit: ["neuebit"],
         neuebitBold: ["neuebit-bold"],
+        "neuebit-bold": ["neuebit-bold"],
         thabit: ["thabit"],
         thabitBold: ["thabit-bold"],
         migra: ["migra"],
@@ -55,6 +61,17 @@ module.exports = {
         "custom-green": "#56BC78",
         "custom-orange": "#FF5722",
         "custom-light-red": "#E77975",
+
+        //merch TODO: needed for merch module reuse
+        "ait-teal": "#9CD9CC",
+        "ait-black": "#020102",
+        "ait-gray": "#E8E8E8",
+        "m-light-gray": "#EDEDED",
+        "m-mid-gray": "#505050",
+        "m-red": "#FF4747",
+        "m-green": "#2E6636",
+        "m-dark-green": "#24512b",
+        "m-black": "#010206",
       },
       screens: {
         "3xl": "2160px",
