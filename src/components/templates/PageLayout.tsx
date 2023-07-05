@@ -44,13 +44,13 @@ const PageLayout: FC<Props> = (props: Props) => {
 
   const [winWidth, winHeight] = useWindowSize();
 
-  useEffect(() => {
-    if (winWidth < 1024) {
-      document.body.style.backgroundColor = "#00EC18";
-    } else {
-      document.body.style.backgroundColor = "#9CD9CC";
-    }
-  }, [winWidth]);
+  // useEffect(() => {
+  //   if (winWidth < 1024) {
+  //     document.body.style.backgroundColor = "#00EC18";
+  //   } else {
+  //     document.body.style.backgroundColor = "#9CD9CC";
+  //   }
+  // }, [winWidth]);
 
   return (
     <ViewContext.Provider value={value}>
