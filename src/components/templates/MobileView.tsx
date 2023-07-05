@@ -65,7 +65,7 @@ const MobileView: FC = () => {
           </div>
           <div className="w-1/2  pt-2">
             <p className=" text-custom-green2 text-left leading-4 text-xl sm:text-4xl font-neuebitBold tracking-wide">
-              store opens june thirtieth twenty twenty three &lt;3
+              store opens july seventh twenty twenty three &lt;3
             </p>
           </div>
         </div>
