@@ -25,6 +25,7 @@ const Home: NextPage = () => {
       <div className="hidden lg:flex flex-col h-full w-full">
         <LandingView setAssets={setAssets} />
         <MerchView1 />
+        <BuyRacksView />
         <MerchView2 />
         <PikaView />
         <NiceFknCrew />
@@ -33,7 +34,6 @@ const Home: NextPage = () => {
         <ShirtHatTransition />
         <CorduroyHat />
         <CulturePack />
-        <BuyRacksView />
         <FooterView />
       </div>
       <div className="lg:hidden flex-col h-full w-full">

@@ -130,8 +130,8 @@ const BuyRacksContent: FC<Props> = (props: Props) => {
       id={id}
       ref={ref}
     >
-      <div className="py-20" />
-      <div className="sticky lg:top-[10%] xl:top-[15%] justify-center flex flex-col gap-0 w-full items-center">
+      <div className="py-14" />
+      <div className="sticky lg:top-[10%] xl:top-[10%] justify-center flex flex-col gap-0 w-full items-center">
         <div
           className="flex flex-col gap-4 lg:flex-row justify-center items-center rounded-[1.75rem] md:rounded-full h-auto lg:h-[75vh] w-[98%] md:w-[90%] lg:w-[95%] xl:w-[90%] bg-ait-black"
           ref={innerRef}
