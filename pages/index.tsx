@@ -15,6 +15,7 @@ import {
 import { NextPage } from "next";
 import Image from "next/image";
 import { useState } from "react";
+import { BuyRacksView } from "@merch-components";
 
 const Home: NextPage = () => {
   const [assets, setAssets] = useState<boolean[]>([false]);
@@ -31,6 +32,7 @@ const Home: NextPage = () => {
       <ShirtHatTransition />
       <CorduroyHat />
       <CulturePack />
+      <BuyRacksView />
       <FooterView />
     </PageLayout>
   );

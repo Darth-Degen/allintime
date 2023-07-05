@@ -2,6 +2,7 @@ import { FC } from "react";
 import Image from "next/image";
 import { RacksDottedLine, Button } from "@components";
 import { useWindowSize } from "src/hooks";
+import { scrollToSection } from "src/helpers";
 
 interface Props {
   title: string;
@@ -74,8 +75,8 @@ const ItemInfo: FC<Props> = ({
             color: buttonTextColor,
             borderColor: buttonBorder,
           }}
-          onClick={() => console.log("buy racks")}
-          disabled={true}
+          onClick={() => scrollToSection("buyracks")}
+          disabled={false}
         >
           Buy Racks
         </Button>

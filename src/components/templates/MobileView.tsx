@@ -12,23 +12,23 @@ const MobileView: FC = () => {
       {/* warning section */}
       <div className="w-full">
         <div className="relative">
-          {miniHeight || tabletWidth ? (
-            <Image
-              src="/images/mobile/warning2.png"
-              width={12920}
-              height={963}
-              alt="warning"
-              className="py-2 pr-1 mx-auto"
-            />
-          ) : (
-            <Image
-              src="/images/mobile/warning.png"
-              width={1720}
-              height={1284}
-              alt="warning2"
-              className="py-2 pr-1 mx-auto"
-            />
-          )}
+          {/* {miniHeight || tabletWidth ? ( */}
+          {/* <Image
+            src="/images/mobile/warning2.png"
+            width={12920}
+            height={963}
+            alt="warning"
+            className="py-2 pr-1 mx-auto"
+          /> */}
+          {/* ) : ( */}
+          <Image
+            src="/images/mobile/warning.png"
+            width={1720}
+            height={1284}
+            alt="warning2"
+            className="py-2 pr-1 mx-auto"
+          />
+          {/* )} */}
           {/* familiar cartoon character */}
           <div className={`absolute -bottom-6 left-1/2 -translate-x-1/2`}>
             <Image
@@ -47,24 +47,24 @@ const MobileView: FC = () => {
             alt="gear"
             className="w-[60px] h-[60px]"
           />
-          <div className="pl-3 flex flex-col justify-start text-custom-green2">
-            <p className="text-3xl tracking-wide font-neuebitBold md:text-4xl">
+          <div className="pl-0 flex flex-col justify-start text-custom-green2">
+            <p className="text-3xl tracking-wider font-neuebitBold md:text-4xl leading-7">
               website is desktop only
             </p>
-            <p className="text-sm md:text-xl font-neuebit tracking-wide leading-0">
+            <p className="text-base md:text-xl font-neuebit tracking-wide leading-none">
               ticket sales and store will be available on mobile, but until
               then, go check out the website on desktop.
             </p>
           </div>
         </div>
-        <div className="w-full flex items-center justify-evenly px-2 pt-2">
-          <div className="w-1/2 px-2">
+        <div className="w-full flex items-center justify-evenly px-2 pt-0 gap-2">
+          <div className="w-1/2 ">
             <p className="text-custom-green2 text-center font-mkHell text-4xl sm:text-[50px]">
               all in time
             </p>
           </div>
-          <div className="w-1/2 px-1 pt-2">
-            <p className="pl-3 text-custom-green2 text-left leading-4 text-xl sm:text-4xl font-neuebitBold tracking-wide">
+          <div className="w-1/2  pt-2">
+            <p className=" text-custom-green2 text-left leading-4 text-xl sm:text-4xl font-neuebitBold tracking-wide">
               store opens june thirtieth twenty twenty three &lt;3
             </p>
           </div>
@@ -73,8 +73,8 @@ const MobileView: FC = () => {
       {/* large chinese characters */}
       <Image
         src="/images/mobile/characters1.png"
-        width={536 * 0.5}
-        height={275 * 0.5}
+        width={536 * 0.6}
+        height={275 * 0.6}
         alt="green characters"
         className="py-8"
       />
