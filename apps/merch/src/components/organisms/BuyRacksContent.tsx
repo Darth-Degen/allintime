@@ -54,59 +54,43 @@ const BuyRacksContent: FC<Props> = (props: Props) => {
   const [editionSaleData, setEditionSaleData] = useState<EditionSaleContract>();
   const [storeOpenView, setStoreOpenView] = useState<boolean>(false);
 
+  const { setShowStore, showStore } = useContext(StoreContext);
   const { connection } = useConnection();
-
-  const winnerWallet = "H1fnjEg9pobH5k74eb3nfDDThHfGganjuABABUeebpGf";
-  const shopURL = `${process.env.NEXT_PUBLIC_CDN_URL}/images/ait/shop.png`;
-
   //wallet
   const wallet = useWallet();
   const { connected, publicKey } = wallet;
   const { setVisible } = useWalletModal();
 
-  //refs
-  const ref = useRef<HTMLDivElement>(null);
-  const innerRef = useRef<HTMLHeadingElement>(null);
+  const winnerWallet = "62fFigHfUyhToRZuRGwcn9f87SqPt2ztU8zWUWPugMga";
+  const shopURL = `${process.env.NEXT_PUBLIC_CDN_URL}/images/ait/shop.png`;
 
-  //store module
-  const { setShowStore, showStore } = useContext(StoreContext);
+  // useEffect(() => {
+  //   (async function () {
+  //     try {
+  //       const editionInfo = await fetch(COLLECTION_API_URL).then((data) =>
+  //         data.json()
+  //       );
+  //       // console.log('editionInfo: ', editionInfo);
 
-  // Setup Exchange Art program
-  const editionContract = new EditionsContractService(
-    wallet,
-    connection,
-    //@ts-ignore
-    editionsContractIdl,
-    EDITIONS_PROGRAM_ID
-  );
-
-  useEffect(() => {
-    (async function () {
-      try {
-        const editionInfo = await fetch(COLLECTION_API_URL).then((data) =>
-          data.json()
-        );
-        // console.log('editionInfo: ', editionInfo);
-
-        if (
-          editionInfo?.contractGroups.length &&
-          editionInfo?.contractGroups[0].availableContracts.editionSales.length
-        ) {
-          setEditionSaleData(
-            editionInfo?.contractGroups[0].availableContracts.editionSales[0]
-          );
-        } else {
-          // TODO error toast
-          toast.error("Error fetching edition sale data. Data is wrong");
-          console.error("Error fetching edition sale data. Data is wrong");
-        }
-      } catch (e) {
-        // TODO error toast
-        toast.error("Error fetching edition sale data");
-        console.error("Error fetching edition sale data.: ", e);
-      }
-    })();
-  }, []);
+  //       if (
+  //         editionInfo?.contractGroups.length &&
+  //         editionInfo?.contractGroups[0].availableContracts.editionSales.length
+  //       ) {
+  //         setEditionSaleData(
+  //           editionInfo?.contractGroups[0].availableContracts.editionSales[0]
+  //         );
+  //       } else {
+  //         // TODO error toast
+  //         toast.error("Error fetching edition sale data. Data is wrong");
+  //         console.error("Error fetching edition sale data. Data is wrong");
+  //       }
+  //     } catch (e) {
+  //       // TODO error toast
+  //       toast.error("Error fetching edition sale data");
+  //       console.error("Error fetching edition sale data.: ", e);
+  //     }
+  //   })();
+  // }, []);
 
   const handleDateEnd = () => {
     if (activeStatus.name === RackStatusName.Buy) {
@@ -116,32 +100,35 @@ const BuyRacksContent: FC<Props> = (props: Props) => {
     }
   };
 
-  const handleMint = (amountToMint: number) => {
-    if (!connected) {
-      setVisible(true);
-      return;
-    }
-    if (!editionSaleData) {
-      // TODO error toast
-      toast.error("Cannot get edition sale data.");
-      console.error("Cannot get edition sale data.");
-      return;
-    }
-    editionContract.buyMultipleEditions(editionSaleData, amountToMint);
+  const handleMint = async (amountToMint: number) => {
+    // if (!connected) {
+    //   setVisible(true);
+    //   return;
+    // }
+    // if (!editionSaleData) {
+    //   // TODO error toast
+    //   toast.error("Cannot get edition sale data.");
+    //   console.error("Cannot get edition sale data.");
+    //   return;
+    // }
+    // // editionContract.buyMultipleEditions(editionSaleData, amountToMint);
+    // const metaplex = new Metaplex(connection);
+    // const nftToBurn = await metaplex.nfts().findByMint({
+    //   mintAddress: new PublicKey(
+    //     "3YKQW6sA2q9rn85HrC8aueYH1BhYL6GN6etGkaoXL2sP"
+    //   ),
+    // });
+    // await slimesPayment.pay(connection, wallet, [nftToBurn], 0.05, 1);
   };
-  // console.log("id ", id);
+
   return (
     <div
       className={`relative w-full min-h-screen flex flex-col items-center justify-center bg-ait-teal`}
       id={id}
-      ref={ref}
     >
-      <div className="py-14" />
-      <div className="sticky lg:top-[10%] xl:top-[10%] justify-center flex flex-col gap-0 w-full items-center">
-        <div
-          className="flex flex-col gap-4 lg:flex-row justify-center items-center rounded-[1.75rem] md:rounded-full h-auto lg:h-[75vh] w-[98%] md:w-[90%] lg:w-[95%] xl:w-[90%] bg-ait-black"
-          ref={innerRef}
-        >
+      <div className="py-20" />
+      <div className="sticky lg:top-[10%] xl:top-[15%] justify-center flex flex-col gap-0 w-full items-center">
+        <div className="flex flex-col gap-4 lg:flex-row justify-center items-center rounded-[1.75rem] md:rounded-full h-auto lg:h-[75vh] w-[98%] md:w-[90%] lg:w-[95%] xl:w-[90%] bg-ait-black">
           <div className="absolute -top-20 lg:-top-20 left-1/2 transform -translate-x-1/2 lg:left-auto lg:right-10">
             <WalletMultiButton
               startIcon={undefined}
@@ -157,7 +144,7 @@ const BuyRacksContent: FC<Props> = (props: Props) => {
           {/* header */}
           <h2
             className="z-10 text-ait-teal text-center pt-20 lg:pt-0 lg:text-transparent lg:bg-clip-text lg:bg-ait-gradient font-primary leading-none
-            text-[70px] sm:text-[80px] lg:text-[100px] xl:text-[150px] lg:absolute lg:-top-[63px] xl:-top-[95px] font-mkHell"
+            text-[70px] sm:text-[80px] lg:text-[100px] xl:text-[150px] lg:absolute lg:-top-[63px] xl:-top-[95px] "
           >
             all in time
           </h2>
@@ -184,6 +171,7 @@ const BuyRacksContent: FC<Props> = (props: Props) => {
                   src={activeStatus.src}
                   caption={activeStatus.caption}
                   activeStatus={activeStatus}
+                  wallet={winnerWallet}
                 />
                 {activeStatus.name === RackStatusName.Buy && (
                   <BuyRacksForm
@@ -202,6 +190,7 @@ const BuyRacksContent: FC<Props> = (props: Props) => {
                       </p>
                     ) : (
                       <p className="text-ait-teal text-4xl md:text-5xl lg:text-4xl xl:text-7xl 2xl:text-8xl font-neuebit-bold text-center">
+                        {" "}
                         YOU LOST
                       </p>
                     )}
@@ -246,7 +235,6 @@ const BuyRacksContent: FC<Props> = (props: Props) => {
     </div>
   );
 };
-
 // {
 //   activeStatus.name === RackStatusName.End && (
 //     <>
