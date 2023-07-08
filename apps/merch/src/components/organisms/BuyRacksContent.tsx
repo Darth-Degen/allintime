@@ -143,7 +143,7 @@ const BuyRacksContent: FC<Props> = (props: Props) => {
           </div>
           {/* header */}
           <h2
-            className="z-10 text-ait-teal text-center pt-20 lg:pt-0 lg:text-transparent lg:bg-clip-text lg:bg-ait-gradient font-primary leading-none
+            className="z-10 text-ait-teal text-center pt-20 lg:pt-0 lg:text-transparent lg:bg-clip-text lg:bg-ait-gradient font-mkHell leading-none
             text-[70px] sm:text-[80px] lg:text-[100px] xl:text-[150px] lg:absolute lg:-top-[63px] xl:-top-[95px] "
           >
             all in time
