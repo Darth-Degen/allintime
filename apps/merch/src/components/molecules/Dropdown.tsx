@@ -6,7 +6,6 @@ import {
 import { DropdownButton, DropdownItem } from "@merch-components";
 import { Dispatch, FC, HTMLAttributes, SetStateAction } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Merch } from "@merch-types";
 
 interface Props extends HTMLAttributes<HTMLDivElement> {
   handleSelect: (id: string) => void;
@@ -15,6 +14,7 @@ interface Props extends HTMLAttributes<HTMLDivElement> {
   label: string;
   items: string[];
   disabled?: boolean;
+  expandUI?: boolean;
 }
 
 const Dropdown: FC<Props> = (props: Props) => {
@@ -25,6 +25,7 @@ const Dropdown: FC<Props> = (props: Props) => {
     label,
     items,
     disabled,
+    expandUI,
     className,
     ...componentProps
   } = props;
@@ -42,34 +43,53 @@ const Dropdown: FC<Props> = (props: Props) => {
         className={className}
         disabled={disabled}
       />
-      <AnimatePresence mode="wait">
-        {showDropdown && (
-          <motion.div
-            {...fastExitAnimation}
-            key="dropdown-list"
-            className="absolute z-20 pt-0.5"
-          >
-            <motion.div
-              variants={dropdownAnimations}
-              initial="hidden"
-              animate="show"
-            >
-              <motion.ul className="border border-m-black shadow max-h-[240px] overflow-y-scroll z-20 bg-white">
-                {items &&
-                  items.map((item, index) => (
-                    <DropdownItem
-                      item={item}
-                      handleSelect={handleSelect}
-                      key={index}
-                      variants={dropdownItemsAnimations}
-                    />
-                  ))}
-              </motion.ul>
-            </motion.div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+      <Droppi
+        showDropdown={showDropdown}
+        items={items}
+        handleSelect={handleSelect}
+        expandUI={expandUI}
+      />
     </div>
+  );
+};
+
+interface DP {
+  showDropdown: boolean;
+  handleSelect: (id: string) => void;
+  items: string[];
+  expandUI?: boolean;
+}
+const Droppi: FC<DP> = (props: DP) => {
+  const { showDropdown, items, handleSelect, expandUI } = props;
+  return (
+    <AnimatePresence mode="wait">
+      {showDropdown && (
+        <motion.div
+          className={`${expandUI ? "" : "absolute"} z-10 `}
+          {...fastExitAnimation}
+          key="dropdown-list"
+        >
+          <motion.div
+            variants={dropdownAnimations}
+            initial="hidden"
+            animate="show"
+            key="dropdown-list"
+          >
+            <ul className="border border-m-black shadow max-h-[240px] overflow-y-scroll bg-white z-10">
+              {items &&
+                items.map((item, index) => (
+                  <DropdownItem
+                    item={item}
+                    handleSelect={handleSelect}
+                    key={index}
+                    variants={dropdownItemsAnimations}
+                  />
+                ))}
+            </ul>
+          </motion.div>
+        </motion.div>
+      )}
+    </AnimatePresence>
   );
 };
 

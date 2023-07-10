@@ -34,6 +34,8 @@ module.exports = {
         thabit: ["thabit"],
         thabitBold: ["thabit-bold"],
         migra: ["migra"],
+        primary: ["mk-hell", "-apple-system", "system-ui", "monospace"],
+        neuebit: ["neuebit"],
       },
       colors: {
         //custom
@@ -65,15 +67,17 @@ module.exports = {
         "custom-light-red": "#E77975",
 
         //merch TODO: needed for merch module reuse
-        "ait-teal": "#9CD9CC",
-        "ait-black": "#020102",
-        "ait-gray": "#E8E8E8",
         "m-light-gray": "#EDEDED",
         "m-mid-gray": "#505050",
         "m-red": "#FF4747",
         "m-green": "#2E6636",
         "m-dark-green": "#24512b",
         "m-black": "#010206",
+        "m-ait-green": "#24FF00",
+        //all in time
+        "ait-teal": "#9CD9CC",
+        "ait-black": "#020102",
+        "ait-gray": "#E8E8E8",
       },
       screens: {
         "3xl": "2160px",
