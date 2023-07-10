@@ -34,6 +34,8 @@ module.exports = {
         thabit: ["thabit"],
         thabitBold: ["thabit-bold"],
         migra: ["migra"],
+        primary: ["mk-hell", "-apple-system", "system-ui", "monospace"],
+        neuebit: ["neuebit"],
       },
       colors: {
         //custom
