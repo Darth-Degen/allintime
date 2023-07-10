@@ -130,14 +130,15 @@ const MerchModule: FC<Props> = (props: Props) => {
       if (!tokens || typeof tokens === "string") return;
       const isDevnet = connection.rpcEndpoint.startsWith("https://devnet.");
 
-      const editionUpdateAuthority = isDevnet
-        ? process.env.devEditionUpdateAuthority
-        : process.env.editionUpdateAuthority;
-      const editionName = isDevnet
-        ? process.env.devEditionName
-        : process.env.editionName;
-
-      // console.log("mint info ", editionName, editionUpdateAuthority);
+      // const editionUpdateAuthority = isDevnet
+      //   ? process.env.devEditionUpdateAuthority
+      //   : process.env.editionUpdateAuthority;
+      // const editionName = isDevnet
+      //   ? process.env.devEditionName
+      //   : process.env.editionName;
+      const editionUpdateAuthority = process.env.editionUpdateAuthority;
+      const editionName = process.env.editionName;
+      // console.log("mint info ", editionName, editionUpdateAuthority, isDevnet);
       //fetch metadata
       const _nfts: (Nft | Sft | SftWithToken | NftWithToken)[] = [];
       await Promise.all(
