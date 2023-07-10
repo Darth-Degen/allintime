@@ -286,7 +286,10 @@ const MerchModule: FC<Props> = (props: Props) => {
           }
         }
       } else {
-        toast.error(("stage 0 " + response.data) as string, { id: toastId });
+        toast.error(
+          "Hard refresh + Try again. Sorry for the inconvenience" as string,
+          { id: toastId }
+        );
         console.log("stage 0 ", response.data as string);
       }
     } catch (error: unknown) {
