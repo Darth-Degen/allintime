@@ -2,6 +2,8 @@ import { Dispatch, FC, SetStateAction, useState } from "react";
 import { Dropdown } from "@merch-components";
 import { Merch } from "@merch-types";
 import Image from "next/image";
+import { AnimatePresence, motion } from "framer-motion";
+import { fastExitAnimation } from "@merch-constants";
 
 interface Props {
   item: Merch;
@@ -39,17 +41,30 @@ const CheckoutCart: FC<Props> = (props: Props) => {
   };
 
   return (
-    <div className="flex flex-col md:flex-row gap-3 font-neuebit-bold border-b divide-y-custom-gray w-full">
+    <div className="flex flex-col md:flex-row gap-3 font-neuebit-bold border-b divide-y-custom-gray w-full z-20">
       <div className="flex flex-col sm:flex-row gap-3 ">
         {/* image */}
-        <div className="">
-          <Image
-            src={`${process.env.NEXT_PUBLIC_CDN_URL}/images/merch/${item.id}/image.png`}
-            width={90}
-            height={90}
-            alt="Merch"
-          />
-        </div>
+        <AnimatePresence mode="wait">
+          {item?.color === "white" && item?.id === "tee" ? (
+            <motion.div className="" key="im1" {...fastExitAnimation}>
+              <Image
+                src={`${process.env.NEXT_PUBLIC_CDN_URL}/images/merch/${item.id}/image2.png`}
+                width={90}
+                height={90}
+                alt="Merch"
+              />
+            </motion.div>
+          ) : (
+            <motion.div className="" key="im2" {...fastExitAnimation}>
+              <Image
+                src={`${process.env.NEXT_PUBLIC_CDN_URL}/images/merch/${item.id}/image.png`}
+                width={90}
+                height={90}
+                alt="Merch"
+              />
+            </motion.div>
+          )}
+        </AnimatePresence>
         {/* info */}
         <div className="flex flex-col gap-0 text-m-mid-gray whitespace-nowrap uppercase w-[150px]">
           <p className="text-xl leading-none">{item.name}</p>
@@ -62,7 +77,7 @@ const CheckoutCart: FC<Props> = (props: Props) => {
         </div>
       </div>
       {/* dropdowns */}
-      <div className="flex flex-col gap-2 pb-3">
+      <div className="flex flex-col gap-2 pb-3 z-0">
         {/* <div
           className={`transition-all ${
             !item?.color ? "outline outline-1 outline-m-red" : ""
@@ -74,8 +89,9 @@ const CheckoutCart: FC<Props> = (props: Props) => {
           showDropdown={colorDropdown}
           label={`COLOR: ${item?.color ?? ""}`}
           items={item.colors}
-          className="!w-44 !h-8 bg-m-light-gray !text-base"
+          className="!w-48 !h-8 bg-m-light-gray !text-base"
           disabled={item.colors.length === 1 || step > 2}
+          expandUI={true}
         />
         {/* </div>
         <div
@@ -89,8 +105,9 @@ const CheckoutCart: FC<Props> = (props: Props) => {
           showDropdown={sizeDropdown}
           label={`SIZE: ${item?.size ?? ""}`}
           items={item.sizeChart}
-          className="!w-44 !h-8 bg-m-light-gray !text-base"
+          className="!w-48 !h-8 bg-m-light-gray !text-base"
           disabled={item.sizeChart.length === 1 || step > 2}
+          expandUI={true}
         />
         {/* </div> */}
       </div>

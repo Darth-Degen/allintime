@@ -23,7 +23,7 @@ const BuyRacksView: FC<Props> = (props: Props) => {
 
   return (
     <MerchModule>
-      <BuyRacksContent />
+      <BuyRacksContent id={"buyracks"} />
     </MerchModule>
   );
 };

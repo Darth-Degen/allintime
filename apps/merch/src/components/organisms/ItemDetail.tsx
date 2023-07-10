@@ -1,20 +1,34 @@
 import { Dispatch, FC, SetStateAction, useEffect, useState } from "react";
-import { Merch, Quantity } from "@merch-types";
+import { Merch, Quantity, ShippingSession } from "@merch-types";
 import Image from "next/image";
 import { midExitAnimation } from "@merch-constants";
 import { motion } from "framer-motion";
 import { ImagePicker, Dropdown } from "@merch-components";
 import { verifyItemInStock } from "@merch-helpers";
+import toast from "react-hot-toast";
 
 import arrows from "../../../images/icons/three-right-arrows.svg";
+import { useWallet } from "@solana/wallet-adapter-react";
+import { useWalletModal } from "@solana/wallet-adapter-react-ui";
 interface Props {
   item: Merch;
   quantities: Quantity[];
   addToCart: (item: Merch) => void;
   setStep: (value: number) => void;
+  atMerchItemCapacity: (id: string) => boolean;
+  shippingSession: ShippingSession | undefined;
+  setShowWarningModal: Dispatch<SetStateAction<boolean>>;
 }
 const ItemDetail: FC<Props> = (props: Props) => {
-  const { item, quantities, addToCart, setStep } = props;
+  const {
+    item,
+    quantities,
+    addToCart,
+    setStep,
+    atMerchItemCapacity,
+    shippingSession,
+    setShowWarningModal,
+  } = props;
   const path = `${process.env.NEXT_PUBLIC_CDN_URL}/images/merch/${item.id}/`;
 
   const [selected, setSelected] = useState<number>(0);
@@ -26,6 +40,10 @@ const ItemDetail: FC<Props> = (props: Props) => {
   const [failedSize, setFailedSize] = useState<boolean>(false);
   const [cartItem, setCartItem] = useState<Merch>(item);
   const [isInStock, setIsInStock] = useState<boolean>(false);
+
+  //solana wallet
+  const { connected, publicKey } = useWallet();
+  const { setVisible } = useWalletModal();
 
   //handle drop downs
   const handleColorSelect = (color: string): void => {
@@ -57,7 +75,21 @@ const ItemDetail: FC<Props> = (props: Props) => {
     if (verifySelections()) addToCart(cartItem);
   };
   const handleBuyNow = (): void => {
+    if (!publicKey || !connected) {
+      setVisible(true);
+      return;
+    }
+
     if (verifySelections()) {
+      if (atMerchItemCapacity(item.id)) {
+        toast.error("Only two of each item");
+        return;
+      }
+      if (shippingSession && shippingSession?.stage_completed === "2") {
+        setShowWarningModal(true);
+        return;
+      }
+
       setStep(3);
       addToCart(cartItem);
     }
@@ -91,6 +123,13 @@ const ItemDetail: FC<Props> = (props: Props) => {
 
   //check items in stock
   useEffect(() => {
+    // console.log(
+    //   "*** ",
+    //   cartItem?.size,
+    //   ",",
+    //   cartItem?.color,
+    //   verifyItemInStock(item, quantities, cartItem?.size, cartItem?.color)
+    // );
     if (item)
       setIsInStock(
         verifyItemInStock(item, quantities, cartItem?.size, cartItem?.color)
@@ -136,6 +175,7 @@ const ItemDetail: FC<Props> = (props: Props) => {
               showDropdown={colorDropdown}
               label={color ?? "COLOR:"}
               items={item.colors}
+              expandUI={true}
             />
           </div>
           <div
@@ -149,6 +189,7 @@ const ItemDetail: FC<Props> = (props: Props) => {
               showDropdown={sizeDropdown}
               label={size ?? "SIZE:"}
               items={item.sizeChart}
+              expandUI={true}
             />
           </div>
         </div>

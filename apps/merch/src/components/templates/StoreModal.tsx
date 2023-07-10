@@ -6,32 +6,64 @@ import {
   Header,
   Footer,
 } from "@merch-components";
-import { StoreContext, merch } from "@merch-constants";
-import { Merch, Quantity } from "@merch-types";
-import { getNftsByOwner } from "@merch-helpers";
+import { StoreContext } from "@merch-constants";
+import {
+  Merch,
+  Quantity,
+  ReturnedFundsBalances,
+  ShippingInfo,
+  ShippingSession,
+} from "@merch-types";
 import {
   Dispatch,
   FC,
   SetStateAction,
-  useCallback,
   useContext,
   useEffect,
+  useRef,
   useState,
 } from "react";
-import { useConnection, useWallet } from "@solana/wallet-adapter-react";
-import { Metadata } from "@metaplex-foundation/mpl-token-metadata";
-import axios from "axios";
 import toast from "react-hot-toast";
-// import "dotenv/config";
 import Image from "next/image";
+import { useWalletModal } from "@solana/wallet-adapter-react-ui";
+import { useWallet } from "@solana/wallet-adapter-react";
+import debounce from "lodash.debounce";
+
 import ExitIcon from "../../../images/icons/close.svg";
 
 interface Props {
   cart: Merch[];
   setCart: Dispatch<SetStateAction<Merch[]>>;
+  nfts: unknown[];
+  shipping: ShippingInfo;
+  setShipping: Dispatch<SetStateAction<ShippingInfo>>;
+  quantities: Quantity[];
+  getQuantities: () => Promise<void>;
+  shippingFee: number;
+  setShowWarningModal: Dispatch<SetStateAction<boolean>>;
+  shippingSession: ShippingSession | undefined;
+  // transactPayment: () => Promise<string>;
+  solPrice: number;
+  getNfts: () => Promise<void>;
+  fetchUserFunds: () => Promise<string | ReturnedFundsBalances | undefined>;
 }
 const StoreModal: FC<Props> = (props: Props) => {
-  const { cart, setCart } = props;
+  const {
+    cart,
+    setCart,
+    nfts,
+    shipping,
+    setShipping,
+    quantities,
+    getQuantities,
+    shippingFee,
+    setShowWarningModal,
+    shippingSession,
+    // transactPayment,
+    solPrice,
+    getNfts,
+    fetchUserFunds,
+  } = props;
   const {
     showStore,
     showOrderModal,
@@ -43,18 +75,74 @@ const StoreModal: FC<Props> = (props: Props) => {
 
   //step 0 = store list, step 1 = item details, step 2 = cart, step 3 = shipping info, step 4 = review
   const [storeItem, setStoreItem] = useState<Merch>();
-  const [nfts, setNfts] = useState<unknown[]>([]);
-  const [quantities, setQuantities] = useState<Quantity[]>([]);
+
+  const cartDebouncer = debounce((value: Merch, toastId: string) => {
+    setCart((prevState) => [...prevState, value]);
+
+    toast.success("Success", { id: toastId });
+    isCartLoadingRef.current = false;
+  }, 350);
+  useEffect(() => {
+    return () => {
+      cartDebouncer.cancel();
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   //solana wallet
-  const { publicKey } = useWallet();
-  const { connection } = useConnection();
-  //add to cart
-  const addToCart = (item: Merch) => {
-    setCart((prevState) => [...prevState, item]);
+  const { connected, publicKey } = useWallet();
+  const { setVisible } = useWalletModal();
+
+  const atMerchItemCapacity = (id: string) => {
+    let count = 0;
+
+    for (let i = 0; i < cart.length; i++) {
+      if (cart[i].id === id) {
+        count++;
+
+        if (count === 2) {
+          return true;
+        }
+      }
+    }
+
+    return false;
   };
+
+  //add to cart
+  const isCartLoadingRef = useRef<boolean>(false);
+  const addToCart = async (item: Merch) => {
+    //TODO: uncomment for shipping
+    if (shippingSession && shippingSession?.stage_completed === "2") {
+      setShowWarningModal(true);
+      return;
+    }
+    if (isCartLoadingRef.current) return;
+    if (!publicKey || !connected) {
+      setVisible(true);
+      return;
+    }
+
+    const toastId = toast.loading("Adding to cart...");
+    if (atMerchItemCapacity(item.id)) {
+      toast.error("Only two of each item", { id: toastId });
+      return;
+    }
+    isCartLoadingRef.current = true;
+
+    // console.log(item);
+    // console.log("quantities ", quantities);
+
+    await getQuantities();
+    cartDebouncer(item, toastId);
+  };
+
   //open cart
   const handleCartClick = (): void => {
+    if (cart.length === 0) {
+      toast.error("Add items to cart");
+      return;
+    }
     setStep(2);
   };
   //open detail view and save clicked item
@@ -63,112 +151,26 @@ const StoreModal: FC<Props> = (props: Props) => {
     setStep(1);
   };
 
-  //fetch users nfts
-  const getNfts = useCallback(async () => {
-    if (!connection || !publicKey) return;
-
-    try {
-      //fetch tokens
-      const tokens = await getNftsByOwner(connection, publicKey);
-      if (!tokens || typeof tokens === "string") return;
-
-      const editionUpdateAuthority = process.env.editionUpdateAuthority;
-      const editionName = process.env.editionName;
-
-      //fetch metadata
-      await Promise.all(
-        tokens.map(async (token, index) => {
-          // console.log(
-          //   "nft \n",
-          //   token?.updateAuthorityAddress.toBase58(),
-          //   "\n",
-          //   token?.address.toBase58(),
-          //   "\n",
-          //   //@ts-ignore
-          //   token?.mintAddress.toBase58(),
-          //   token
-          // );
-
-          if (
-            token?.updateAuthorityAddress?.toBase58() ===
-              editionUpdateAuthority &&
-            token?.name === editionName
-          ) {
-            setNfts((prevState) => [...prevState, token]);
-          }
-          // const uri = token.uri;
-          // try {
-          //   await axios.get(uri).then((r) => {
-          //     // @ts-ignore
-          //     r.data.mintAddress = token.mintAddress;
-          //     jsonArr.push(r.data);
-          //   });
-          // } catch (e: any) {
-          //   console.error(e.message);
-          // }
-        })
-      );
-    } catch (e: any) {
-      console.error(e.message);
-      toast.error(`Error ${e.message}`);
+  const placeOrder = async () => {
+    const _funds = (await fetchUserFunds()) as ReturnedFundsBalances;
+    if (typeof _funds === undefined || !_funds?.sol) {
+      toast.error("Error verifying shipping funds");
+      setVisible(true);
+      return;
     }
-  }, [connection, publicKey]);
 
-  useEffect(() => {
-    getNfts();
-  }, [getNfts]);
-
-  //fetch merch quantities
-  const getQuantities = useCallback(() => {
-    if (!process.env.apiKey || !process.env.apiUrl) return;
-
-    const apiKey = process.env.apiKey;
-    const apiUrl = process.env.apiUrl;
-
-    // axios
-    //   .get(`${apiUrl}/products`, {
-    //     headers: {
-    //       "Content-Type": "application/json",
-    //       "Access-Control-Allow-Origin": "*",
-    //       access_token: apiKey,
-    //     },
-    //   })
-    //   .then((response) => {
-    //     // Handle the response data
-    //     console.log(response.data);
-    //   })
-    //   .catch((error) => {
-    //     console.error(error);
-    //     // Handle the error
-    let _quantities: Quantity[] = [];
-    merch.forEach((item: Merch) => {
-      _quantities.push({
-        productid: item.id,
-        name: item.name,
-        cost: item.cost,
-        sizes: item.sizes,
-      });
-    });
-    setQuantities(_quantities);
-    // });
-  }, []);
-
-  useEffect(() => {
-    getQuantities();
-  }, [getQuantities]);
+    if (Number((shippingFee / solPrice).toFixed(2)) > _funds?.sol) {
+      toast.error("Not enough SOL for shipping");
+      return;
+    } else {
+      setStep(5);
+    }
+  };
 
   //reset selected item
   useEffect(() => {
     if (step === 0) setStoreItem(undefined);
   }, [step]);
-
-  //console outputs
-  useEffect(() => {
-    if (cart.length > 0) console.log("cart ", cart);
-  }, [cart]);
-  useEffect(() => {
-    if (nfts.length > 0) console.log("racks ", nfts.length);
-  }, [nfts]);
 
   return (
     <Modal
@@ -176,13 +178,17 @@ const StoreModal: FC<Props> = (props: Props) => {
       onClick={() => {
         setShowExitModal(true);
       }}
-      className="w-[90%] lg:w-5/6 xl:w-[1285px] 3xl:w-1/2 h-[93%] xl:h-[800px] px-4 py-2 z-50"
+      className="w-[90%] lg:w-5/6 xl:w-[1285px] 3xl:w-1/2 h-[93%] xl:h-[800px] lg:px-4 py-2 z-50"
     >
-      <div className="flex flex-col items-center justify-between xl:h-full w-full text-3xl">
+      <div
+        className={`flex flex-col items-center justify-between w-full text-3xl ${
+          step === 1 ? "xl:h-full" : "xl:h-full"
+        }`}
+      >
         {/* close icon */}
 
         <div
-          className="absolute top-2 right-2 cursor-pointer scale-75 lg:scale-50 z-10"
+          className="absolute top-2 right-2 cursor-pointer scale-75 lg:scale-50 z-10 lg:hidden"
           onClick={() => {
             setShowExitModal(true);
           }}
@@ -212,6 +218,9 @@ const StoreModal: FC<Props> = (props: Props) => {
             item={storeItem}
             addToCart={addToCart}
             setStep={setStep}
+            atMerchItemCapacity={atMerchItemCapacity}
+            shippingSession={shippingSession}
+            setShowWarningModal={setShowWarningModal}
           />
         )}
         {/* cart + checkout process */}
@@ -221,6 +230,13 @@ const StoreModal: FC<Props> = (props: Props) => {
             step={step}
             setStep={setStep}
             updateCart={setCart}
+            shipping={shipping}
+            setShipping={setShipping}
+            racks={nfts.length}
+            shippingFee={shippingFee}
+            solPrice={solPrice}
+            getNfts={getNfts}
+            placeOrder={placeOrder}
           />
         )}
         <Footer step={step} />
