@@ -11,7 +11,13 @@ export const merch: Merch[] = [
     usdc: 120,
     sizeChart: ["s", "m", "l", "xl", "2xl"],
     colors: ["black"],
-    images: ["image.png", "image1.png", "image2.png", "image3.png"],
+    images: [
+      "image.png",
+      "image1.png",
+      "image2.png",
+      "image3.png",
+      "image4.png",
+    ],
     sizes: [
       {
         color: "black",
@@ -50,7 +56,13 @@ export const merch: Merch[] = [
     usdc: 50,
     sizeChart: ["s", "m", "l", "xl", "2xl"],
     colors: ["black", "white"],
-    images: ["image.png", "image1.png", "image2.png", "image3.png"],
+    images: [
+      "image.png",
+      "image1.png",
+      "image2.png",
+      "image3.png",
+      "image4.png",
+    ],
     sizes: [
       //white
       {

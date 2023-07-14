@@ -61,7 +61,7 @@ const OrderModal: FC<Props> = (props: Props) => {
     >
       <div className="relative self-center flex flex-col items-center px-20 py-[30%] md:py-[15%] lg:justify-start h-full w-full  text-center gap-10">
         {/* content */}
-        <h2 className="text-4xl md:text-[80px]  pb-10 lowercase">
+        <h2 className="text-4xl md:text-[80px] font-primary pb-10 lowercase whitespace-nowrap">
           all in time
         </h2>
         <AnimatePresence mode="wait">
