@@ -17,7 +17,7 @@ export const updateUserSession = async (
     data : data
   };
 
-  console.log("config ", config)
+  // console.log("config ", config)
 
   let value = {
     type: ResponseType.Fail,
