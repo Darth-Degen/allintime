@@ -118,7 +118,7 @@ const OrderModal: FC<Props> = (props: Props) => {
                   >
                     SOL
                   </button>
-                  <button
+                  {/* <button
                     className={`w-32 h-10 border border-m-black cursor-pointer flex pt-0.5 items-center justify-center transition-all duration-300  ${
                       paymentType === "usdc"
                         ? "bg-ait-teal text-white border-m-light-gray "
@@ -127,7 +127,7 @@ const OrderModal: FC<Props> = (props: Props) => {
                     onClick={() => setPaymentType("usdc")}
                   >
                     USDC
-                  </button>
+                  </button> */}
                   <button
                     className={`w-32 h-10 border border-m-black cursor-pointer flex pt-0.5 items-center justify-center transition-all duration-300  ${
                       paymentType === "racks"

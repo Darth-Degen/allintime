@@ -115,9 +115,10 @@ const CheckoutCart: FC<Props> = (props: Props) => {
       <div className="md:self-start pb-1 pl-2">
         <p className="text-xl leading-none uppercase">{item.cost} racks or</p>
         <p className="text-xl leading-none uppercase">
-          {Number((item.usdc / solPrice).toFixed(2))} SOL or
+          {Number((item.usdc / solPrice).toFixed(2))} SOL
+          {/* or */}
         </p>
-        <p className="text-xl leading-none uppercase">${item.usdc} usdc</p>
+        {/* <p className="text-xl leading-none uppercase">${item.usdc} usdc</p> */}
         <p
           className="whitespace-nowrap text-xl text-m-red underline uppercase cursor-pointer leading-none"
           onClick={() => handleRemove()}

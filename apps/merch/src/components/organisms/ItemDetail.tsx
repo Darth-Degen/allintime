@@ -164,7 +164,8 @@ const ItemDetail: FC<Props> = (props: Props) => {
         <div className="flex justify-start w-full uppercase gap-14">
           <p className="font-neuebit-bold">
             cost - {item.cost} racks /{" "}
-            {Number((item.usdc / solPrice).toFixed(2))} SOL / ${item.usdc} USDC
+            {Number((item.usdc / solPrice).toFixed(2))} SOL
+            {/* / ${item.usdc} USDC */}
           </p>
           <p className="font-neuebit-bold">qty made - {item.maxSupply}</p>
         </div>

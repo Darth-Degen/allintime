@@ -86,7 +86,8 @@ const StoreItem: FC<Props> = (props: Props) => {
         </h3>
         <p className="font-neuebit-bold text-xl">
           cost - {item.cost} racks / {Number((item.usdc / solPrice).toFixed(2))}{" "}
-          SOL / ${item.usdc} USDC
+          SOL
+          {/* / ${item.usdc} USDC */}
         </p>
         <p className="font-neuebit-bold text-xl">
           qty remaining - {calculateItemQuantity(item.id, quantities)}

@@ -129,15 +129,15 @@ const Checkout: FC<Props> = (props: Props) => {
                 <div className="whitespace-no-wrap w-full xl:w-1/2 lg:min-w-[580px] xl:min-w-[650px] flex flex-col md:flex-row justify-between px-8 py-3 bg-white font-neuebit-bold uppercase text-xl md:text-2xl text-m-mid-gray">
                   <p>cost</p>
                   <p>
-                    {calculateRacks()} racks / {calculateSOL().toFixed(2)} sol /
-                    ${calculateUSDC()} usdc
+                    {calculateRacks()} racks / {calculateSOL().toFixed(2)} sol
+                    {/* / ${calculateUSDC()} usdc */}
                   </p>
                 </div>
                 <div className="w-full xl:w-1/2 lg:min-w-[580px] xl:min-w-[650px] flex flex-col md:flex-row justify-between px-8 py-3 bg-white font-neuebit-bold uppercase text-xl md:text-2xl text-m-mid-gray">
                   <p>shipping</p>
                   <p>
-                    {Number((shippingFee / solPrice).toFixed(2))} SOL / $
-                    {shippingFee} USDC
+                    {Number((shippingFee / solPrice).toFixed(2))} SOL
+                    {/* / ${shippingFee} USDC */}
                   </p>
                 </div>
               </motion.div>
@@ -147,8 +147,8 @@ const Checkout: FC<Props> = (props: Props) => {
             <p>total</p>
             {step < 4 ? (
               <p>
-                {calculateRacks()} racks / {calculateSOL()} sol / $
-                {calculateUSDC()} usdc
+                {calculateRacks()} racks / {calculateSOL()} sol
+                {/* / ${calculateUSDC()} usdc */}
               </p>
             ) : (
               <p>
@@ -156,7 +156,8 @@ const Checkout: FC<Props> = (props: Props) => {
                 {step > 3 &&
                   ` + ${Number((shippingFee / solPrice).toFixed(2))}  SOL`}{" "}
                 / {calculateSOL() + Number((shippingFee / solPrice).toFixed(2))}{" "}
-                sol / ${calculateUSDC() + shippingFee} usdc
+                sol
+                {/* / ${calculateUSDC() + shippingFee} usdc */}
               </p>
             )}
           </div>

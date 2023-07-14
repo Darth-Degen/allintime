@@ -112,7 +112,7 @@ const StoreModal: FC<Props> = (props: Props) => {
   //add to cart
   const isCartLoadingRef = useRef<boolean>(false);
   const addToCart = async (item: Merch) => {
-    //TODO: uncomment for testing
+    //TODO: uncomment / comment for testing
     if (shippingSession && shippingSession?.stage_completed === "2") {
       setShowWarningModal(true);
       return;
