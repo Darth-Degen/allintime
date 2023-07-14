@@ -304,7 +304,22 @@ const MerchModule: FC<Props> = (props: Props) => {
       });
     }
   };
+  const calculateUSDC = (): number => {
+    if (cart.length === 0) return 0;
+    //calculate total
+    return cart.reduce((total, item) => {
+      return total + item.usdc;
+    }, 0);
+  };
+  const calculateSOL = (): number => {
+    if (cart.length === 0) return 0;
+    //calculate total
+    const _usdc = cart.reduce((total, item) => {
+      return total + item.usdc;
+    }, 0);
 
+    return Number((_usdc / solPrice).toFixed(2));
+  };
   const transactPayment = async (): Promise<string> => {
     if (!connection || !publicKey) {
       setVisible(true);
@@ -312,7 +327,7 @@ const MerchModule: FC<Props> = (props: Props) => {
 
     const _racks = calculateRacks();
 
-    if (_racks > dividend) {
+    if (paymentType === "racks" && _racks > dividend) {
       const numBatches = Math.ceil(_racks / dividend);
       const txsSignatures: string[] = [];
 
@@ -341,15 +356,48 @@ const MerchModule: FC<Props> = (props: Props) => {
       return txsSignatures.join(",");
     } else {
       const nftsToBurn = nfts.slice(0, _racks);
-      const txsSignatures = await slimesPayment.pay(
-        connection,
-        wallet,
-        nftsToBurn,
-        shippingCurrency === "sol"
-          ? Number((shippingFee / solPrice).toFixed(2))
-          : 0,
-        shippingCurrency === "usdc" ? shippingFee : 0
-      );
+      let txsSignatures: string = "";
+      switch (paymentType) {
+        case "racks":
+          txsSignatures = await slimesPayment.pay(
+            connection,
+            wallet,
+            nftsToBurn,
+            shippingCurrency === "sol"
+              ? Number((shippingFee / solPrice).toFixed(2))
+              : 0,
+            shippingCurrency === "usdc" ? shippingFee : 0
+          );
+          break;
+        case "sol":
+          txsSignatures = await slimesPayment.pay(
+            connection,
+            wallet,
+            [],
+            calculateSOL() + Number((shippingFee / solPrice).toFixed(2)),
+            0
+          );
+          break;
+        case "usdc":
+          txsSignatures = await slimesPayment.pay(
+            connection,
+            wallet,
+            [],
+            0,
+            calculateUSDC() + shippingFee
+          );
+          break;
+      }
+      // const txsSignatures = await slimesPayment.pay(
+      //   connection,
+      //   wallet,
+      //   nftsToBurn,
+      //   shippingCurrency === "sol"
+      //     ? Number((shippingFee / solPrice).toFixed(2))
+      //     : 0,
+      //   shippingCurrency === "usdc" ? shippingFee : 0
+      // );
+
       console.log("txsSignatures: ", txsSignatures);
       return txsSignatures;
     }
