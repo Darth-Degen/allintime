@@ -112,7 +112,7 @@ const StoreModal: FC<Props> = (props: Props) => {
   //add to cart
   const isCartLoadingRef = useRef<boolean>(false);
   const addToCart = async (item: Merch) => {
-    //TODO: uncomment for shipping
+    //TODO: uncomment / comment for testing
     if (shippingSession && shippingSession?.stage_completed === "2") {
       setShowWarningModal(true);
       return;
@@ -159,12 +159,12 @@ const StoreModal: FC<Props> = (props: Props) => {
       return;
     }
 
-    if (Number((shippingFee / solPrice).toFixed(2)) > _funds?.sol) {
-      toast.error("Not enough SOL for shipping");
-      return;
-    } else {
-      setStep(5);
-    }
+    // if (Number((shippingFee / solPrice).toFixed(2)) > _funds?.sol) {
+    //   toast.error("Not enough SOL for shipping");
+    //   return;
+    // } else {
+    setStep(5);
+    // }
   };
 
   //reset selected item
@@ -209,6 +209,7 @@ const StoreModal: FC<Props> = (props: Props) => {
             quantities={quantities}
             addToCart={addToCart}
             handleImageClick={handleImageClick}
+            solPrice={solPrice}
           />
         )}
         {/* item detail view */}
@@ -221,6 +222,7 @@ const StoreModal: FC<Props> = (props: Props) => {
             atMerchItemCapacity={atMerchItemCapacity}
             shippingSession={shippingSession}
             setShowWarningModal={setShowWarningModal}
+            solPrice={solPrice}
           />
         )}
         {/* cart + checkout process */}

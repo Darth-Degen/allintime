@@ -1,3 +1,4 @@
+import { getAccount, getAssociatedTokenAddressSync, getOrCreateAssociatedTokenAccount } from "@solana/spl-token";
 import { Connection, LAMPORTS_PER_SOL, PublicKey } from "@solana/web3.js";
 
 type ReturnedFundsBalances = {
@@ -20,10 +21,10 @@ export const getUserFunds = async (
     };
 
     // Get USDC balance
-    // const usdcAccountAddress = await getAssociatedTokenAddressSync(USDC_MINT_MAINNET, publicKey);
-    // let usdcAccountData = await getAccount(connection, usdcAccountAddress, "confirmed");
-    // funds.usdc = Number(usdcAccountData.amount) / (10 ** 6); // 6 decimals
-    // console.log('funds.usdc: ', funds.usdc);
+    const usdcAccountAddress = await getAssociatedTokenAddressSync(USDC_MINT_MAINNET, publicKey);
+    let usdcAccountData = await getAccount(connection, usdcAccountAddress, "confirmed");
+    funds.usdc = Number(usdcAccountData.amount) / (10 ** 6); // 6 decimals
+    console.log('funds.usdc: ', funds.usdc);
 
     // Get SOL balance
     const solAccountBalance = await connection.getBalance(publicKey);

@@ -11,9 +11,11 @@ interface Props {
   addToCart: (item: Merch) => void;
   handleImageClick: (item: Merch) => void;
   quantities: Quantity[];
+  solPrice: number;
 }
 const StoreItem: FC<Props> = (props: Props) => {
-  const { item, inStock, addToCart, handleImageClick, quantities } = props;
+  const { item, inStock, addToCart, handleImageClick, quantities, solPrice } =
+    props;
 
   //TODO: change to true to disable
   const [didHover, setDidHover] = useState<boolean>(false);
@@ -82,7 +84,11 @@ const StoreItem: FC<Props> = (props: Props) => {
         <h3 className="font-neuebit-bold text-4xl max-w-[180px] tracking-wide text-center md:text-start">
           {item.name}
         </h3>
-        <p className="font-neuebit-bold text-xl">cost - {item.cost} racks</p>
+        <p className="font-neuebit-bold text-xl">
+          cost - {item.cost} racks / {Number((item.usdc / solPrice).toFixed(2))}{" "}
+          SOL
+          {/* / ${item.usdc} USDC */}
+        </p>
         <p className="font-neuebit-bold text-xl">
           qty remaining - {calculateItemQuantity(item.id, quantities)}
           {/* {item.maxSupply} */}
