@@ -112,11 +112,11 @@ const StoreModal: FC<Props> = (props: Props) => {
   //add to cart
   const isCartLoadingRef = useRef<boolean>(false);
   const addToCart = async (item: Merch) => {
-    //TODO: uncomment for shipping
-    if (shippingSession && shippingSession?.stage_completed === "2") {
-      setShowWarningModal(true);
-      return;
-    }
+    //TODO: uncomment for testing
+    // if (shippingSession && shippingSession?.stage_completed === "2") {
+    //   setShowWarningModal(true);
+    //   return;
+    // }
     if (isCartLoadingRef.current) return;
     if (!publicKey || !connected) {
       setVisible(true);
@@ -209,6 +209,7 @@ const StoreModal: FC<Props> = (props: Props) => {
             quantities={quantities}
             addToCart={addToCart}
             handleImageClick={handleImageClick}
+            solPrice={solPrice}
           />
         )}
         {/* item detail view */}
@@ -221,6 +222,7 @@ const StoreModal: FC<Props> = (props: Props) => {
             atMerchItemCapacity={atMerchItemCapacity}
             shippingSession={shippingSession}
             setShowWarningModal={setShowWarningModal}
+            solPrice={solPrice}
           />
         )}
         {/* cart + checkout process */}

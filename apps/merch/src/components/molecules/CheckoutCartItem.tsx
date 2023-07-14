@@ -11,9 +11,10 @@ interface Props {
   step: number;
   handleCartClick?: () => void;
   updateCart: Dispatch<SetStateAction<Merch[]>>;
+  solPrice: number;
 }
 const CheckoutCart: FC<Props> = (props: Props) => {
-  const { item, index, step, updateCart } = props;
+  const { item, index, step, updateCart, solPrice } = props;
 
   const [colorDropdown, setColorDropdown] = useState<boolean>(false);
   const [sizeDropdown, setSizeDropdown] = useState<boolean>(false);
@@ -111,10 +112,14 @@ const CheckoutCart: FC<Props> = (props: Props) => {
         />
         {/* </div> */}
       </div>
-      <div className="md:self-center pb-1">
-        <p className="text-2xl leading-none uppercase">{item.cost} racks</p>
+      <div className="md:self-start pb-1 pl-2">
+        <p className="text-xl leading-none uppercase">{item.cost} racks or</p>
+        <p className="text-xl leading-none uppercase">
+          {Number((item.usdc / solPrice).toFixed(2))} SOL or
+        </p>
+        <p className="text-xl leading-none uppercase">${item.usdc} usdc</p>
         <p
-          className="whitespace-nowrap text-2xl text-m-red underline uppercase cursor-pointer leading-none"
+          className="whitespace-nowrap text-xl text-m-red underline uppercase cursor-pointer leading-none"
           onClick={() => handleRemove()}
         >
           remove

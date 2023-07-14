@@ -97,7 +97,12 @@ const Checkout: FC<Props> = (props: Props) => {
       >
         {/* left side */}
         <div className="xl:h-[55vh] max-h-[550px] flex flex-col items-center xl:items-start justify-start gap-3">
-          <CheckoutCart cart={cart} updateCart={updateCart} step={step} />
+          <CheckoutCart
+            cart={cart}
+            updateCart={updateCart}
+            step={step}
+            solPrice={solPrice}
+          />
           <AnimatePresence mode="wait">
             {step > 3 && (
               <motion.div

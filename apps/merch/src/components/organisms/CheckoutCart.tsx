@@ -8,9 +8,10 @@ interface Props {
   step: number;
   cart: Merch[];
   updateCart: Dispatch<SetStateAction<Merch[]>>;
+  solPrice: number;
 }
 const CheckoutCart: FC<Props> = (props: Props) => {
-  const { step, cart, updateCart } = props;
+  const { step, cart, updateCart, solPrice } = props;
 
   return (
     <motion.div
@@ -25,6 +26,7 @@ const CheckoutCart: FC<Props> = (props: Props) => {
             index={index}
             updateCart={updateCart}
             step={step}
+            solPrice={solPrice}
           />
         ))
       ) : (

@@ -18,6 +18,7 @@ interface Props {
   atMerchItemCapacity: (id: string) => boolean;
   shippingSession: ShippingSession | undefined;
   setShowWarningModal: Dispatch<SetStateAction<boolean>>;
+  solPrice: number;
 }
 const ItemDetail: FC<Props> = (props: Props) => {
   const {
@@ -28,6 +29,7 @@ const ItemDetail: FC<Props> = (props: Props) => {
     atMerchItemCapacity,
     shippingSession,
     setShowWarningModal,
+    solPrice,
   } = props;
   const path = `${process.env.NEXT_PUBLIC_CDN_URL}/images/merch/${item.id}/`;
 
@@ -160,7 +162,10 @@ const ItemDetail: FC<Props> = (props: Props) => {
         </div>
         <p className="font-neuebit text-2xl leading-6"> {item.description}</p>
         <div className="flex justify-start w-full uppercase gap-14">
-          <p className="font-neuebit-bold">cost - {item.cost}</p>
+          <p className="font-neuebit-bold">
+            cost - {item.cost} racks 5 RACKS /{" "}
+            {Number((item.usdc / solPrice).toFixed(2))} SOL / ${item.usdc} USDC
+          </p>
           <p className="font-neuebit-bold">qty made - {item.maxSupply}</p>
         </div>
         <div className="flex flex-col gap-2 pb-3">
