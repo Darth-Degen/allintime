@@ -113,10 +113,10 @@ const StoreModal: FC<Props> = (props: Props) => {
   const isCartLoadingRef = useRef<boolean>(false);
   const addToCart = async (item: Merch) => {
     //TODO: uncomment for testing
-    // if (shippingSession && shippingSession?.stage_completed === "2") {
-    //   setShowWarningModal(true);
-    //   return;
-    // }
+    if (shippingSession && shippingSession?.stage_completed === "2") {
+      setShowWarningModal(true);
+      return;
+    }
     if (isCartLoadingRef.current) return;
     if (!publicKey || !connected) {
       setVisible(true);
@@ -159,12 +159,12 @@ const StoreModal: FC<Props> = (props: Props) => {
       return;
     }
 
-    if (Number((shippingFee / solPrice).toFixed(2)) > _funds?.sol) {
-      toast.error("Not enough SOL for shipping");
-      return;
-    } else {
-      setStep(5);
-    }
+    // if (Number((shippingFee / solPrice).toFixed(2)) > _funds?.sol) {
+    //   toast.error("Not enough SOL for shipping");
+    //   return;
+    // } else {
+    setStep(5);
+    // }
   };
 
   //reset selected item

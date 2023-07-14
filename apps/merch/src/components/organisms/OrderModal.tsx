@@ -15,6 +15,8 @@ interface Props {
   shippingCurrency: string;
   setShippingCurrency: Dispatch<SetStateAction<string>>;
   txDividend: number;
+  paymentType: string;
+  setPaymentType: Dispatch<SetStateAction<string>>;
 }
 const OrderModal: FC<Props> = (props: Props) => {
   const {
@@ -26,6 +28,8 @@ const OrderModal: FC<Props> = (props: Props) => {
     shippingCurrency,
     setShippingCurrency,
     txDividend,
+    paymentType,
+    setPaymentType,
   } = props;
   const { showOrderModal, step, setStep } = useContext(StoreContext);
 
@@ -68,14 +72,44 @@ const OrderModal: FC<Props> = (props: Props) => {
           {step === 5 && (
             <motion.div
               key="step-5"
-              className="flex flex-col items-center gap-10"
+              className="flex flex-col items-center gap-10 pt-4"
               {...midExitAnimation}
             >
               <div className="flex flex-col items-center uppercase font-neuebit-bold text-xl md:text-3xl lg:w-full ">
                 <p className="text-m-red text-4xl pb-3">attention</p>
-                <p className="pb-5">
-                  we will now be collecting your racks and shipping fees
-                </p>
+                <p className="pb-5">choose your payment method</p>
+                <div className="flex gap-4 items-center justify-center">
+                  <button
+                    className={`w-32 h-10 border border-m-black cursor-pointer flex pt-0.5 items-center justify-center transition-all duration-300  ${
+                      paymentType === "sol"
+                        ? "bg-ait-teal text-white border-m-light-gray "
+                        : ""
+                    }`}
+                    onClick={() => setPaymentType("sol")}
+                  >
+                    SOL
+                  </button>
+                  <button
+                    className={`w-32 h-10 border border-m-black cursor-pointer flex pt-0.5 items-center justify-center transition-all duration-300  ${
+                      paymentType === "usdc"
+                        ? "bg-ait-teal text-white border-m-light-gray "
+                        : ""
+                    }`}
+                    onClick={() => setPaymentType("usdc")}
+                  >
+                    USDC
+                  </button>
+                  <button
+                    className={`w-32 h-10 border border-m-black cursor-pointer flex pt-0.5 items-center justify-center transition-all duration-300  ${
+                      paymentType === "racks"
+                        ? "bg-ait-teal text-white border-m-light-gray "
+                        : ""
+                    }`}
+                    onClick={() => setPaymentType("racks")}
+                  >
+                    RACKS
+                  </button>
+                </div>
 
                 <p className="pt-5">
                   **you can only place 1 order per wallet. Future purchases must
@@ -83,7 +117,7 @@ const OrderModal: FC<Props> = (props: Props) => {
                 </p>
               </div>
 
-              <div className="flex flex-col items-center gap-2">
+              <div className="flex flex-col items-center gap-2 pt-4">
                 <button
                   className="h-12 w-60 bg-ait-teal rounded-full uppercase font-neuebit-bold text-xl text-white pt-0.5 tracking-wide"
                   onClick={() => {

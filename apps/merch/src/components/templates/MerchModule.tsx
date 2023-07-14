@@ -71,6 +71,7 @@ const MerchModule: FC<Props> = (props: Props) => {
   const [showWarningModal, setShowWarningModal] = useState<boolean>(false);
   const [solPrice, setSolPrice] = useState<number>(21.69);
   const [shippingCurrency, setShippingCurrency] = useState("sol");
+  const [paymentType, setPaymentType] = useState("racks"); //racks usdc sol
 
   const [bearerToken, setBearerToken] = useState<
     string | unknown | undefined
@@ -524,6 +525,8 @@ const MerchModule: FC<Props> = (props: Props) => {
             shippingCurrency={shippingCurrency}
             setShippingCurrency={setShippingCurrency}
             txDividend={dividend}
+            paymentType={paymentType}
+            setPaymentType={setPaymentType}
           />
         )}
       </AnimatePresence>

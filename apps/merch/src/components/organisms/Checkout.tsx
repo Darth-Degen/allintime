@@ -145,13 +145,12 @@ const Checkout: FC<Props> = (props: Props) => {
           </AnimatePresence>
           <div className="w-full xl:w-1/2 lg:min-w-[580px] xl:min-w-[650px] flex flex-col md:flex-row justify-between px-8 py-3 bg-white font-neuebit-bold uppercase text-xl md:text-2xl text-m-mid-gray">
             <p>total</p>
-            {step === 3 && (
+            {step < 4 ? (
               <p>
                 {calculateRacks()} racks / {calculateSOL()} sol / $
                 {calculateUSDC()} usdc
               </p>
-            )}
-            {step === 4 && (
+            ) : (
               <p>
                 {calculateRacks()} racks{" "}
                 {step > 3 &&
