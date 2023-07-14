@@ -75,10 +75,10 @@ const Checkout: FC<Props> = (props: Props) => {
     //TODO: add getQuantities: () => Promise<void>;
 
     // console.log(calculateRacks(), racks);
-    // if (racks < calculateRacks()) {
-    //   toast.error("Not enough racks");
-    //   return;
-    // }
+    if (racks < calculateRacks()) {
+      toast.error("Not enough racks");
+      return;
+    }
     //verify all sizes & colors
     const totalItems = cart.length;
     let totalColors = 0;

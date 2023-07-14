@@ -527,6 +527,8 @@ const MerchModule: FC<Props> = (props: Props) => {
             txDividend={dividend}
             paymentType={paymentType}
             setPaymentType={setPaymentType}
+            userRacks={nfts.length}
+            fetchUserFunds={fetchUserFunds}
           />
         )}
       </AnimatePresence>
