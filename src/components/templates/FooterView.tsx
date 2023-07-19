@@ -30,7 +30,7 @@ const FooterView: FC = () => {
           />
           <a
             className="relative cursor-pointer whitespace-nowrap"
-            href="https://twitter.com/sol_exp"
+            href="https://twitter.com/expstudio_"
             target="_blank"
             rel="noreferrer"
           >
