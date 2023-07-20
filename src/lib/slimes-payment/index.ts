@@ -23,7 +23,7 @@ export async function pay(
   const isDevnet = connection.rpcEndpoint.startsWith("https://devnet.");
 
   const USDC_DECIMALS = isDevnet ? USDC_DECIMALS_DEVNET : USDC_DECIMALS_MAINNET;
-  console.log("pay ", solAmount, usdcAmount, firstTransaction)
+  console.log("pay ", solAmount, usdcAmount)
   // 1. Build tx to send NFTs
   if (nfts.length) {
     for await (let nft of nfts) {

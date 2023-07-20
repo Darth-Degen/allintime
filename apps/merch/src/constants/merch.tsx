@@ -8,6 +8,7 @@ export const merch: Merch[] = [
       "Slightly oversized fit. Boxy shoulders. Embroidery 3 locations, custom tags inside and out. 100% cotton",
     maxSupply: 188,
     cost: 12,
+    usdc: 120,
     sizeChart: ["s", "m", "l", "xl", "2xl"],
     colors: ["black"],
     images: [
@@ -52,6 +53,7 @@ export const merch: Merch[] = [
       "Slightly oversized fit. Graphic designed by Skullface. Available in black and white. 100% cotton.",
     maxSupply: 221,
     cost: 5,
+    usdc: 50,
     sizeChart: ["s", "m", "l", "xl", "2xl"],
     colors: ["black", "white"],
     images: [
@@ -123,6 +125,7 @@ export const merch: Merch[] = [
       "Golden Brown, recycled cotton/poly blend. Embroidery and custom tag. Dad swag not included.",
     maxSupply: 190,
     cost: 4,
+    usdc: 40,
     sizeChart: ["one size fits most"],
     colors: ["corduroy"],
     images: ["image.png"],
@@ -141,6 +144,7 @@ export const merch: Merch[] = [
       "Custom LAMY pen (made in germany), custom vanity box, Recycled paper sketchbook, Stickers (5x), Hard enamel pin. Paper/Metal/Plastic.",
     maxSupply: 190,
     cost: 5,
+    usdc: 55,
     sizeChart: ["one pack to rule them all"],
     colors: ["pack"],
     images: ["image.png", "image1.png", "image2.png", "image3.png"],

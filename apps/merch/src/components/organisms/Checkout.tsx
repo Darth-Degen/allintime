@@ -50,6 +50,22 @@ const Checkout: FC<Props> = (props: Props) => {
       return total + item.cost;
     }, 0);
   };
+  const calculateUSDC = (): number => {
+    if (cart.length === 0) return 0;
+    //calculate total
+    return cart.reduce((total, item) => {
+      return total + item.usdc;
+    }, 0);
+  };
+  const calculateSOL = (): number => {
+    if (cart.length === 0) return 0;
+    //calculate total
+    const _usdc = cart.reduce((total, item) => {
+      return total + item.usdc;
+    }, 0);
+
+    return Number((_usdc / solPrice).toFixed(2));
+  };
 
   const handleCartCheckout = async () => {
     if (cart.length === 0) {
@@ -59,10 +75,10 @@ const Checkout: FC<Props> = (props: Props) => {
     //TODO: add getQuantities: () => Promise<void>;
 
     // console.log(calculateRacks(), racks);
-    if (racks < calculateRacks()) {
-      toast.error("Not enough racks");
-      return;
-    }
+    // if (racks < calculateRacks()) {
+    //   toast.error("Not enough racks");
+    //   return;
+    // }
     //verify all sizes & colors
     const totalItems = cart.length;
     let totalColors = 0;
@@ -97,7 +113,12 @@ const Checkout: FC<Props> = (props: Props) => {
       >
         {/* left side */}
         <div className="xl:h-[55vh] max-h-[550px] flex flex-col items-center xl:items-start justify-start gap-3">
-          <CheckoutCart cart={cart} updateCart={updateCart} step={step} />
+          <CheckoutCart
+            cart={cart}
+            updateCart={updateCart}
+            step={step}
+            solPrice={solPrice}
+          />
           <AnimatePresence mode="wait">
             {step > 3 && (
               <motion.div
@@ -105,28 +126,40 @@ const Checkout: FC<Props> = (props: Props) => {
                 className="flex flex-col items-center xl:items-start justify-start gap-3 w-full"
                 {...fastExitAnimation}
               >
-                <div className="whitespace-no-wrap w-full xl:w-1/2 lg:min-w-[580px] xl:min-w-[650px] flex flex-col md:flex-row justify-between px-8 py-3 bg-white font-neuebit-bold uppercase text-4xl text-m-mid-gray">
-                  <p>Cost</p>
-                  <p>{calculateRacks()} racks</p>
+                <div className="whitespace-no-wrap w-full xl:w-1/2 lg:min-w-[580px] xl:min-w-[650px] flex flex-col md:flex-row justify-between px-8 py-3 bg-white font-neuebit-bold uppercase text-xl md:text-2xl text-m-mid-gray">
+                  <p>cost</p>
+                  <p>
+                    {calculateRacks()} racks / {calculateSOL().toFixed(2)} sol
+                    {/* / ${calculateUSDC()} usdc */}
+                  </p>
                 </div>
-                <div className="w-full xl:w-1/2 lg:min-w-[580px] xl:min-w-[650px] flex flex-col md:flex-row justify-between px-8 py-3 bg-white font-neuebit-bold uppercase text-4xl text-m-mid-gray">
+                <div className="w-full xl:w-1/2 lg:min-w-[580px] xl:min-w-[650px] flex flex-col md:flex-row justify-between px-8 py-3 bg-white font-neuebit-bold uppercase text-xl md:text-2xl text-m-mid-gray">
                   <p>shipping</p>
                   <p>
                     {Number((shippingFee / solPrice).toFixed(2))} SOL
-                    {/* or $
-                    {shippingFee} USDC */}
+                    {/* / ${shippingFee} USDC */}
                   </p>
                 </div>
               </motion.div>
             )}
           </AnimatePresence>
-          <div className="w-full xl:w-1/2 lg:min-w-[580px] xl:min-w-[650px] flex flex-col md:flex-row justify-between px-8 py-3 bg-white font-neuebit-bold uppercase text-4xl text-m-mid-gray">
+          <div className="w-full xl:w-1/2 lg:min-w-[580px] xl:min-w-[650px] flex flex-col md:flex-row justify-between px-8 py-3 bg-white font-neuebit-bold uppercase text-xl md:text-2xl text-m-mid-gray">
             <p>total</p>
-            <p>
-              {calculateRacks()} racks{" "}
-              {step > 3 &&
-                ` + ${Number((shippingFee / solPrice).toFixed(2))}  SOL`}
-            </p>
+            {step < 4 ? (
+              <p>
+                {calculateRacks()} racks / {calculateSOL()} sol
+                {/* / ${calculateUSDC()} usdc */}
+              </p>
+            ) : (
+              <p>
+                {calculateRacks()} racks{" "}
+                {step > 3 &&
+                  ` + ${Number((shippingFee / solPrice).toFixed(2))}  SOL`}{" "}
+                / {calculateSOL() + Number((shippingFee / solPrice).toFixed(2))}{" "}
+                sol
+                {/* / ${calculateUSDC() + shippingFee} usdc */}
+              </p>
+            )}
           </div>
         </div>
         {/* right side */}

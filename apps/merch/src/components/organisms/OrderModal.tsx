@@ -1,8 +1,16 @@
 import { Modal } from "@merch-components";
 import { StoreContext, midExitAnimation } from "@merch-constants";
-import { Dispatch, FC, SetStateAction, useContext, useState } from "react";
+import {
+  Dispatch,
+  FC,
+  SetStateAction,
+  useContext,
+  useEffect,
+  useRef,
+  useState,
+} from "react";
 import Image from "next/image";
-import { Merch } from "@merch-types";
+import { Merch, ReturnedFundsBalances } from "@merch-types";
 import { AnimatePresence, motion } from "framer-motion";
 import { toast } from "react-hot-toast";
 import OrderIcon from "../../../images/icons/close.svg";
@@ -15,6 +23,10 @@ interface Props {
   shippingCurrency: string;
   setShippingCurrency: Dispatch<SetStateAction<string>>;
   txDividend: number;
+  paymentType: string;
+  setPaymentType: Dispatch<SetStateAction<string>>;
+  userRacks: number;
+  fetchUserFunds: () => Promise<string | ReturnedFundsBalances | undefined>;
 }
 const OrderModal: FC<Props> = (props: Props) => {
   const {
@@ -26,6 +38,10 @@ const OrderModal: FC<Props> = (props: Props) => {
     shippingCurrency,
     setShippingCurrency,
     txDividend,
+    paymentType,
+    setPaymentType,
+    userRacks,
+    fetchUserFunds,
   } = props;
   const { showOrderModal, step, setStep } = useContext(StoreContext);
 
@@ -41,6 +57,23 @@ const OrderModal: FC<Props> = (props: Props) => {
     return cart.reduce((total, item) => {
       return total + item.cost;
     }, 0);
+  };
+  const insufficientRacks = userRacks < calculateRacks();
+  const calculateUSDC = (): number => {
+    if (cart.length === 0) return 0;
+    //calculate total
+    return cart.reduce((total, item) => {
+      return total + item.usdc;
+    }, 0);
+  };
+  const calculateSOL = (): number => {
+    if (cart.length === 0) return 0;
+    //calculate total
+    const _usdc = cart.reduce((total, item) => {
+      return total + item.usdc;
+    }, 0);
+
+    return Number((_usdc / solPrice).toFixed(2));
   };
 
   const handleOrder = (): void => {
@@ -68,14 +101,44 @@ const OrderModal: FC<Props> = (props: Props) => {
           {step === 5 && (
             <motion.div
               key="step-5"
-              className="flex flex-col items-center gap-10"
+              className="flex flex-col items-center gap-10 pt-4"
               {...midExitAnimation}
             >
               <div className="flex flex-col items-center uppercase font-neuebit-bold text-xl md:text-3xl lg:w-full ">
                 <p className="text-m-red text-4xl pb-3">attention</p>
-                <p className="pb-5">
-                  we will now be collecting your racks and shipping fees
-                </p>
+                <p className="pb-5">choose your payment method</p>
+                <div className="flex gap-4 items-center justify-center">
+                  <button
+                    className={`w-32 h-10 border border-m-black cursor-pointer flex pt-0.5 items-center justify-center transition-all duration-300  ${
+                      paymentType === "sol"
+                        ? "bg-ait-teal text-white border-m-light-gray "
+                        : ""
+                    }`}
+                    onClick={() => setPaymentType("sol")}
+                  >
+                    SOL
+                  </button>
+                  {/* <button
+                    className={`w-32 h-10 border border-m-black cursor-pointer flex pt-0.5 items-center justify-center transition-all duration-300  ${
+                      paymentType === "usdc"
+                        ? "bg-ait-teal text-white border-m-light-gray "
+                        : ""
+                    }`}
+                    onClick={() => setPaymentType("usdc")}
+                  >
+                    USDC
+                  </button> */}
+                  <button
+                    className={`w-32 h-10 border border-m-black cursor-pointer flex pt-0.5 items-center justify-center transition-all duration-300  ${
+                      paymentType === "racks"
+                        ? "bg-ait-teal text-white border-m-light-gray "
+                        : ""
+                    }`}
+                    onClick={() => setPaymentType("racks")}
+                  >
+                    RACKS
+                  </button>
+                </div>
 
                 <p className="pt-5">
                   **you can only place 1 order per wallet. Future purchases must
@@ -83,10 +146,36 @@ const OrderModal: FC<Props> = (props: Props) => {
                 </p>
               </div>
 
-              <div className="flex flex-col items-center gap-2">
+              <div className="flex flex-col items-center gap-2 pt-4">
                 <button
-                  className="h-12 w-60 bg-ait-teal rounded-full uppercase font-neuebit-bold text-xl text-white pt-0.5 tracking-wide"
-                  onClick={() => {
+                  className="h-12 w-60 bg-ait-teal rounded-full uppercase font-neuebit-bold text-xl text-white pt-0.5 tracking-wide disabled:cursor-not-allowed disabled:bg-opacity-60"
+                  // disabled={insufficientRacks && paymentType === "racks"}
+                  onClick={async () => {
+                    if (insufficientRacks && paymentType === "racks") {
+                      toast.error("Not enough RACKS");
+                      return;
+                    }
+                    const _funds =
+                      (await fetchUserFunds()) as ReturnedFundsBalances;
+                    if (
+                      paymentType === "sol" &&
+                      _funds.sol < calculateSOL() + shippingFee / solPrice
+                    ) {
+                      toast.error("Not enough SOL");
+                      return;
+                    }
+                    if (
+                      paymentType === "usdc" &&
+                      _funds.usdc < calculateUSDC() + shippingFee
+                    ) {
+                      toast.error("Not enough USDC");
+                      return;
+                    }
+
+                    // if (Number((shippingFee / solPrice).toFixed(2)) > _funds?.sol) {
+                    //   toast.error("Not enough SOL for shipping");
+                    //   return;
+                    // } else {
                     setStep(6);
                   }}
                 >
@@ -103,8 +192,20 @@ const OrderModal: FC<Props> = (props: Props) => {
             >
               <div className="flex flex-col items-center uppercase font-neuebit-bold text-2xl md:text-3xl lg:w-full gap-10">
                 <p key="step-6">
-                  You will now be deducted ({calculateRacks()}) NFTs &
-                  {Number((shippingFee / solPrice).toFixed(2))} SOL
+                  {paymentType === "racks" &&
+                    ` You will now be deducted ${calculateRacks()} NFTs & ${Number(
+                      (shippingFee / solPrice).toFixed(2)
+                    )} SOL`}
+                  {paymentType === "usdc" &&
+                    ` You will now be deducted $${
+                      calculateUSDC() + shippingFee
+                    } USDC `}
+                  {paymentType === "sol" &&
+                    ` You will now be deducted ${(
+                      calculateSOL() +
+                      shippingFee / solPrice
+                    ).toFixed(2)}  SOL`}
+
                   {/* or $
                     {shippingFee} USDC for shipping */}
                 </p>
@@ -127,7 +228,7 @@ const OrderModal: FC<Props> = (props: Props) => {
                 {/* <p className="uppercase font-neuebit-bold text-lg text-m-mid-gray -mt-9">
                   choose how you want to pay for shipping
                 </p> */}
-                {calculateRacks() > txDividend ? (
+                {calculateRacks() > txDividend && paymentType === "racks" ? (
                   <>
                     <p className="text-m-red text-2xl">
                       since your order is over {txDividend} racks

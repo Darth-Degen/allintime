@@ -10,6 +10,7 @@ export interface Merch {
   description: string;
   maxSupply: number;
   cost: number;
+  usdc: number;
   sizeChart: string[];
   colors: string[];
   images: string[];

@@ -9,9 +9,10 @@ interface Props {
   quantities: Quantity[];
   addToCart: (item: Merch) => void;
   handleImageClick: (item: Merch) => void;
+  solPrice: number;
 }
 const Store: FC<Props> = (props: Props) => {
-  const { quantities, addToCart, handleImageClick } = props;
+  const { quantities, addToCart, handleImageClick, solPrice } = props;
 
   return (
     <motion.div
@@ -28,6 +29,7 @@ const Store: FC<Props> = (props: Props) => {
             inStock={verifyItemInStock(item, quantities)}
             handleImageClick={handleImageClick}
             quantities={quantities}
+            solPrice={solPrice}
           />
         ))}
       </div>
