@@ -155,22 +155,22 @@ const OrderModal: FC<Props> = (props: Props) => {
                       toast.error("Not enough RACKS");
                       return;
                     }
-                    const _funds =
-                      (await fetchUserFunds()) as ReturnedFundsBalances;
-                    if (
-                      paymentType === "sol" &&
-                      _funds.sol < calculateSOL() + shippingFee / solPrice
-                    ) {
-                      toast.error("Not enough SOL");
-                      return;
-                    }
-                    if (
-                      paymentType === "usdc" &&
-                      _funds.usdc < calculateUSDC() + shippingFee
-                    ) {
-                      toast.error("Not enough USDC");
-                      return;
-                    }
+                    // const _funds =
+                    //   (await fetchUserFunds()) as ReturnedFundsBalances;
+                    // if (
+                    //   paymentType === "sol" &&
+                    //   _funds.sol < calculateSOL() + shippingFee / solPrice
+                    // ) {
+                    //   toast.error("Not enough SOL");
+                    //   return;
+                    // }
+                    // if (
+                    //   paymentType === "usdc" &&
+                    //   _funds.usdc < calculateUSDC() + shippingFee
+                    // ) {
+                    //   toast.error("Not enough USDC");
+                    //   return;
+                    // }
 
                     // if (Number((shippingFee / solPrice).toFixed(2)) > _funds?.sol) {
                     //   toast.error("Not enough SOL for shipping");
