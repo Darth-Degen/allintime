@@ -24,8 +24,8 @@ const Home: NextPage = () => {
     <PageLayout footer={false} fixed={false} assets={assets}>
       <div className="hidden lg:flex flex-col h-full w-full">
         <LandingView setAssets={setAssets} />
-        <MerchView1 />
         <BuyRacksView />
+        <MerchView1 />
         <MerchView2 />
         <PikaView />
         <NiceFknCrew />

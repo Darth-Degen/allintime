@@ -226,12 +226,12 @@ const BuyRacksContent: FC<Props> = (props: Props) => {
 
   return (
     <div
-      className={`relative w-full min-h-screen flex flex-col items-center justify-center bg-ait-teal`}
+      className={`relative w-full h-screen flex flex-col items-center justify-center bg-ait-teal`}
       id={id}
       ref={ref}
     >
       <div className="py-20" />
-      <div className="sticky lg:top-[10%] xl:top-[15%] justify-center flex flex-col gap-0 w-full items-center">
+      <div className="absolute lg:top-[40%] transform -translate-y-1/4 justify-center flex flex-col gap-0 w-full items-center">
         <div className="absolute z-[50] -top-20 lg:-top-10 left-1/2 lg:left-auto lg:right-0 -translate-x-1/2">
           <WalletMultiButton
             startIcon={undefined}
@@ -245,7 +245,7 @@ const BuyRacksContent: FC<Props> = (props: Props) => {
           </WalletMultiButton>
         </div>
         <div
-          className="flex flex-col gap-4 lg:flex-row justify-center items-center rounded-[1.75rem] lg:rounded-full h-auto lg:h-[75vh] w-[98%] md:w-[90%] lg:w-[95%] xl:w-[90%] bg-ait-black overflow-hidden"
+          className="flex flex-col gap-4 lg:flex-row justify-center items-center rounded-[1.75rem] lg:rounded-full h-auto lg:h-[50vh] w-[98%] md:w-[90%] lg:w-[55%] xl:w-[80%] bg-ait-black overflow-hidden"
           ref={innerRef}
         >
           {/* <div className="absolute -top-20 lg:-top-20 left-1/2 transform -translate-x-1/2 lg:left-auto lg:right-10"> */}
@@ -352,8 +352,8 @@ const BuyRacksContent: FC<Props> = (props: Props) => {
                 )}
               </motion.div>
             ) : (
-              <div className="relative w-full h-[640px] lg:h-full">
-                <div
+              <div className="relative w-full h-[400px] lg:h-full">
+                {/* <div
                   style={{
                     position: "absolute",
                     top: 0,
@@ -366,32 +366,31 @@ const BuyRacksContent: FC<Props> = (props: Props) => {
                     backgroundPosition: "center",
                     opacity: 0.5,
                   }}
-                ></div>
-
-                <p
-                  className="absolute top-[25%] -translate-y-[75%] left-1/2 -translate-x-1/2
-                  text-white font-neuebit-bold text-6xl lg:text-8xl"
-                >
-                  !!!
-                </p>
-                <p
-                  className="absolute top-[30%] -translate-y-[70%] left-1/2 -translate-x-1/2 
-                  text-white font-neuebit-bold text-3xl lg:text-5xl"
-                >
-                  STORE OPEN
-                </p>
-                <div
-                  className="absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 
-                  py-4 px-8 bg-white flex justify-center items-center"
-                >
-                  <div
-                    className="underline text-[#2764FF] font-neuebit-bold text-3xl lg:text-5xl cursor-pointer"
-                    onClick={() => setShowStore(true)}
-                  >
-                    SHOP NOW
+                ></div> */}
+                {/* <Image
+                  src={activeStatus.src}
+                  height={1000}
+                  width={500}
+                  alt="AIT"
+                  className="absolute left-1/2 transform -translate-x-1/2"
+                /> */}
+                <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex flex-col items-center">
+                  <p className="text-white font-neuebit-bold text-6xl lg:text-8xl">
+                    !!!
+                  </p>
+                  <p className="text-white font-neuebit-bold text-3xl lg:text-5xl pb-4">
+                    STORE OPEN
+                  </p>
+                  <div className="py-4 px-8 bg-white flex justify-center items-center">
+                    <div
+                      className="underline text-[#2764FF] font-neuebit-bold text-3xl lg:text-5xl cursor-pointer"
+                      onClick={() => setShowStore(true)}
+                    >
+                      SHOP NOW
+                    </div>
                   </div>
                 </div>
-                <div
+                {/* <div
                   className="absolute bottom-20 md:bottom-4 left-1/2 -translate-x-1/2 text-m-ait-green
                   font-neuebit-bold text-2xl md:text-3xl flex flex-col gap-0 items-center justify-center uppercase"
                 >
@@ -418,8 +417,8 @@ const BuyRacksContent: FC<Props> = (props: Props) => {
                       /190
                     </p>
                   </div>
-                </div>
-                <div
+                </div> */}
+                {/* <div
                   className="absolute bottom-0 lg:top-1/2 lg:-translate-y-1/2 left-4
                   px-3 py-1 flex items-center gap-3 cursor-pointer"
                   onClick={() => setStoreOpenView(false)}
@@ -443,7 +442,7 @@ const BuyRacksContent: FC<Props> = (props: Props) => {
                     <br />
                     WINNER
                   </p>
-                </div>
+                </div> */}
               </div>
             )}
           </AnimatePresence>
