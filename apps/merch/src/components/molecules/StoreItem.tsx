@@ -89,10 +89,10 @@ const StoreItem: FC<Props> = (props: Props) => {
           SOL
           {/* / ${item.usdc} USDC */}
         </p>
-        <p className="font-neuebit-bold text-xl">
+        {/* <p className="font-neuebit-bold text-xl">
           qty remaining - {calculateItemQuantity(item.id, quantities)}
-          {/* {item.maxSupply} */}
-        </p>
+           {item.maxSupply} 
+        </p> */}
         <div className="flex gap-2 font-neuebit text-xl ">
           {item.sizeChart.map((item, index) => (
             <span key={index}>{item}</span>
