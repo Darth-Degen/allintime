@@ -27,7 +27,7 @@ const NftIndicator: FC<Props> = (props: Props) => {
             className="absolute -bottom-4 left-[1px] text-m-mid-gray text-base"
             {...fastExitAnimation}
           >
-            racks = .5 sol ea.
+            {/* racks = .5 sol ea. */}
           </motion.p>
         )}
       </AnimatePresence>
