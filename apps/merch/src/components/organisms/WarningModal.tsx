@@ -25,11 +25,7 @@ const WarningModal: FC<Props> = (props: Props) => {
           Wait Hol&apos; Up
         </h3>
         <div className="flex flex-col items-center uppercase font-neuebit-bold text-3xl md:text-4xl">
-          <p>
-            looks like you&apos;ve already placed an order with this wallet. to
-            place another please move your racks to a new wallet. Thank you for
-            buying more. much love
-          </p>
+          <p>TO PLACE ANOTHER ORDER PLEASE CONNECT WITH A NEW WALLET</p>
         </div>
         {/* close icon */}
         <div
