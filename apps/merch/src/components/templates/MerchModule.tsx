@@ -542,25 +542,21 @@ const MerchModule: FC<Props> = (props: Props) => {
     <StoreContext.Provider value={value}>
       {children}
       {/* store */}
-      <AnimatePresence mode="wait">
-        {showStore && (
-          <StoreModal
-            cart={cart}
-            setCart={setCart}
-            nfts={nfts}
-            shipping={shipping}
-            setShipping={setShipping}
-            quantities={quantities}
-            getQuantities={getQuantities}
-            shippingFee={shippingFee}
-            setShowWarningModal={setShowWarningModal}
-            shippingSession={shippingSession}
-            solPrice={solPrice}
-            getNfts={getNfts}
-            fetchUserFunds={fetchUserFunds}
-          />
-        )}
-      </AnimatePresence>
+      <StoreModal
+        cart={cart}
+        setCart={setCart}
+        nfts={nfts}
+        shipping={shipping}
+        setShipping={setShipping}
+        quantities={quantities}
+        getQuantities={getQuantities}
+        shippingFee={shippingFee}
+        setShowWarningModal={setShowWarningModal}
+        shippingSession={shippingSession}
+        solPrice={solPrice}
+        getNfts={getNfts}
+        fetchUserFunds={fetchUserFunds}
+      />
       {/* order */}
       <AnimatePresence mode="wait">
         {showOrderModal && (

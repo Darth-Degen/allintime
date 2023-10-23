@@ -21,11 +21,7 @@ interface Props {
 const BuyRacksView: FC<Props> = (props: Props) => {
   // const { id, setIsInView, setCurrentPage } = props;
 
-  return (
-    <MerchModule>
-      <BuyRacksContent id={"buyracks"} />
-    </MerchModule>
-  );
+  return <MerchModule>{/* <BuyRacksContent id={"buyracks"} /> */}</MerchModule>;
 };
 
 export default BuyRacksView;

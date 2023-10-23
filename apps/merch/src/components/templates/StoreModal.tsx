@@ -173,77 +173,77 @@ const StoreModal: FC<Props> = (props: Props) => {
   }, [step]);
 
   return (
-    <Modal
-      show={showStore}
-      onClick={() => {
-        setShowExitModal(true);
-      }}
-      className="w-[90%] lg:w-5/6 xl:w-[1285px] 3xl:w-1/2 h-[93%] xl:h-[800px] lg:px-4 py-2 z-50"
+    // <Modal
+    //   show={showStore}
+    //   onClick={() => {
+    //     setShowExitModal(true);
+    //   }}
+    //   className="w-[90%] lg:w-5/6 xl:w-[1285px] 3xl:w-1/2 h-[93%] xl:h-[800px] lg:px-4 py-2 z-50"
+    // >
+    <div
+      className={`flex flex-col items-center justify-between bg-[#EBEBEB] text-3xl w-[85%] max-w-[2200px] mx-auto ${
+        step === 1 ? "xl:h-full" : "xl:h-full"
+      }`}
     >
-      <div
-        className={`flex flex-col items-center justify-between w-full text-3xl ${
-          step === 1 ? "xl:h-full" : "xl:h-full"
-        }`}
-      >
-        {/* close icon */}
+      {/* close icon */}
 
-        <div
-          className="absolute top-2 right-2 cursor-pointer scale-75 lg:scale-50 z-10 lg:hidden"
-          onClick={() => {
-            setShowExitModal(true);
-          }}
-        >
-          <Image src={ExitIcon} alt="esc" width={35} height={35} />
-        </div>
-        <Header
-          step={step}
-          nfts={nfts.length}
-          cart={cart}
-          handleCartClick={handleCartClick}
-          setStep={setStep}
-          storeItem={storeItem}
-        />
-        {/* store items */}
-        {step === 0 && (
-          <Store
-            quantities={quantities}
-            addToCart={addToCart}
-            handleImageClick={handleImageClick}
-            solPrice={solPrice}
-          />
-        )}
-        {/* item detail view */}
-        {step === 1 && storeItem && (
-          <ItemDetail
-            quantities={quantities}
-            item={storeItem}
-            addToCart={addToCart}
-            setStep={setStep}
-            atMerchItemCapacity={atMerchItemCapacity}
-            shippingSession={shippingSession}
-            setShowWarningModal={setShowWarningModal}
-            solPrice={solPrice}
-          />
-        )}
-        {/* cart + checkout process */}
-        {step > 1 && (
-          <Checkout
-            cart={cart}
-            step={step}
-            setStep={setStep}
-            updateCart={setCart}
-            shipping={shipping}
-            setShipping={setShipping}
-            racks={nfts.length}
-            shippingFee={shippingFee}
-            solPrice={solPrice}
-            getNfts={getNfts}
-            placeOrder={placeOrder}
-          />
-        )}
-        <Footer step={step} />
+      <div
+        className="absolute top-2 right-2 cursor-pointer scale-75 lg:scale-50 z-10 lg:hidden"
+        onClick={() => {
+          setShowExitModal(true);
+        }}
+      >
+        <Image src={ExitIcon} alt="esc" width={35} height={35} />
       </div>
-    </Modal>
+      <Header
+        step={step}
+        nfts={nfts.length}
+        cart={cart}
+        handleCartClick={handleCartClick}
+        setStep={setStep}
+        storeItem={storeItem}
+      />
+      {/* store items */}
+      {step === 0 && (
+        <Store
+          quantities={quantities}
+          addToCart={addToCart}
+          handleImageClick={handleImageClick}
+          solPrice={solPrice}
+        />
+      )}
+      {/* item detail view */}
+      {step === 1 && storeItem && (
+        <ItemDetail
+          quantities={quantities}
+          item={storeItem}
+          addToCart={addToCart}
+          setStep={setStep}
+          atMerchItemCapacity={atMerchItemCapacity}
+          shippingSession={shippingSession}
+          setShowWarningModal={setShowWarningModal}
+          solPrice={solPrice}
+        />
+      )}
+      {/* cart + checkout process */}
+      {step > 1 && (
+        <Checkout
+          cart={cart}
+          step={step}
+          setStep={setStep}
+          updateCart={setCart}
+          shipping={shipping}
+          setShipping={setShipping}
+          racks={nfts.length}
+          shippingFee={shippingFee}
+          solPrice={solPrice}
+          getNfts={getNfts}
+          placeOrder={placeOrder}
+        />
+      )}
+      <Footer step={step} />
+    </div>
+    // </Modal>
   );
 };
 
