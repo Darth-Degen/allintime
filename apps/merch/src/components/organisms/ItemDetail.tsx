@@ -132,7 +132,7 @@ const ItemDetail: FC<Props> = (props: Props) => {
   }, [cartItem?.color, cartItem?.size, color, item, quantities]);
 
   return (
-    <div className="flex flex-col lg:flex-row items-center lg:items-start justify-start gap-12 xl:gap-16 h-full w-full px-12 py-5">
+    <div className="flex flex-col lg:flex-row items-center lg:items-start justify-center gap-12 xl:gap-16 h-full w-full px-12 py-5">
       <ImagePicker
         images={item.images}
         path={path}
