@@ -125,17 +125,10 @@ const ItemDetail: FC<Props> = (props: Props) => {
 
   //check items in stock
   useEffect(() => {
-    // console.log(
-    //   "*** ",
-    //   cartItem?.size,
-    //   ",",
-    //   cartItem?.color,
+    if (item) setIsInStock(false);
+    // setIsInStock(
     //   verifyItemInStock(item, quantities, cartItem?.size, cartItem?.color)
     // );
-    if (item)
-      setIsInStock(
-        verifyItemInStock(item, quantities, cartItem?.size, cartItem?.color)
-      );
   }, [cartItem?.color, cartItem?.size, color, item, quantities]);
 
   return (

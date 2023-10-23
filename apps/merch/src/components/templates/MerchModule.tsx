@@ -222,7 +222,7 @@ const MerchModule: FC<Props> = (props: Props) => {
     try {
       const _cart: ShippingCart[] = cart.map((item) => {
         //verify is in stock
-        const isInStock = verifyItemInStock(item, quantities);
+        const isInStock = false; //verifyItemInStock(item, quantities);
         if (!isInStock) {
           console.log("isInStock ", item.name, isInStock);
           throw new Error(`${item.name} is no longer in stock`);
