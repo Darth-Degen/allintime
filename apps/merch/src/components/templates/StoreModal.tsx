@@ -181,9 +181,7 @@ const StoreModal: FC<Props> = (props: Props) => {
     //   className="w-[90%] lg:w-5/6 xl:w-[1285px] 3xl:w-1/2 h-[93%] xl:h-[800px] lg:px-4 py-2 z-50"
     // >
     <div
-      className={`flex flex-col items-center justify-between bg-[#EBEBEB] text-3xl w-[85%] max-w-[2200px] mx-auto ${
-        step === 1 ? "xl:h-full" : "xl:h-full"
-      }`}
+      className={`flex flex-col items-center justify-between bg-[#EBEBEB] text-3xl w-[85%] max-w-[2200px] mx-auto lg:min-h-[785px]`}
     >
       {/* close icon */}
 
