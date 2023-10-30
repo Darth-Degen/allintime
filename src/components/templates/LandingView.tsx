@@ -64,7 +64,7 @@ const LandingView: FC<Props> = (props: Props) => {
       </div>
       <div className="w-[85%] max-w-[2200px] mx-auto bg-custom-black h-40 flex items-center justify-center" />
       {/* banner */}
-      <div className="w-[85%] max-w-[2200px] mx-auto  bg-[#EBEBEB] h-6 xl:h-8 flex items-center justify-center">
+      {/* <div className="w-[85%] max-w-[2200px] mx-auto  bg-[#EBEBEB] h-6 xl:h-8 flex items-center justify-center">
         <p
           className="px-2 whitespace-nowrap overflow-hidden uppercase xl:text-lg text-center 
               text-black font-neuebitBold tracking-[0.2em] xl:tracking-[0.32em] 2xl:tracking-[0.41em] 3xl:tracking-[0.7em]"
@@ -72,7 +72,7 @@ const LandingView: FC<Props> = (props: Props) => {
           {`rob banks // use space magic // be a real life action figure
               // time travel // get drained (with style)`}
         </p>
-      </div>
+      </div> */}
     </div>
   );
 };
