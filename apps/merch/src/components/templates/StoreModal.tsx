@@ -185,14 +185,14 @@ const StoreModal: FC<Props> = (props: Props) => {
     >
       {/* close icon */}
 
-      <div
+      {/* <div
         className="absolute top-2 right-2 cursor-pointer scale-75 lg:scale-50 z-10 lg:hidden"
         onClick={() => {
           setShowExitModal(true);
         }}
       >
         <Image src={ExitIcon} alt="esc" width={35} height={35} />
-      </div>
+      </div> */}
       <Header
         step={step}
         nfts={nfts.length}
